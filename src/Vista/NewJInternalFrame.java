@@ -29,10 +29,12 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        AñadirMoto = new javax.swing.JButton();
+        AgregarMoto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        ConsultarVentas = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -46,65 +48,76 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido Administrador");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 500, 130));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 500, 130));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
-        AñadirMoto.setBackground(new java.awt.Color(102, 102, 102));
-        AñadirMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        AñadirMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
-        AñadirMoto.setAutoscrolls(true);
-        AñadirMoto.addActionListener(new java.awt.event.ActionListener() {
+        AgregarMoto.setBackground(new java.awt.Color(102, 102, 102));
+        AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
+        AgregarMoto.setAutoscrolls(true);
+        AgregarMoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AñadirMotoActionPerformed(evt);
+                AgregarMotoActionPerformed(evt);
             }
         });
-        jPanel1.add(AñadirMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 180, 150));
+        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 180, 150));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Añadir moto");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 190, 70));
+        jLabel2.setText("Agregar moto");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 70));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 180, 160));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 180, 150));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ver Inventario");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+
+        ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
+        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 180, 150));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Consultar Ventas");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AñadirMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirMotoActionPerformed
+    private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AñadirMotoActionPerformed
+    }//GEN-LAST:event_AgregarMotoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AñadirMoto;
+    private javax.swing.JButton AgregarMoto;
+    private javax.swing.JButton ConsultarVentas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
