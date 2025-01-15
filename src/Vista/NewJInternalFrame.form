@@ -70,7 +70,7 @@
               <Color blue="ff" green="ff" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Vista/Img/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"/>
+              <Image iconType="3" name="/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"/>
             </Property>
           </Properties>
           <Constraints>

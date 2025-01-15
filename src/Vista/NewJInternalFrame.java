@@ -47,7 +47,7 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Img/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
         AñadirMoto.setBackground(new java.awt.Color(255, 102, 51));
