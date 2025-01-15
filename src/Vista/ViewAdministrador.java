@@ -28,7 +28,7 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtbienvenida = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        RegresaMenuPrincipal = new javax.swing.JButton();
         AgregarMoto = new javax.swing.JButton();
         TxtAgregar = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -50,20 +50,15 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         txtbienvenida.setText("Bienvenido Administrador");
         jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 500, 130));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setForeground(new java.awt.Color(51, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
+        RegresaMenuPrincipal.setBackground(new java.awt.Color(153, 153, 153));
+        RegresaMenuPrincipal.setForeground(new java.awt.Color(51, 255, 255));
+        RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        jPanel1.add(RegresaMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
         AgregarMoto.setBackground(new java.awt.Color(102, 102, 102));
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
         AgregarMoto.setAutoscrolls(true);
-        AgregarMoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarMotoActionPerformed(evt);
-            }
-        });
         jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 180, 150));
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
@@ -104,17 +99,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarMotoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarMoto;
     private javax.swing.JButton ConsultarVentas;
+    private javax.swing.JButton RegresaMenuPrincipal;
     private javax.swing.JLabel TxtAgregar;
     private javax.swing.JLabel TxtInventario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

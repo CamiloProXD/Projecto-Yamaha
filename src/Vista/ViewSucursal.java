@@ -33,9 +33,12 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
         RegresarAdmin = new javax.swing.JButton();
         RegresaMenuPrincipal = new javax.swing.JButton();
         AñadeLamoto = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setClosable(true);
+        setIconifiable(true);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -66,12 +69,7 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
 
         RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
-        AñadeLamoto.setText("Agregar");
-        AñadeLamoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AñadeLamotoActionPerformed(evt);
-            }
-        });
+        AñadeLamoto.setText("Acceder");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,11 +86,13 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(286, 286, 286)
-                        .addComponent(AñadeLamoto))
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(113, 113, 113)
+                        .addComponent(AñadeLamoto)
+                        .addGap(64, 64, 64)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -108,11 +108,13 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(RegresaMenuPrincipal)))
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(AñadeLamoto)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AñadeLamoto)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -123,15 +125,14 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AñadeLamotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadeLamotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AñadeLamotoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -140,6 +141,7 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
     private javax.swing.JButton RegresarAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel txtSucursal;
     // End of variables declaration//GEN-END:variables
