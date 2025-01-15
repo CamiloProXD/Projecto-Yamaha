@@ -42,7 +42,6 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido Administrador");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 500, 130));
 
@@ -51,10 +50,9 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Img/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
-        AñadirMoto.setBackground(new java.awt.Color(0, 0, 0));
+        AñadirMoto.setBackground(new java.awt.Color(255, 102, 51));
         AñadirMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        AñadirMoto.setForeground(new java.awt.Color(0, 0, 0));
-        AñadirMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Img/moto (1).png"))); // NOI18N
+        AñadirMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
         AñadirMoto.setAutoscrolls(true);
         AñadirMoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,7 +63,6 @@ public class NewJInternalFrame extends javax.swing.JInternalFrame {
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Añadir moto");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 190, 70));
 
