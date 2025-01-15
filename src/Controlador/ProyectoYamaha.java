@@ -4,6 +4,9 @@
  */
 package Controlador;
 
+import Vista.Clase;
+import Vista.ViewPrincipal;
+
 /**
  *
  * @author User
@@ -15,6 +18,7 @@ public class ProyectoYamaha {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Clase.hola();
     }
     
 }
