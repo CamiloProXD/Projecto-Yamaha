@@ -40,7 +40,7 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setIconifiable(true);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -50,15 +50,20 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         txtbienvenida.setText("Bienvenido Administrador");
         jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 500, 130));
 
-        RegresaMenuPrincipal.setBackground(new java.awt.Color(153, 153, 153));
+        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         RegresaMenuPrincipal.setForeground(new java.awt.Color(51, 255, 255));
         RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         jPanel1.add(RegresaMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
 
-        AgregarMoto.setBackground(new java.awt.Color(102, 102, 102));
+        AgregarMoto.setBackground(new java.awt.Color(0, 153, 153));
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
         AgregarMoto.setAutoscrolls(true);
+        AgregarMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarMotoActionPerformed(evt);
+            }
+        });
         jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 180, 150));
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
@@ -67,7 +72,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         TxtAgregar.setText("Agregar moto");
         jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 70));
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 180, 150));
 
         TxtInventario.setBackground(new java.awt.Color(0, 0, 0));
@@ -76,7 +87,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         TxtInventario.setText("Ver Inventario");
         jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
+        ConsultarVentas.setBackground(new java.awt.Color(0, 153, 153));
         ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
+        ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarVentasActionPerformed(evt);
+            }
+        });
         jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 180, 150));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
@@ -98,6 +115,24 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
+        ViewRegistrarMoto newframe=new ViewRegistrarMoto();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AgregarMotoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       ViewFiltroinventario newframe=new ViewFiltroinventario();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentasActionPerformed
+        ViewConsultarVentas newframe=new ViewConsultarVentas();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ConsultarVentasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

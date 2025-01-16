@@ -28,7 +28,7 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botonRegresar = new javax.swing.JButton();
         labelCliente = new javax.swing.JLabel();
         labelNombre = new javax.swing.JLabel();
         labelapellido = new javax.swing.JLabel();
@@ -45,22 +45,30 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
         TxtTelefono = new javax.swing.JTextField();
         txtDirec = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botonMenu = new javax.swing.JButton();
         labelPlaca = new javax.swing.JLabel();
         txttipo = new javax.swing.JTextField();
         txtmodelo = new javax.swing.JTextField();
         txtprecio = new javax.swing.JTextField();
         txtPlaca = new javax.swing.JTextField();
         TxtColor = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        botonFactura = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtAbonado = new javax.swing.JTextField();
 
-        jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(55, 209, 211));
+
+        jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Realizar venta");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        botonRegresar.setBackground(new java.awt.Color(255, 255, 255));
+        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        botonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarActionPerformed(evt);
+            }
+        });
 
         labelCliente.setFont(new java.awt.Font("Bodoni MT Black", 0, 36)); // NOI18N
         labelCliente.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,23 +110,51 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
         LabePrec.setForeground(new java.awt.Color(0, 0, 0));
         LabePrec.setText("Precio");
 
+        TxtNombre.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtApellido.setBackground(new java.awt.Color(255, 255, 255));
+
+        TxtCedula.setBackground(new java.awt.Color(255, 255, 255));
+
+        TxtTelefono.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtDirec.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel3.setFont(new java.awt.Font("Bodoni MT Black", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Moto");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        botonMenu.setBackground(new java.awt.Color(255, 255, 255));
+        botonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        botonMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMenuActionPerformed(evt);
+            }
+        });
 
         labelPlaca.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         labelPlaca.setForeground(new java.awt.Color(0, 0, 0));
         labelPlaca.setText("Placa");
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Generar Factura");
+        txttipo.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtmodelo.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtprecio.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtPlaca.setBackground(new java.awt.Color(255, 255, 255));
+
+        TxtColor.setBackground(new java.awt.Color(255, 255, 255));
+
+        botonFactura.setBackground(new java.awt.Color(255, 255, 255));
+        botonFactura.setForeground(new java.awt.Color(0, 0, 0));
+        botonFactura.setText("Generar Factura");
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Precio abonado");
+
+        txtAbonado.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,15 +162,15 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jButton1)
+                .addComponent(botonRegresar)
                 .addGap(202, 202, 202)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addComponent(botonMenu)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(406, 406, 406)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
@@ -181,8 +217,8 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1)))
+                            .addComponent(botonMenu)
+                            .addComponent(botonRegresar)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addComponent(jLabel1)))
@@ -234,8 +270,8 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(txtAbonado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(botonFactura)
                 .addGap(37, 37, 37))
         );
 
@@ -255,6 +291,19 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuActionPerformed
+        
+        ViewPrincipal newframe=new ViewPrincipal();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botonMenuActionPerformed
+
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
+        ViewAdministrador newframe=new ViewAdministrador();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botonRegresarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabePrec;
@@ -264,9 +313,9 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtColor;
     private javax.swing.JTextField TxtNombre;
     private javax.swing.JTextField TxtTelefono;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton botonFactura;
+    private javax.swing.JButton botonMenu;
+    private javax.swing.JButton botonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

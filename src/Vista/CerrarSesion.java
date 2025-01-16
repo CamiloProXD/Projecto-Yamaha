@@ -40,11 +40,14 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
+        regresar.setBackground(new java.awt.Color(255, 255, 255));
         regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images.png"))); // NOI18N
 
+        cerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
         cerrarSesion.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        cerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         cerrarSesion.setText("Cerrar Sesión");
         cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,11 +55,25 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
             }
         });
 
+        MenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         MenuPrincipal.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        MenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
         MenuPrincipal.setText("Menu Principal");
+        MenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuPrincipalActionPerformed(evt);
+            }
+        });
 
+        Salir.setBackground(new java.awt.Color(255, 255, 255));
         Salir.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        Salir.setForeground(new java.awt.Color(0, 0, 0));
         Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,6 +133,17 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
         this.dispose();
         
     }//GEN-LAST:event_cerrarSesionActionPerformed
+
+    private void MenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalActionPerformed
+        ViewAdministrador newframe=new ViewAdministrador();
+        newframe.setVisible(true);
+        this.dispose();  
+    }//GEN-LAST:event_MenuPrincipalActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+       
+        System.exit(0);      
+    }//GEN-LAST:event_SalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
