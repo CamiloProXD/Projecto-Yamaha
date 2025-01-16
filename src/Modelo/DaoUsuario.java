@@ -15,92 +15,99 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class DaoUsuario extends Conexion {
-    public boolean agregar(Persona p){
-        Connection cnx= getConexion();
-        String stc = "INSERT INTO usuarios (usuario_id,persona_id,username,password) VALUES (?,?,?,?)";
+
+    public boolean agregar(Usuario u) {
+        Connection cnx = getConexion();
+        String stc = "INSERT INTO usuarios (username,password,rol,salario) VALUES (?,?,?,?)";
         PreparedStatement pst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(p.getId()));
-            pst.setString(2, p.getNombres());
-            pst.setString(3, p.getApellidos());
-            pst.setString(4, p.getNumeroTelefonico());
-            pst.setString(3, p.getEmail());
-            pst.setString(4, p.getDireccion());
+            pst.setString(1, u.getUsername());
+            pst.setString(2, u.getPassword());
+            pst.setString(3, u.getRol());
+            pst.setString(4, Double.toString(u.getSalario()));
             pst.execute();
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el INSERT-> "+ex);
-            mensaje("Error al ejecutar el INSERT","Agregar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el INSERT-> " + ex);
+            mensaje("Error al ejecutar el INSERT", "Agregar!!!");
         }
-        
+
         return false;
     }
-    
-    public boolean actualizar(Persona p){
-        Connection cnx= getConexion();
-        String stc = "UPDATE personas SET nombres=?,apellidos=?,numero_telefonico=?,email=?,direccion=? WHERE persona_id=?";
+
+    public boolean actualizar(Usuario u) {
+        Connection cnx = getConexion();
+        String stc = "UPDATE usuarios SET username=?,password=?,rol=?,salario=? WHERE usuario_id=?";
         PreparedStatement pst;
-        try{
-            pst = cnx.prepareStatement(stc);  
-            pst.setString(1, p.getNombres());
-            pst.setString(2, p.getApellidos());
-            pst.setString(3, p.getNumeroTelefonico());
-            pst.setString(4, p.getEmail());
-            pst.setString(5, p.getDireccion());
-            pst.setString(6, Integer.toString(p.getId()));
+        try {
+            pst = cnx.prepareStatement(stc);
+            pst.setString(1, u.getUsername());
+            pst.setString(2, u.getPassword());
+            pst.setString(3, u.getRol());
+            pst.setString(4, Double.toString(u.getSalario()));
             pst.execute();
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el UPODATE -> "+ex);
-            mensaje("Error al ejecutar el UPDATE","actualizar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el UPODATE -> " + ex);
+            mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
         }
         return false;
-    } 
-    
-    public boolean consultar(Persona p){
-        Connection cnx= getConexion();
-        String stc = "SELECT * FROM personas WHERE persona_id=?";
+    }
+
+    public boolean consultar(Usuario u) {
+        Connection cnx = getConexion();
+        String stc = "SELECT p.nombres, p.apellidos, p.numero_telefonico, p.email, p.direccion, u.username, u.password, u.rol, u.salario, u.sucursal_id"
+                + "FROM usuarios u "
+                + "INNER JOIN personas p ON p.persona_id = u.persona_id "
+                + "WHERE u.id_usuario = ?"; // Agregamos la condición para filtrar por idUsuario
         PreparedStatement pst;
         ResultSet rst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(p.getId()));
+            pst.setInt(1, u.getIdUsuario());
             rst = pst.executeQuery();
-            if(rst.next()){
-                p.setNombres(rst.getString("nombres"));
-                p.setApellidos(rst.getString("apellidos"));
-                p.setNumeroTelefonico(rst.getString("numero_telefonico"));
-                p.setEmail(rst.getString("email"));
-                p.setEmail(rst.getString("direccion"));
-              
+            if (rst.next()) {
+
+                u.setNombres(rst.getString("nombres"));
+                u.setApellidos(rst.getString("apellidos"));
+                u.setNumeroTelefonico(rst.getString("numero_telefonico"));
+                u.setEmail(rst.getString("email"));
+                u.setDireccion(rst.getString("direccion"));
+                u.setUsername(rst.getString("username"));
+                u.setPassword(rst.getString("password"));
+                u.setRol(rst.getString("rol"));
+                u.setSalario(Double.parseDouble(rst.getString("salario")));
+                u.setIdSede(Integer.parseInt(rst.getString("sucursal_id")));
+
+            } else {
+                return false;
             }
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el SELECT -> "+ex);
-            mensaje("Error al ejecutar el SELECT","consultar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el SELECT -> " + ex);
+            mensaje("Error al ejecutar el SELECT", "consultar!!!");
         }
         return false;
-    } 
-    
-     public boolean eliminar(Persona p){
+    }
+
+    public boolean eliminar(Usuario u) {
         Connection cnx = getConexion();
-        String stc = "DELETE DROM persona WHERE persona_id=?)";
+        String stc = "DELETE FROM persona WHERE usuario_id=?)";
         PreparedStatement pst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(p.getId()));
+            pst.setString(1, Integer.toString(u.getIdUsuario()));
             pst.execute();
             return true;
-        }
-        catch(SQLException ex){
-            System.err.println("Error al ejecutar el DELETE -> "+ex);
-            mensaje("Error al ejecutar el DELETE","eliminar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el DELETE -> " + ex);
+            mensaje("Error al ejecutar el DELETE", "eliminar!!!");
         }
         return false;
-   }
-    
-    public void mensaje(String msg, String title){
+    }
+
+    public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);
     }
 }

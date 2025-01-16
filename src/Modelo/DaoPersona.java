@@ -72,7 +72,7 @@ public class DaoPersona extends Conexion {
                 p.setApellidos(rst.getString("apellidos"));
                 p.setNumeroTelefonico(rst.getString("numero_telefonico"));
                 p.setEmail(rst.getString("email"));
-                p.setEmail(rst.getString("direccion"));
+                p.setDireccion(rst.getString("direccion"));
               
             }
             return true;
@@ -85,7 +85,7 @@ public class DaoPersona extends Conexion {
     
      public boolean eliminar(Persona p){
         Connection cnx = getConexion();
-        String stc = "DELETE DROM persona WHERE persona_id=?)";
+        String stc = "DELETE FROM persona WHERE persona_id=?)";
         PreparedStatement pst;
         try{
             pst = cnx.prepareStatement(stc);

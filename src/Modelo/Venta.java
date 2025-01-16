@@ -11,14 +11,14 @@ import java.util.Date;
  * @author User
  */
 public class Venta {
-    private int numeroFactura;
+    private int numero_factura;
     private Date fecha;
     private Usuario quienCompro;
     private Usuario quienAtendio;
     private Moto[] motosVenta;
 
     public Venta(int numeroFactura, Date fecha, Usuario quienCompro, Usuario quienAtendio, Moto[] motosVenta) {
-        this.numeroFactura = numeroFactura;
+        this.numero_factura = numeroFactura;
         this.fecha = fecha;
         this.quienCompro = quienCompro;
         this.quienAtendio = quienAtendio;
@@ -26,11 +26,11 @@ public class Venta {
     }
 
     public int getNumeroFactura() {
-        return numeroFactura;
+        return numero_factura;
     }
 
     public void setNumeroFactura(int numeroFactura) {
-        this.numeroFactura = numeroFactura;
+        this.numero_factura = numeroFactura;
     }
 
     public Date getFecha() {
