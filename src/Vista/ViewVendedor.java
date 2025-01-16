@@ -28,7 +28,6 @@ public class ViewVendedor extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         btnVenta = new javax.swing.JButton();
         btnConsulinv = new javax.swing.JButton();
         ConsultarVentas = new javax.swing.JButton();
@@ -37,8 +36,6 @@ public class ViewVendedor extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
         btnVenta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVenta.setText("Realizar Venta");
@@ -73,8 +70,7 @@ public class ViewVendedor extends javax.swing.JInternalFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ConsultarVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10))
+                        .addGap(38, 38, 38))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(btnConsulinv)
@@ -88,9 +84,7 @@ public class ViewVendedor extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
+                        .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(34, Short.MAX_VALUE)
@@ -132,7 +126,6 @@ public class ViewVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnConsulinv;
     private javax.swing.JButton btnVenta;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

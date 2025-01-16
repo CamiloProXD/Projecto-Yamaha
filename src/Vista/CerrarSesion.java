@@ -46,6 +46,11 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         cerrarSesion.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         cerrarSesion.setText("Cerrar Sesión");
+        cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cerrarSesionActionPerformed(evt);
+            }
+        });
 
         MenuPrincipal.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         MenuPrincipal.setText("Menu Principal");
@@ -104,6 +109,13 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionActionPerformed
+        ViewPrincipal newframe=new ViewPrincipal();
+        newframe.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_cerrarSesionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
