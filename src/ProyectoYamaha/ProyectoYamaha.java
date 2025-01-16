@@ -40,7 +40,7 @@ public class ProyectoYamaha {
         ViewPrincipal viewPrincipal = new ViewPrincipal();
         
         
-        
+        viewPrincipal.setResizable(false);
         viewPrincipal.setVisible(true);
     }
     
