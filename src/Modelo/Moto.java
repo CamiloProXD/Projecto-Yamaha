@@ -25,6 +25,9 @@ public class Moto {
         this.tipoMoto = tipoMoto;
     }
 
+    public Moto() {
+    }
+
     public String getSerialMoto() {
         return serialMoto;
     }

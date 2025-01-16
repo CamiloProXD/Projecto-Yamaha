@@ -25,6 +25,9 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public Persona() {
+    }
+
     public int getId() {
         return id;
     }

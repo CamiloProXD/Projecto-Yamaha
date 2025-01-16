@@ -25,6 +25,9 @@ public class Venta {
         this.motosVenta = motosVenta;
     }
 
+    public Venta() {
+    }
+
     public int getNumeroFactura() {
         return numero_factura;
     }

@@ -9,10 +9,7 @@ package Modelo;
  * @author User
  */
 public class Usuario extends Persona {
-    
-    public Usuario(int id, String nombres, String apellidos, String numeroTelefonico, String email, String direccion) {
-        super(id, nombres, apellidos, numeroTelefonico, email, direccion);
-    }
+     
     
     private int idUsuario;
     private String username;
@@ -32,7 +29,10 @@ public class Usuario extends Persona {
         this.venta = venta;
         this.idSede = idSede;
     }
-
+    
+    public Usuario() {
+       }
+    
     public int getIdUsuario() {
         return idUsuario;
     }

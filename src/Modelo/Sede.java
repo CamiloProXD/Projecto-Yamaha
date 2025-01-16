@@ -21,6 +21,9 @@ public class Sede {
         this.inventario = inventario;
     }
 
+    public Sede() {
+    }
+
     public int getIdSede() {
         return idSede;
     }

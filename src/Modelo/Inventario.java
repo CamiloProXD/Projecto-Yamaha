@@ -15,6 +15,9 @@ public class Inventario {
         this.producto = producto;
     }
 
+    public Inventario() {
+    }
+
     public Moto[] getProducto() {
         return producto;
     }
