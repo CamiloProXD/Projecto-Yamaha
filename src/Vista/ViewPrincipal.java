@@ -58,6 +58,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         txtEntrar.setBackground(new java.awt.Color(227, 14, 21));
         txtEntrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtEntrar.setForeground(new java.awt.Color(255, 255, 255));
         txtEntrar.setText("Entrar");
         jPanel1.add(txtEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 660, 130, 60));
 
