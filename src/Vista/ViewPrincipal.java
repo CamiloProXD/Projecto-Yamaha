@@ -30,7 +30,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtEntrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JTextField();
@@ -39,6 +38,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btnCatalogo = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnEntrar = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,12 +55,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 240, 40));
-
-        txtEntrar.setBackground(new java.awt.Color(227, 14, 21));
-        txtEntrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtEntrar.setForeground(new java.awt.Color(255, 255, 255));
-        txtEntrar.setText("Entrar");
-        jPanel1.add(txtEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 660, 130, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 260, 300));
@@ -116,6 +110,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setText("Usuario       :");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 70));
+
+        btnEntrar.setBackground(new java.awt.Color(227, 14, 21));
+        btnEntrar.setForeground(new java.awt.Color(242, 242, 242));
+        btnEntrar.setText("Entrar");
+        btnEntrar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnEntrar.setBorderPainted(false);
+        btnEntrar.setColor(new java.awt.Color(227, 14, 21));
+        btnEntrar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnEntrar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnEntrar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnEntrar.setRadius(30);
+        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, 130, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,6 +180,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
     private javax.swing.JButton btnCatalogo;
+    public Vista.MyButton btnEntrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -182,7 +189,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtContrasena;
-    private javax.swing.JButton txtEntrar;
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
