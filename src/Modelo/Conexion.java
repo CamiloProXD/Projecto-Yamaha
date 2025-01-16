@@ -16,13 +16,14 @@ import javax.swing.JOptionPane;
 public class Conexion {
     public Connection getConexion(){
         Connection cnx = null;
-        String URL = "jdbc:mysql://localhost:3306/produccion";
+        String driver = "com.mysql.cj.jdbc.Driver";
+        String url = "jdbc:mysql://localhost:3306/produccion";
         String usuario = "root";
         String contrasena = "12345678";  
                 
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            cnx =  DriverManager.getConnection(URL,"root","");
+            Class.forName(driver);
+            cnx =  DriverManager.getConnection(url,usuario,contrasena);
         }catch(SQLException|ClassNotFoundException ex){
             System.err.println("Error al conectar la BD ->"+ex);
             JOptionPane.showMessageDialog(null, "Error al conectar la BD!!!","conexion",1);
