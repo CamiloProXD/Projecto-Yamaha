@@ -309,10 +309,10 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LabePrec;
     private javax.swing.JLabel LabelColor;
     private javax.swing.JLabel LabelMod;
-    private javax.swing.JTextField TxtCedula;
-    private javax.swing.JTextField TxtColor;
-    private javax.swing.JTextField TxtNombre;
-    private javax.swing.JTextField TxtTelefono;
+    public javax.swing.JTextField TxtCedula;
+    public javax.swing.JTextField TxtColor;
+    public javax.swing.JTextField TxtNombre;
+    public javax.swing.JTextField TxtTelefono;
     private javax.swing.JButton botonFactura;
     private javax.swing.JButton botonMenu;
     private javax.swing.JButton botonRegresar;
@@ -328,12 +328,12 @@ public class ViewRealizarVenta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel labelTipo;
     private javax.swing.JLabel labelapellido;
     private javax.swing.JLabel labelcedula;
-    private javax.swing.JTextField txtAbonado;
-    private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtDirec;
-    private javax.swing.JTextField txtPlaca;
-    private javax.swing.JTextField txtmodelo;
-    private javax.swing.JTextField txtprecio;
-    private javax.swing.JTextField txttipo;
+    public javax.swing.JTextField txtAbonado;
+    public javax.swing.JTextField txtApellido;
+    public javax.swing.JTextField txtDirec;
+    public javax.swing.JTextField txtPlaca;
+    public javax.swing.JTextField txtmodelo;
+    public javax.swing.JTextField txtprecio;
+    public javax.swing.JTextField txttipo;
     // End of variables declaration//GEN-END:variables
 }

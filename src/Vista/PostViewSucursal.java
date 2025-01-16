@@ -101,6 +101,11 @@ public class PostViewSucursal extends javax.swing.JInternalFrame {
         Salir.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
         Salir.setForeground(new java.awt.Color(0, 0, 0));
         Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
 
         Regresar.setBackground(new java.awt.Color(255, 255, 255));
         Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
@@ -181,6 +186,10 @@ public class PostViewSucursal extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_SalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

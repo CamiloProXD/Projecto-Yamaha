@@ -219,12 +219,12 @@ public class ViewConsultarVentas extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labelID;
     private javax.swing.JButton principal;
     private javax.swing.JButton regresarBienvenidoadmin;
-    private javax.swing.JTextField txtConsesionario;
+    public javax.swing.JTextField txtConsesionario;
     private javax.swing.JTextField txtMandarEmpleado;
     // End of variables declaration//GEN-END:variables
 }

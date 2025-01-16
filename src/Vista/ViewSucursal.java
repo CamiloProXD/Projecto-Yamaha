@@ -40,7 +40,7 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
         txtSucursal.setFont(new java.awt.Font("Bodoni MT Black", 0, 36)); // NOI18N
         txtSucursal.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,11 +65,23 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
             tabla.getColumnModel().getColumn(2).setHeaderValue("Administrador");
         }
 
+        RegresarAdmin.setBackground(new java.awt.Color(255, 255, 255));
         RegresarAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
+        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
+        AñadeLamoto.setBackground(new java.awt.Color(255, 255, 255));
+        AñadeLamoto.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        AñadeLamoto.setForeground(new java.awt.Color(0, 0, 0));
         AñadeLamoto.setText("Acceder");
+        AñadeLamoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AñadeLamotoActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,13 +98,13 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(AñadeLamoto)
                         .addGap(64, 64, 64)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -109,12 +121,12 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
                         .addGap(23, 23, 23)
                         .addComponent(RegresaMenuPrincipal)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AñadeLamoto)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,6 +146,12 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void AñadeLamotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadeLamotoActionPerformed
+        PostViewSucursal newframe=new PostViewSucursal();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AñadeLamotoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AñadeLamoto;
@@ -141,7 +159,7 @@ public class ViewSucursal extends javax.swing.JInternalFrame {
     private javax.swing.JButton RegresarAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     private javax.swing.JTable tabla;
     private javax.swing.JLabel txtSucursal;
     // End of variables declaration//GEN-END:variables
