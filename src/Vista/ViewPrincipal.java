@@ -28,68 +28,111 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtContrasena = new javax.swing.JTextField();
         txtEntrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtContrasena = new javax.swing.JTextField();
+        BordeAbajo = new javax.swing.JPanel();
+        BordeArriba = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel2.setText("Bienvenido al");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 240, 60));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel2.setText("Bienvenido al concensionario Yamaha");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 890, 90));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Yamaha");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 240, 60));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel3.setText("Concesionario");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 240, 60));
-
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Inicie Sesion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, -1, -1));
 
-        txtUsuario.setText("Usuario");
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 90, 40));
+        txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 240, 40));
 
-        txtContrasena.setText("Contraseña");
-        txtContrasena.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContrasenaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 90, 40));
-
+        txtEntrar.setBackground(new java.awt.Color(227, 14, 21));
+        txtEntrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtEntrar.setText("Entrar");
-        jPanel1.add(txtEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, -1, -1));
+        jPanel1.add(txtEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 660, 130, 60));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -10, 480, 480));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 260, 300));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setText("Catalogo");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 640, 230, 70));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel7.setText("Contraseña  :");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 230, 70));
+
+        txtContrasena.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, 240, 40));
+
+        BordeAbajo.setBackground(new java.awt.Color(227, 14, 21));
+        BordeAbajo.setForeground(new java.awt.Color(227, 14, 21));
+
+        javax.swing.GroupLayout BordeAbajoLayout = new javax.swing.GroupLayout(BordeAbajo);
+        BordeAbajo.setLayout(BordeAbajoLayout);
+        BordeAbajoLayout.setHorizontalGroup(
+            BordeAbajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1300, Short.MAX_VALUE)
+        );
+        BordeAbajoLayout.setVerticalGroup(
+            BordeAbajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BordeAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 820, 1300, 80));
+
+        BordeArriba.setBackground(new java.awt.Color(227, 14, 21));
+        BordeArriba.setForeground(new java.awt.Color(227, 14, 21));
+
+        javax.swing.GroupLayout BordeArribaLayout = new javax.swing.GroupLayout(BordeArriba);
+        BordeArriba.setLayout(BordeArribaLayout);
+        BordeArribaLayout.setHorizontalGroup(
+            BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1300, Short.MAX_VALUE)
+        );
+        BordeArribaLayout.setVerticalGroup(
+            BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(BordeArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(227, 14, 21));
+        jButton2.setForeground(new java.awt.Color(227, 14, 21));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/catalogo.png"))); // NOI18N
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 700, 120, 120));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setText("Usuario       :");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,14 +170,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel BordeAbajo;
+    private javax.swing.JPanel BordeArriba;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtContrasena;
+    public javax.swing.JTextField txtContrasena;
     private javax.swing.JButton txtEntrar;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
