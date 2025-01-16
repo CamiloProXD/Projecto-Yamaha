@@ -32,13 +32,13 @@ public class ViewPrincipal extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         txtEntrar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JTextField();
         BordeAbajo = new javax.swing.JPanel();
         BordeArriba = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnCatalogo = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,10 +64,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 260, 300));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setText("Catalogo");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 640, 230, 70));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel7.setText("Contraseña  :");
@@ -108,14 +104,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         jPanel1.add(BordeArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(227, 14, 21));
-        jButton2.setForeground(new java.awt.Color(227, 14, 21));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/catalogo.png"))); // NOI18N
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 700, 120, 120));
+        btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CatalogoNegro.png"))); // NOI18N
+        btnCatalogo.setBorder(null);
+        btnCatalogo.setBorderPainted(false);
+        jPanel1.add(btnCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 700, 120, 120));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel8.setText("Usuario       :");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 70));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setText("Catalogo");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 650, 230, 70));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("Usuario       :");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,13 +173,13 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCatalogo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtContrasena;
     private javax.swing.JButton txtEntrar;

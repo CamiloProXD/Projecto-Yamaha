@@ -37,6 +37,8 @@ public class ViewRegistrarpago extends javax.swing.JInternalFrame {
         regresarBienvenidoadmin = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(1300, 900));
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel2.setText("Registrar Pago De Factura");
 
