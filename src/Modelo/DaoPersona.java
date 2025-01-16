@@ -25,8 +25,8 @@ public class DaoPersona extends Conexion {
             pst.setString(2, p.getNombres());
             pst.setString(3, p.getApellidos());
             pst.setString(4, p.getNumeroTelefonico());
-            pst.setString(3, p.getEmail());
-            pst.setString(4, p.getDireccion());
+            pst.setString(5, p.getEmail());
+            pst.setString(6, p.getDireccion());
             pst.execute();
             return true;
         }catch(SQLException ex){
@@ -52,7 +52,7 @@ public class DaoPersona extends Conexion {
             pst.execute();
             return true;
         }catch(SQLException ex){
-            System.err.println("Error al ejecutar el UPODATE -> "+ex);
+            System.err.println("Error al ejecutar el UPDATE -> "+ex);
             mensaje("Error al ejecutar el UPDATE","actualizar!!!");
         }
         return false;

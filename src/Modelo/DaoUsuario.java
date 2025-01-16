@@ -46,10 +46,11 @@ public class DaoUsuario extends Conexion {
             pst.setString(2, u.getPassword());
             pst.setString(3, u.getRol());
             pst.setString(4, Double.toString(u.getSalario()));
+            pst.setString(5, Integer.toString(u.getIdUsuario()));
             pst.execute();
             return true;
         } catch (SQLException ex) {
-            System.err.println("Error al ejecutar el UPODATE -> " + ex);
+            System.err.println("Error al ejecutar el UPDATE -> " + ex);
             mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
         }
         return false;

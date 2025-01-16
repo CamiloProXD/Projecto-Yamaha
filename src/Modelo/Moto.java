@@ -9,36 +9,36 @@ package Modelo;
  * @author User
  */
 public class Moto {
-    private String serial;
-    private String modelo;
-    private int cilindraje;
-    private String tipoMoto;
-    private float precioUnitario;
+    private String serialMoto;
     private String color;
+    private int cilindraje;
+    private String modelo;
+    private double precioUnitario;
+    private String tipoMoto;
 
-    public Moto(String serial, String modelo, int cilindraje, String tipoMoto, float precioUnitario, String color) {
-        this.serial = serial;
-        this.modelo = modelo;
-        this.cilindraje = cilindraje;
-        this.tipoMoto = tipoMoto;
-        this.precioUnitario = precioUnitario;
+    public Moto(String serialMoto, String color, int cilindraje, String modelo, double precioUnitario, String tipoMoto) {
+        this.serialMoto = serialMoto;
         this.color = color;
-    }
-
-    public String getSerial() {
-        return serial;
-    }
-
-    public void setSerial(String serial) {
-        this.serial = serial;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
+        this.cilindraje = cilindraje;
         this.modelo = modelo;
+        this.precioUnitario = precioUnitario;
+        this.tipoMoto = tipoMoto;
+    }
+
+    public String getSerialMoto() {
+        return serialMoto;
+    }
+
+    public void setSerialMoto(String serialMoto) {
+        this.serialMoto = serialMoto;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public int getCilindraje() {
@@ -49,6 +49,22 @@ public class Moto {
         this.cilindraje = cilindraje;
     }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public double getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public void setPrecioUnitario(double precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
     public String getTipoMoto() {
         return tipoMoto;
     }
@@ -57,21 +73,5 @@ public class Moto {
         this.tipoMoto = tipoMoto;
     }
 
-    public float getPrecioUnitario() {
-        return precioUnitario;
-    }
-
-    public void setPrecioUnitario(float precioUnitario) {
-        this.precioUnitario = precioUnitario;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-    
     
 }
