@@ -112,6 +112,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 70));
 
         btnEntrar.setBackground(new java.awt.Color(227, 14, 21));
+        btnEntrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEntrar.setForeground(new java.awt.Color(242, 242, 242));
         btnEntrar.setText("Entrar");
         btnEntrar.setBorderColor(new java.awt.Color(242, 242, 242));
@@ -121,6 +122,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btnEntrar.setColorOver(new java.awt.Color(167, 14, 21));
         btnEntrar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         btnEntrar.setRadius(30);
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, 130, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,6 +146,10 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**
      * @param args the command line arguments

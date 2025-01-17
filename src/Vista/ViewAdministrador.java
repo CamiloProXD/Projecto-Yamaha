@@ -26,21 +26,39 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         txtbienvenida = new javax.swing.JLabel();
-        RegresaMenuPrincipal = new javax.swing.JButton();
         AgregarMoto = new javax.swing.JButton();
         TxtAgregar = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnVerInventario = new javax.swing.JButton();
         TxtInventario = new javax.swing.JLabel();
         ConsultarVentas = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        RegresaMenuPrincipal = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setIconifiable(true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -48,14 +66,9 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         txtbienvenida.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
         txtbienvenida.setForeground(new java.awt.Color(0, 0, 0));
         txtbienvenida.setText("Bienvenido Administrador");
-        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 500, 130));
+        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 440, 40));
 
-        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        RegresaMenuPrincipal.setForeground(new java.awt.Color(51, 255, 255));
-        RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-        jPanel1.add(RegresaMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 40));
-
-        AgregarMoto.setBackground(new java.awt.Color(0, 153, 153));
+        AgregarMoto.setBackground(new java.awt.Color(255, 255, 255));
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
         AgregarMoto.setAutoscrolls(true);
@@ -64,53 +77,103 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
                 AgregarMotoActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 180, 150));
+        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 180, 150));
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         TxtAgregar.setForeground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setText("Agregar moto");
-        jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 70));
+        jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 190, 70));
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnVerInventario.setBackground(new java.awt.Color(255, 255, 255));
+        btnVerInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
+        btnVerInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnVerInventarioActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 180, 150));
+        jPanel1.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 180, 150));
 
         TxtInventario.setBackground(new java.awt.Color(0, 0, 0));
         TxtInventario.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         TxtInventario.setForeground(new java.awt.Color(0, 0, 0));
         TxtInventario.setText("Ver Inventario");
-        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
 
-        ConsultarVentas.setBackground(new java.awt.Color(0, 153, 153));
+        ConsultarVentas.setBackground(new java.awt.Color(255, 255, 255));
         ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
         ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 180, 150));
+        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 180, 150));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Consultar Ventas");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, 20));
+
+        jPanel2.setBackground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 880, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 880, 40));
+
+        jPanel3.setBackground(new java.awt.Color(255, 0, 0));
+
+        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        RegresaMenuPrincipal.setForeground(new java.awt.Color(51, 255, 255));
+        RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(823, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 50));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 880, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -122,11 +185,11 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_AgregarMotoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
        ViewFiltroinventario newframe=new ViewFiltroinventario();
         newframe.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnVerInventarioActionPerformed
 
     private void ConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentasActionPerformed
         ViewConsultarVentas newframe=new ViewConsultarVentas();
@@ -141,9 +204,14 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
     private javax.swing.JButton RegresaMenuPrincipal;
     private javax.swing.JLabel TxtAgregar;
     private javax.swing.JLabel TxtInventario;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnVerInventario;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel txtbienvenida;
     // End of variables declaration//GEN-END:variables
 }
