@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
 
@@ -8,10 +8,10 @@ package Vista;
  *
  * @author juanc
  */
-public class ViewAdministrador extends javax.swing.JInternalFrame {
+public class ViewAdministrador extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJInternalFrame
+     * Creates new form ViewAdministradorr
      */
     public ViewAdministrador() {
         initComponents();
@@ -26,8 +26,6 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         txtbienvenida = new javax.swing.JLabel();
         AgregarMoto = new javax.swing.JButton();
@@ -41,32 +39,18 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         RegresaMenuPrincipal = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        setIconifiable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtbienvenida.setBackground(new java.awt.Color(0, 0, 0));
-        txtbienvenida.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
+        txtbienvenida.setFont(new java.awt.Font("Britannic Bold", 0, 60)); // NOI18N
         txtbienvenida.setForeground(new java.awt.Color(0, 0, 0));
         txtbienvenida.setText("Bienvenido Administrador");
-        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 440, 40));
+        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 40));
 
         AgregarMoto.setBackground(new java.awt.Color(255, 255, 255));
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
@@ -77,13 +61,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
                 AgregarMotoActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 180, 150));
+        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 180, 150));
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         TxtAgregar.setForeground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setText("Agregar moto");
-        jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 190, 70));
+        jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 190, 70));
 
         btnVerInventario.setBackground(new java.awt.Color(255, 255, 255));
         btnVerInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
@@ -92,13 +76,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
                 btnVerInventarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 180, 150));
+        jPanel1.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 180, 150));
 
         TxtInventario.setBackground(new java.awt.Color(0, 0, 0));
         TxtInventario.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         TxtInventario.setForeground(new java.awt.Color(0, 0, 0));
         TxtInventario.setText("Ver Inventario");
-        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
         ConsultarVentas.setBackground(new java.awt.Color(255, 255, 255));
         ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
@@ -107,13 +91,13 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
                 ConsultarVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 180, 150));
+        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 440, 180, 150));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Consultar Ventas");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, 20));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -121,14 +105,14 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 880, 40));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 860, 1300, 40));
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -143,14 +127,14 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(823, Short.MAX_VALUE))
+                .addContainerGap(1243, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 50));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -186,7 +170,7 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_AgregarMotoActionPerformed
 
     private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
-       ViewFiltroinventario newframe=new ViewFiltroinventario();
+        ViewFiltroinventario newframe=new ViewFiltroinventario();
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVerInventarioActionPerformed
@@ -197,6 +181,41 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_ConsultarVentasActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ViewAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ViewAdministrador().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarMoto;
@@ -210,8 +229,6 @@ public class ViewAdministrador extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel txtbienvenida;
     // End of variables declaration//GEN-END:variables
 }
