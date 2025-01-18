@@ -48,11 +48,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         txtbienvenida.setBackground(new java.awt.Color(0, 0, 0));
         txtbienvenida.setFont(new java.awt.Font("Britannic Bold", 0, 60)); // NOI18N
-        txtbienvenida.setForeground(new java.awt.Color(0, 0, 0));
         txtbienvenida.setText("Bienvenido Administrador");
-        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 40));
+        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 50));
 
-        AgregarMoto.setBackground(new java.awt.Color(255, 255, 255));
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
         AgregarMoto.setAutoscrolls(true);
@@ -65,11 +63,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
-        TxtAgregar.setForeground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setText("Agregar moto");
         jPanel1.add(TxtAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 190, 70));
 
-        btnVerInventario.setBackground(new java.awt.Color(255, 255, 255));
         btnVerInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
         btnVerInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,11 +76,9 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         TxtInventario.setBackground(new java.awt.Color(0, 0, 0));
         TxtInventario.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
-        TxtInventario.setForeground(new java.awt.Color(0, 0, 0));
         TxtInventario.setText("Ver Inventario");
         jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
-        ConsultarVentas.setBackground(new java.awt.Color(255, 255, 255));
         ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
         ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +89,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Consultar Ventas");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, 20));
 
@@ -116,7 +109,6 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
-        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         RegresaMenuPrincipal.setForeground(new java.awt.Color(51, 255, 255));
         RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
@@ -164,13 +156,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
-        ViewRegistrarMoto newframe=new ViewRegistrarMoto();
+        ViewRegistrarmoto newframe=new ViewRegistrarmoto();
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AgregarMotoActionPerformed
 
     private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
-        ViewFiltroinventario newframe=new ViewFiltroinventario();
+        ViewFiltrarinventario newframe=new ViewFiltrarinventario();
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVerInventarioActionPerformed
