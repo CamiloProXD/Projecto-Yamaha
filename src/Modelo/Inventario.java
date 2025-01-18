@@ -10,6 +10,7 @@ package Modelo;
  */
 public class Inventario {
     private Moto[] producto;
+    private int idSede;
 
     public Inventario(Moto[] producto) {
         this.producto = producto;

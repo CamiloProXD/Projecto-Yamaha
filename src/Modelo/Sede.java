@@ -10,15 +10,17 @@ package Modelo;
  */
 public class Sede {
     private int idSede;
+    private int inventario_id;
     private String nombreSede;
+    private String municipio;
     private int idAdministrador;
-    private Inventario inventario;
 
-    public Sede(int idSede, String nombreSede, int idAdministrador, Inventario inventario) {
+    public Sede(int idSede, int inventario_id, String nombreSede, String municipio, int idAdministrador) {
         this.idSede = idSede;
+        this.inventario_id = inventario_id;
         this.nombreSede = nombreSede;
+        this.municipio = municipio;
         this.idAdministrador = idAdministrador;
-        this.inventario = inventario;
     }
 
     public Sede() {
@@ -32,12 +34,28 @@ public class Sede {
         this.idSede = idSede;
     }
 
+    public int getInventario_id() {
+        return inventario_id;
+    }
+
+    public void setInventario_id(int inventario_id) {
+        this.inventario_id = inventario_id;
+    }
+
     public String getNombreSede() {
         return nombreSede;
     }
 
     public void setNombreSede(String nombreSede) {
         this.nombreSede = nombreSede;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public int getIdAdministrador() {
@@ -48,13 +66,6 @@ public class Sede {
         this.idAdministrador = idAdministrador;
     }
 
-    public Inventario getInventario() {
-        return inventario;
-    }
-
-    public void setInventario(Inventario inventario) {
-        this.inventario = inventario;
-    }
     
-    
+  
 }
