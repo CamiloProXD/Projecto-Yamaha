@@ -156,21 +156,15 @@ public class ViewAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
-        ViewRegistrarmoto newframe=new ViewRegistrarmoto();
-        newframe.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_AgregarMotoActionPerformed
 
     private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
-        ViewFiltrarinventario newframe=new ViewFiltrarinventario();
-        newframe.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_btnVerInventarioActionPerformed
 
     private void ConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentasActionPerformed
-        ViewConsultarVentas newframe=new ViewConsultarVentas();
-        newframe.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_ConsultarVentasActionPerformed
 
     /**

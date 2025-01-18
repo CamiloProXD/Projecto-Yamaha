@@ -159,21 +159,16 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionActionPerformed
-        ViewPrincipal newframe=new ViewPrincipal();
-        newframe.setVisible(true);
-        this.dispose();
+
         
     }//GEN-LAST:event_cerrarSesionActionPerformed
 
     private void MenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalActionPerformed
-        ViewAdministrador newframe=new ViewAdministrador();
-        newframe.setVisible(true);
-        this.dispose();  
+
     }//GEN-LAST:event_MenuPrincipalActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-       
-        System.exit(0);      
+
     }//GEN-LAST:event_SalirActionPerformed
 
 

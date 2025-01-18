@@ -259,16 +259,11 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
-        ViewAdministrador newframe=new ViewAdministrador();
-        newframe.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_botonRegresarActionPerformed
 
     private void botonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuActionPerformed
 
-        ViewPrincipal newframe=new ViewPrincipal();
-        newframe.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_botonMenuActionPerformed
 
     private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
