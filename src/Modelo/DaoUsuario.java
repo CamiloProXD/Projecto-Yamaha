@@ -58,15 +58,19 @@ public class DaoUsuario extends Conexion {
 
     public boolean consultar(Usuario u) {
         Connection cnx = getConexion();
-        String stc = "SELECT p.nombres, p.apellidos, p.numero_telefonico, p.email, p.direccion, u.username, u.password, u.rol, u.salario, u.sucursal_id"
-                + " FROM usuarios u "
+        String stc = "SELECT p.nombres, p.apellidos, p.numero_telefonico, p.email, p.direccion, u.usuario_id, u.username, u.password, u.rol, u.salario, u.sucursal_id "
+                + "FROM usuarios u "
                 + "INNER JOIN personas p ON p.persona_id = u.persona_id "
-                + "WHERE u.id_usuario = ?"; 
+                + "WHERE u.username = ?";
+        System.out.println("Conectando a la base de datos...");
+        System.out.println("Consulta SQL: " + stc);
+        System.out.println("Username proporcionado: " + u.getUsername());
+
         PreparedStatement pst;
         ResultSet rst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setInt(1, u.getIdUsuario());
+            pst.setString(1, u.getUsername());
             rst = pst.executeQuery();
             if (rst.next()) {
 
@@ -75,7 +79,7 @@ public class DaoUsuario extends Conexion {
                 u.setNumeroTelefonico(rst.getString("numero_telefonico"));
                 u.setEmail(rst.getString("email"));
                 u.setDireccion(rst.getString("direccion"));
-                u.setUsername(rst.getString("username"));
+                u.setIdUsuario(rst.getInt("usuario_id"));
                 u.setPassword(rst.getString("password"));
                 u.setRol(rst.getString("rol"));
                 u.setSalario(Double.parseDouble(rst.getString("salario")));

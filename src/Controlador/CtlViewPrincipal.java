@@ -56,12 +56,13 @@ public class CtlViewPrincipal implements ActionListener {
             }
 
             try {
-
+                // Configurar el username en el objeto Usuario
                 us.setUsername(usuario);
 
+                // Consultar en la base de datos usando el username
                 if (dao.consultar(us)) {
-
-                    if (us.getUsername().equals(usuario) && us.getPassword().equals(contrasena)) {
+                    // Verificar credenciales
+                    if (us.getPassword().equals(contrasena)) {
                         if (us.getRol().equalsIgnoreCase("Admin")) {
                             vpa.setVisible(true);
                             vp.dispose();
@@ -73,7 +74,7 @@ public class CtlViewPrincipal implements ActionListener {
                             limpiar();
                         }
                     } else {
-                        mensaje("Credenciales incorrectas, inténtelo nuevamente", "Error");
+                        mensaje("Contraseña incorrecta, inténtelo nuevamente", "Error");
                         limpiar();
                     }
                 } else {
