@@ -28,7 +28,6 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        btnRegistrar = new Vista.MyButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -46,6 +45,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         txtModelo = new javax.swing.JTextField();
         txtCilindraje = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        btnRegistrar = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,24 +67,6 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 260, 143));
-
-        btnRegistrar.setBackground(new java.awt.Color(227, 14, 21));
-        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnRegistrar.setForeground(new java.awt.Color(242, 242, 242));
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnRegistrar.setBorderPainted(false);
-        btnRegistrar.setColor(new java.awt.Color(227, 14, 21));
-        btnRegistrar.setColorClick(new java.awt.Color(227, 14, 21));
-        btnRegistrar.setColorOver(new java.awt.Color(167, 14, 21));
-        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnRegistrar.setRadius(30);
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 680, 171, 60));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -200,12 +182,26 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel16.setText("Serial:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
 
+        btnRegistrar.setBackground(new java.awt.Color(227, 14, 21));
+        btnRegistrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrar.setForeground(new java.awt.Color(242, 242, 242));
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnRegistrar.setBorderPainted(false);
+        btnRegistrar.setColor(new java.awt.Color(227, 14, 21));
+        btnRegistrar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnRegistrar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnRegistrar.setRadius(30);
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, 171, 60));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
         // TODO add your handling code here:
@@ -222,6 +218,10 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     private void txtCilindrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCilindrajeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCilindrajeActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
