@@ -5,6 +5,7 @@
 package ProyectoYamaha;
 
 import Controlador.CtlCerrarSesion;
+import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewPrincipal;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
@@ -56,6 +57,7 @@ public class ProyectoYamaha {
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
         CtlCerrarSesion ctlcs = new CtlCerrarSesion(vp, vpv, vpa, cs);
+        CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp);
         
         vp.setVisible(true);
     }

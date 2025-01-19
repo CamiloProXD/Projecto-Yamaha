@@ -14,10 +14,10 @@ import Vista.CatalogoTodoTer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CtlCatalogoPrincipal implements ActionListener {
+public class CtlViewCatalogoPrincipal implements ActionListener {
     private ViewCatalogoPrincipal vcp;
 
-    public CtlCatalogoPrincipal(ViewCatalogoPrincipal vcp) {
+    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp) {
         this.vcp = vcp;
         this.vcp.btnDeportivas.addActionListener(this);
         this.vcp.btnSuperDeportivas.addActionListener(this);
