@@ -8,6 +8,8 @@ import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesion;
 import Controlador.CtlViewPrincipal;
+import Controlador.CtlViewRegresarAutomaticas;
+import Controlador.CtlViewRegresarDeportivas;
 import Controlador.CtlViewVendedor;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
@@ -84,6 +86,9 @@ public class ProyectoYamaha {
         CtlViewCerrarSesion ctlcs = new CtlViewCerrarSesion(vp, vpv, vpa, cs);
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
         CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, cs);
+        CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);
+        CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
+        
         
         vp.setVisible(true);
     }

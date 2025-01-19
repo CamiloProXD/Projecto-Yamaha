@@ -67,9 +67,11 @@ public class CtlViewPrincipal implements ActionListener {
                         if (us.getRol().equalsIgnoreCase("Admin")) {
                             vpa.setVisible(true);
                             vp.dispose();
+                            limpiar();
                         } else if (us.getRol().equalsIgnoreCase("Empleado")) {
                             vpv.setVisible(true);
                             vp.dispose();
+                            limpiar();
                         } else {
                             mensaje("Rol no reconocido", "Error");
                             limpiar();
