@@ -30,7 +30,7 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         BordeAbajo = new javax.swing.JPanel();
         BordeArriba = new javax.swing.JPanel();
-        btnVolver = new Vista.MyButton();
+        btnRegresarM = new Vista.MyButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -98,20 +98,20 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
         BordeArriba.setBackground(new java.awt.Color(227, 14, 21));
         BordeArriba.setForeground(new java.awt.Color(227, 14, 21));
 
-        btnVolver.setBackground(new java.awt.Color(227, 14, 21));
-        btnVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnVolver.setForeground(new java.awt.Color(242, 242, 242));
-        btnVolver.setText("Volver");
-        btnVolver.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnVolver.setBorderPainted(false);
-        btnVolver.setColor(new java.awt.Color(227, 14, 21));
-        btnVolver.setColorClick(new java.awt.Color(227, 14, 21));
-        btnVolver.setColorOver(new java.awt.Color(167, 14, 21));
-        btnVolver.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnVolver.setRadius(30);
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresarM.setBackground(new java.awt.Color(227, 14, 21));
+        btnRegresarM.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegresarM.setForeground(new java.awt.Color(242, 242, 242));
+        btnRegresarM.setText("Volver");
+        btnRegresarM.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnRegresarM.setBorderPainted(false);
+        btnRegresarM.setColor(new java.awt.Color(227, 14, 21));
+        btnRegresarM.setColorClick(new java.awt.Color(227, 14, 21));
+        btnRegresarM.setColorOver(new java.awt.Color(167, 14, 21));
+        btnRegresarM.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnRegresarM.setRadius(30);
+        btnRegresarM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+                btnRegresarMActionPerformed(evt);
             }
         });
 
@@ -120,16 +120,16 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
         BordeArribaLayout.setHorizontalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BordeArribaLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1142, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1147, Short.MAX_VALUE))
         );
         BordeArribaLayout.setVerticalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BordeArribaLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4))
+            .addGroup(BordeArribaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel1.add(BordeArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -438,9 +438,9 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrar1ActionPerformed
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+    private void btnRegresarMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolverActionPerformed
+    }//GEN-LAST:event_btnRegresarMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -450,7 +450,7 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
-    private Vista.MyButton btnVolver;
+    public Vista.MyButton btnRegresarM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

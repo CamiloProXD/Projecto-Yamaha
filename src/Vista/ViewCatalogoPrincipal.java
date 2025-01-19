@@ -32,11 +32,11 @@ public class ViewCatalogoPrincipal extends javax.swing.JFrame {
         btnVolver1 = new Vista.MyButton();
         btnAutomaticas = new Vista.MyButton();
         btnDeportivas = new Vista.MyButton();
-        btnSuperDeportivas = new Vista.MyButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        btnSuperDeportivas = new Vista.MyButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -147,24 +147,6 @@ public class ViewCatalogoPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(btnDeportivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 160, 70));
 
-        btnSuperDeportivas.setBackground(new java.awt.Color(227, 14, 21));
-        btnSuperDeportivas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSuperDeportivas.setForeground(new java.awt.Color(242, 242, 242));
-        btnSuperDeportivas.setText("Super Deportivas");
-        btnSuperDeportivas.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnSuperDeportivas.setBorderPainted(false);
-        btnSuperDeportivas.setColor(new java.awt.Color(227, 14, 21));
-        btnSuperDeportivas.setColorClick(new java.awt.Color(227, 14, 21));
-        btnSuperDeportivas.setColorOver(new java.awt.Color(167, 14, 21));
-        btnSuperDeportivas.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnSuperDeportivas.setRadius(30);
-        btnSuperDeportivas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSuperDeportivasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnSuperDeportivas, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 160, 70));
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mt10.jpeg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -188,13 +170,32 @@ public class ViewCatalogoPrincipal extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/R1.jpeg"))); // NOI18N
 
+        btnSuperDeportivas.setBackground(new java.awt.Color(227, 14, 21));
+        btnSuperDeportivas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSuperDeportivas.setForeground(new java.awt.Color(242, 242, 242));
+        btnSuperDeportivas.setText("Super Deportivas");
+        btnSuperDeportivas.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnSuperDeportivas.setBorderPainted(false);
+        btnSuperDeportivas.setColor(new java.awt.Color(227, 14, 21));
+        btnSuperDeportivas.setColorClick(new java.awt.Color(227, 14, 21));
+        btnSuperDeportivas.setColorOver(new java.awt.Color(167, 14, 21));
+        btnSuperDeportivas.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnSuperDeportivas.setRadius(30);
+        btnSuperDeportivas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuperDeportivasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSuperDeportivas, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(21, 21, 21))
         );
         jPanel3Layout.setVerticalGroup(
@@ -202,7 +203,9 @@ public class ViewCatalogoPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel3)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnSuperDeportivas, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, -1, -1));
