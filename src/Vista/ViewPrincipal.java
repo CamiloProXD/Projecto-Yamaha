@@ -101,7 +101,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CatalogoNegro.png"))); // NOI18N
         btnCatalogo.setBorder(null);
         btnCatalogo.setBorderPainted(false);
-        jPanel1.add(btnCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 700, 120, 120));
+        jPanel1.add(btnCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 690, 120, 120));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Catalogo");
