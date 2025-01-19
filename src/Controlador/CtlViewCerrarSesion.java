@@ -8,14 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.Usuario;
 
-public class CtlCerrarSesion implements ActionListener {
+public class CtlViewCerrarSesion implements ActionListener {
 
     private ViewPrincipal vp;
     private ViewVendedor vuv;
     private ViewAdministrador vpa;
     private ViewCerrarSesion cs;
 
-    public CtlCerrarSesion(ViewPrincipal vp, ViewVendedor vuv, ViewAdministrador vpa, ViewCerrarSesion cs) {
+    public CtlViewCerrarSesion(ViewPrincipal vp, ViewVendedor vuv, ViewAdministrador vpa, ViewCerrarSesion cs) {
         this.cs = cs;
         this.vpa = vpa;
         this.vp = vp;

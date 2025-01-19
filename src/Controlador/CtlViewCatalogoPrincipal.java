@@ -27,16 +27,15 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
     private ViewPrincipal vp;
     
 
-    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewPrincipal vp) {
+    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewCatalogoDeportivas vcd, ViewCatalogoSuperDep vsd, ViewCatalogoAutomaticas ca, ViewCatalogoCross cc, ViewCatalogoUrbanas vcu, ViewCatalogoTodoTer ctt, ViewPrincipal vp) {
         this.vcp = vcp;
+        this.vcd = vcd;
+        this.vsd = vsd;
+        this.ca = ca;
+        this.cc = cc;
+        this.vcu = vcu;
+        this.ctt = ctt;
         this.vp = vp;
-        this.vcd = new ViewCatalogoDeportivas();
-        this.vsd = new ViewCatalogoSuperDep();
-        this.ca = new ViewCatalogoAutomaticas();
-        this.cc = new ViewCatalogoCross();
-        this.vcu = new ViewCatalogoUrbanas();
-        this.ctt = new ViewCatalogoTodoTer();
-
         
         this.vcp.btnDeportivas.addActionListener(this);
         this.vcp.btnSuperDeportivas.addActionListener(this);
@@ -46,6 +45,8 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
         this.vcp.btnTodoterreno.addActionListener(this);
         this.vcp.btnVolver1.addActionListener(this); 
     }
+    
+    
     
 
     @Override

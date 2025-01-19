@@ -212,19 +212,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="RegresaMenuPrincipal" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnRegresaMenuPrincipal" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace pref="1243" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="RegresaMenuPrincipal" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnRegresaMenuPrincipal" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="RegresaMenuPrincipal">
+            <Component class="javax.swing.JButton" name="btnRegresaMenuPrincipal">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="33" type="rgb"/>
@@ -233,6 +233,9 @@
                   <Image iconType="3" name="/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

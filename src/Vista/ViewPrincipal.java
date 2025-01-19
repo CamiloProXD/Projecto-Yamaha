@@ -168,7 +168,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
-    private javax.swing.JButton btnCatalogo;
+    public javax.swing.JButton btnCatalogo;
     public Vista.MyButton btnEntrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

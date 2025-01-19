@@ -4,8 +4,8 @@
  */
 package ProyectoYamaha;
 
-import Controlador.CtlCerrarSesion;
 import Controlador.CtlViewCatalogoPrincipal;
+import Controlador.CtlViewCerrarSesion;
 import Controlador.CtlViewPrincipal;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
@@ -16,7 +16,13 @@ import Modelo.Usuario;
 import Modelo.Venta;
 import Vista.ViewCerrarSesion;
 import Vista.ViewAdministrador;
+import Vista.ViewCatalogoAutomaticas;
+import Vista.ViewCatalogoCross;
+import Vista.ViewCatalogoDeportivas;
 import Vista.ViewCatalogoPrincipal;
+import Vista.ViewCatalogoSuperDep;
+import Vista.ViewCatalogoTodoTer;
+import Vista.ViewCatalogoUrbanas;
 import Vista.ViewPrincipal;
 import Vista.ViewVendedor;
 
@@ -52,12 +58,18 @@ public class ProyectoYamaha {
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
         ViewCerrarSesion cs = new ViewCerrarSesion();
+        ViewCatalogoDeportivas vcd = new ViewCatalogoDeportivas();
+        ViewCatalogoSuperDep vsd = new ViewCatalogoSuperDep();
+        ViewCatalogoAutomaticas vca = new ViewCatalogoAutomaticas();
+        ViewCatalogoCross vcc = new ViewCatalogoCross();
+        ViewCatalogoUrbanas vcu = new ViewCatalogoUrbanas();
+        ViewCatalogoTodoTer vctt = new ViewCatalogoTodoTer();
         
         
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
-        CtlCerrarSesion ctlcs = new CtlCerrarSesion(vp, vpv, vpa, cs);
-        CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vp);
+        CtlViewCerrarSesion ctlcs = new CtlViewCerrarSesion(vp, vpv, vpa, cs);
+        CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
         
         vp.setVisible(true);
     }
