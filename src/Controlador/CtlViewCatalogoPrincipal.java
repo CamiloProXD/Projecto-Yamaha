@@ -29,6 +29,7 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
 
     public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewPrincipal vp) {
         this.vcp = vcp;
+        this.vp = vp;
         this.vcd = new ViewCatalogoDeportivas();
         this.vsd = new ViewCatalogoSuperDep();
         this.ca = new ViewCatalogoAutomaticas();
