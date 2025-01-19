@@ -38,6 +38,7 @@ public class CtlCerrarSesion implements ActionListener {
             System.exit(0);
         }
         if (ev.getSource().equals(cs.btnMenuPrincipal)) {
+            
             if (Rol.equals("Admin")) {
                 this.vpa.setVisible(true);
                 this.cs.dispose();

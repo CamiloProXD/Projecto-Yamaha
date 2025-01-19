@@ -56,12 +56,12 @@ public class CtlViewPrincipal implements ActionListener {
             }
 
             try {
-                // Configurar el username en el objeto Usuario
+              
                 us.setUsername(usuario);
 
-                // Consultar en la base de datos usando el username
+              
                 if (dao.consultar(us)) {
-                    // Verificar credenciales
+                    
                     if (us.getPassword().equals(contrasena)) {
                         if (us.getRol().equalsIgnoreCase("Admin")) {
                             vpa.setVisible(true);
