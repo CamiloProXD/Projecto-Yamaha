@@ -30,7 +30,7 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         BordeAbajo = new javax.swing.JPanel();
         BordeArriba = new javax.swing.JPanel();
-        btnVolver = new Vista.MyButton();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -92,38 +92,24 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
         BordeArriba.setBackground(new java.awt.Color(227, 14, 21));
         BordeArriba.setForeground(new java.awt.Color(227, 14, 21));
 
-        btnVolver.setBackground(new java.awt.Color(227, 14, 21));
-        btnVolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnVolver.setForeground(new java.awt.Color(242, 242, 242));
-        btnVolver.setText("Volver");
-        btnVolver.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnVolver.setBorderPainted(false);
-        btnVolver.setColor(new java.awt.Color(227, 14, 21));
-        btnVolver.setColorClick(new java.awt.Color(227, 14, 21));
-        btnVolver.setColorOver(new java.awt.Color(167, 14, 21));
-        btnVolver.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnVolver.setRadius(30);
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
-            }
-        });
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout BordeArribaLayout = new javax.swing.GroupLayout(BordeArriba);
         BordeArriba.setLayout(BordeArribaLayout);
         BordeArribaLayout.setHorizontalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BordeArribaLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1142, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(jButton1)
+                .addContainerGap(1213, Short.MAX_VALUE))
         );
         BordeArribaLayout.setVerticalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BordeArribaLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4))
+            .addGroup(BordeArribaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         jPanel1.add(BordeArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -243,7 +229,7 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xtz125.png"))); // NOI18N
 
@@ -303,8 +289,8 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 50)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(55, 78, 90));
-        jLabel2.setText("Todoterreno");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 350, 60));
+        jLabel2.setText("Todo Terreno");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 390, 60));
 
         jPanel7.setBackground(new java.awt.Color(227, 14, 21));
 
@@ -375,10 +361,6 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrar1ActionPerformed
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolverActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -387,7 +369,7 @@ public class ViewCatalogoTodoterreno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
-    public Vista.MyButton btnVolver;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
