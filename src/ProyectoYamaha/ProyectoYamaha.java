@@ -4,6 +4,8 @@
  */
 package ProyectoYamaha;
 
+import Controlador.CtlCerrarSesion;
+import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewPrincipal;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
@@ -12,8 +14,16 @@ import Modelo.Persona;
 import Modelo.Sede;
 import Modelo.Usuario;
 import Modelo.Venta;
+import Vista.CerrarSesion;
+import Vista.ViewAdministrador;
+import Vista.ViewAgregarVendedor;
+import Vista.ViewCatalogoPrincipal;
+import Vista.ViewConsultarVentas;
+import Vista.ViewFiltrarinventario;
 import Vista.ViewPrincipal;
-import Vista.*;
+import Vista.ViewRegistrarMoto;
+import Vista.ViewVendedor;
+
 
 
 
@@ -46,11 +56,18 @@ public class ProyectoYamaha {
         ViewAdministrador vpa = new ViewAdministrador();
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
+        ViewRegistrarMoto vrm = new ViewRegistrarMoto();
+        ViewFiltrarinventario vfi = new ViewFiltrarinventario();
+        ViewConsultarVentas vcv = new ViewConsultarVentas();
+        ViewAgregarVendedor vav = new ViewAgregarVendedor();
+        CerrarSesion cs = new CerrarSesion();
+        
         
         
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
-        
+        CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, cs, vrm, vfi, vcv, vav);
+        CtlCerrarSesion ctlcs = new CtlCerrarSesion(vp, vpv, vpa, cs);
         
         vp.setVisible(true);
     }

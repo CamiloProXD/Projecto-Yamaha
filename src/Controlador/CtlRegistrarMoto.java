@@ -6,7 +6,7 @@ package Controlador;
 
 import Modelo.DaoMoto;
 import Modelo.Moto;
-import Vista.ViewRegistrarmoto;
+import Vista.ViewRegistrarMoto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -17,10 +17,10 @@ import javax.swing.JOptionPane;
  */
 public class CtlRegistrarMoto implements ActionListener{
     private DaoMoto daoMoto;
-    private ViewRegistrarmoto vx;
+    private ViewRegistrarMoto vx;
     private Moto moto;
 
-    public CtlRegistrarMoto(DaoMoto dMoto, ViewRegistrarmoto vx, Moto moto) {
+    public CtlRegistrarMoto(DaoMoto dMoto, ViewRegistrarMoto vx, Moto moto) {
         this.daoMoto = dMoto;
         this.vx = vx;
         this.moto = moto;
