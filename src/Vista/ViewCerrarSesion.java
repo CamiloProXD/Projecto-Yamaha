@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class CerrarSesion extends javax.swing.JInternalFrame {
+public class ViewCerrarSesion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form NewJInternalFrame
      */
-    public CerrarSesion() {
+    public ViewCerrarSesion() {
         initComponents();
     }
 
@@ -44,9 +44,7 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images.png"))); // NOI18N
 
-        btncerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
         btncerrarSesion.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        btncerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         btncerrarSesion.setText("Cerrar Sesión");
         btncerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,9 +52,7 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        btnMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         btnMenuPrincipal.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        btnMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
         btnMenuPrincipal.setText("Menu Principal");
         btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,9 +60,7 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
             }
         });
 
-        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +70,6 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
-        regresar.setBackground(new java.awt.Color(255, 255, 255));
         regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

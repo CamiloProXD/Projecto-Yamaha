@@ -6,11 +6,11 @@ package Controlador;
 
 import Vista.ViewCatalogoPrincipal;
 import Vista.ViewCatalogoDeportivas;
-import Vista.CatalogoSuperDep;
-import Vista.CatalogoAutomaticas;
-import Vista.CatalogoCross;
+import Vista.ViewCatalogoSuperDep;
+import Vista.ViewCatalogoAutomaticas;
+import Vista.ViewCatalogoCross;
 import Vista.ViewCatalogoUrbanas;
-import Vista.CatalogoTodoTer;
+import Vista.ViewCatalogoTodoTer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,15 +36,15 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
             vcd.setVisible(true);
             vcp.dispose();             
         } else if (ev.getSource().equals(vcp.btnSuperDeportivas)) {
-            CatalogoSuperDep vsd = new CatalogoSuperDep();
+            ViewCatalogoSuperDep vsd = new ViewCatalogoSuperDep();
             vsd.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnAutomaticas)) {
-            CatalogoAutomaticas ca = new CatalogoAutomaticas();
+            ViewCatalogoAutomaticas ca = new ViewCatalogoAutomaticas();
             ca.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnEnduro)) {
-            CatalogoCross cc = new CatalogoCross();
+            ViewCatalogoCross cc = new ViewCatalogoCross();
             cc.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnUrbanasYtrabajo)) {
@@ -52,7 +52,7 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
             vcu.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnTodoterreno)) {
-            CatalogoTodoTer ctt = new CatalogoTodoTer();
+            ViewCatalogoTodoTer ctt = new ViewCatalogoTodoTer();
             ctt.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnVolver1)) {

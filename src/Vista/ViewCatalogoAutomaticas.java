@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class CatalogoAutomaticas extends javax.swing.JFrame {
+public class ViewCatalogoAutomaticas extends javax.swing.JFrame {
 
     /**
      * Creates new form CatalogoAutomaticas
      */
-    public CatalogoAutomaticas() {
+    public ViewCatalogoAutomaticas() {
         initComponents();
     }
 
@@ -58,7 +58,6 @@ public class CatalogoAutomaticas extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 60)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Automaticas");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 400, 110));
 
@@ -236,7 +235,6 @@ public class CatalogoAutomaticas extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 0, 0));
 
-        btnRegresar.setBackground(new java.awt.Color(255, 255, 255));
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -304,20 +302,21 @@ public class CatalogoAutomaticas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoAutomaticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CatalogoAutomaticas().setVisible(true);
+                new ViewCatalogoAutomaticas().setVisible(true);
             }
         });
     }

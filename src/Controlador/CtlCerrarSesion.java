@@ -1,6 +1,6 @@
 package Controlador;
 
-import Vista.CerrarSesion;
+import Vista.ViewCerrarSesion;
 import Vista.ViewAdministrador;
 import Vista.ViewPrincipal;
 import Vista.ViewVendedor;
@@ -13,9 +13,9 @@ public class CtlCerrarSesion implements ActionListener {
     private ViewPrincipal vp;
     private ViewVendedor vuv;
     private ViewAdministrador vpa;
-    private CerrarSesion cs;
+    private ViewCerrarSesion cs;
 
-    public CtlCerrarSesion(ViewPrincipal vp, ViewVendedor vuv, ViewAdministrador vpa, CerrarSesion cs) {
+    public CtlCerrarSesion(ViewPrincipal vp, ViewVendedor vuv, ViewAdministrador vpa, ViewCerrarSesion cs) {
         this.cs = cs;
         this.vpa = vpa;
         this.vp = vp;

@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class CatalogoSuperDep extends javax.swing.JFrame {
+public class ViewCatalogoSuperDep extends javax.swing.JFrame {
 
     /**
      * Creates new form CatalogoSuperDep
      */
-    public CatalogoSuperDep() {
+    public ViewCatalogoSuperDep() {
         initComponents();
     }
 
@@ -58,7 +58,6 @@ public class CatalogoSuperDep extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -96,7 +95,6 @@ public class CatalogoSuperDep extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 820, 1300, 80));
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 60)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Super Deportivas");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
 
@@ -307,20 +305,21 @@ public class CatalogoSuperDep extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoSuperDep.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CatalogoSuperDep().setVisible(true);
+                new ViewCatalogoSuperDep().setVisible(true);
             }
         });
     }

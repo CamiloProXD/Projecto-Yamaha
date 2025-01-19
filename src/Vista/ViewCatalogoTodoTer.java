@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class CatalogoTodoTer extends javax.swing.JFrame {
+public class ViewCatalogoTodoTer extends javax.swing.JFrame {
 
     /**
      * Creates new form CatalogoTodoTer
      */
-    public CatalogoTodoTer() {
+    public ViewCatalogoTodoTer() {
         initComponents();
     }
 
@@ -78,7 +78,6 @@ public class CatalogoTodoTer extends javax.swing.JFrame {
         BordeArriba.setBackground(new java.awt.Color(227, 14, 21));
         BordeArriba.setForeground(new java.awt.Color(227, 14, 21));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout BordeArribaLayout = new javax.swing.GroupLayout(BordeArriba);
@@ -379,20 +378,21 @@ public class CatalogoTodoTer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewCatalogoTodoTer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CatalogoTodoTer().setVisible(true);
+                new ViewCatalogoTodoTer().setVisible(true);
             }
         });
     }

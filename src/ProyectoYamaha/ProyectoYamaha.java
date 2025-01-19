@@ -14,7 +14,7 @@ import Modelo.Persona;
 import Modelo.Sede;
 import Modelo.Usuario;
 import Modelo.Venta;
-import Vista.CerrarSesion;
+import Vista.ViewCerrarSesion;
 import Vista.ViewAdministrador;
 import Vista.ViewCatalogoPrincipal;
 import Vista.ViewPrincipal;
@@ -51,7 +51,7 @@ public class ProyectoYamaha {
         ViewAdministrador vpa = new ViewAdministrador();
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
-        CerrarSesion cs = new CerrarSesion();
+        ViewCerrarSesion cs = new ViewCerrarSesion();
         
         
         //Controladores
