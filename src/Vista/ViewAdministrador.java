@@ -38,6 +38,8 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         RegresaMenuPrincipal = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        ConsultarVentas1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,7 +51,7 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txtbienvenida.setBackground(new java.awt.Color(0, 0, 0));
         txtbienvenida.setFont(new java.awt.Font("Britannic Bold", 0, 60)); // NOI18N
         txtbienvenida.setText("Bienvenido Administrador");
-        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 50));
+        jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 40));
 
         AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
         AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
@@ -72,25 +74,25 @@ public class ViewAdministrador extends javax.swing.JFrame {
                 btnVerInventarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 180, 150));
+        jPanel1.add(btnVerInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, 180, 150));
 
         TxtInventario.setBackground(new java.awt.Color(0, 0, 0));
         TxtInventario.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         TxtInventario.setText("Ver Inventario");
-        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
+        jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, -1, -1));
 
-        ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
+        ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconNuevoEmpleado.png"))); // NOI18N
         ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultarVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 440, 180, 150));
+        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 440, 180, 150));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel4.setText("Consultar Ventas");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 320, -1, 20));
+        jLabel4.setText("Registrar nuevo vendedor");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, -1, 20));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -141,6 +143,19 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 40));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
+        jLabel5.setText("Consultar Ventas");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, 20));
+
+        ConsultarVentas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
+        ConsultarVentas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarVentas1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ConsultarVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 180, 150));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,6 +182,10 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ConsultarVentasActionPerformed
 
+    private void ConsultarVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConsultarVentas1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -175,11 +194,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgregarMoto;
     private javax.swing.JButton ConsultarVentas;
+    private javax.swing.JButton ConsultarVentas1;
     private javax.swing.JButton RegresaMenuPrincipal;
     private javax.swing.JLabel TxtAgregar;
     private javax.swing.JLabel TxtInventario;
     private javax.swing.JButton btnVerInventario;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
