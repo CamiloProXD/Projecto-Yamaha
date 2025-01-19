@@ -8,6 +8,7 @@ import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesion;
 import Controlador.CtlViewPrincipal;
+import Controlador.CtlViewVendedor;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
 import Modelo.Moto;
@@ -27,6 +28,7 @@ import Vista.ViewCatalogoTodoTer;
 import Vista.ViewCatalogoUrbanas;
 import Vista.ViewConsultarVentas;
 import Vista.ViewPrincipal;
+import Vista.ViewRealizarVenta;
 import Vista.ViewRegistrarmoto;
 import Vista.ViewSucursal;
 import Vista.ViewVendedor;
@@ -73,6 +75,7 @@ public class ProyectoYamaha {
         ViewSucursal vs = new ViewSucursal();
         ViewConsultarVentas vcv = new ViewConsultarVentas();
         ViewAgregarVendedor vav = new ViewAgregarVendedor();
+        ViewRealizarVenta vrv = new ViewRealizarVenta();
         
         
         //Controladores
@@ -80,6 +83,7 @@ public class ProyectoYamaha {
         CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vs, vcv, vav, cs);
         CtlViewCerrarSesion ctlcs = new CtlViewCerrarSesion(vp, vpv, vpa, cs);
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
+        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, cs);
         
         vp.setVisible(true);
     }
