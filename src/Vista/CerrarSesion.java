@@ -28,9 +28,9 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cerrarSesion = new javax.swing.JButton();
-        MenuPrincipal = new javax.swing.JButton();
-        Salir = new javax.swing.JButton();
+        btncerrarSesion = new javax.swing.JButton();
+        btnMenuPrincipal = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         regresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -44,33 +44,33 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/images.png"))); // NOI18N
 
-        cerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
-        cerrarSesion.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        cerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
-        cerrarSesion.setText("Cerrar Sesión");
-        cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+        btncerrarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        btncerrarSesion.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        btncerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
+        btncerrarSesion.setText("Cerrar Sesión");
+        btncerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cerrarSesionActionPerformed(evt);
+                btncerrarSesionActionPerformed(evt);
             }
         });
 
-        MenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        MenuPrincipal.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        MenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
-        MenuPrincipal.setText("Menu Principal");
-        MenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        btnMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        btnMenuPrincipal.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        btnMenuPrincipal.setForeground(new java.awt.Color(0, 0, 0));
+        btnMenuPrincipal.setText("Menu Principal");
+        btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPrincipalActionPerformed(evt);
+                btnMenuPrincipalActionPerformed(evt);
             }
         });
 
-        Salir.setBackground(new java.awt.Color(255, 255, 255));
-        Salir.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
-        Salir.setForeground(new java.awt.Color(0, 0, 0));
-        Salir.setText("Salir");
-        Salir.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setFont(new java.awt.Font("Bodoni MT Black", 0, 14)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalirActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -123,9 +123,9 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(MenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnMenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btncerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(280, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -135,11 +135,11 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
-                .addComponent(cerrarSesion)
+                .addComponent(btncerrarSesion)
                 .addGap(18, 18, 18)
-                .addComponent(MenuPrincipal)
+                .addComponent(btnMenuPrincipal)
                 .addGap(18, 18, 18)
-                .addComponent(Salir)
+                .addComponent(btnSalir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -158,24 +158,24 @@ public class CerrarSesion extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cerrarSesionActionPerformed
+    private void btncerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarSesionActionPerformed
 
         
-    }//GEN-LAST:event_cerrarSesionActionPerformed
+    }//GEN-LAST:event_btncerrarSesionActionPerformed
 
-    private void MenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalActionPerformed
+    private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
 
-    }//GEN-LAST:event_MenuPrincipalActionPerformed
+    }//GEN-LAST:event_btnMenuPrincipalActionPerformed
 
-    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
 
-    }//GEN-LAST:event_SalirActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuPrincipal;
-    private javax.swing.JButton Salir;
-    private javax.swing.JButton cerrarSesion;
+    public javax.swing.JButton btnMenuPrincipal;
+    public javax.swing.JButton btnSalir;
+    public javax.swing.JButton btncerrarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
