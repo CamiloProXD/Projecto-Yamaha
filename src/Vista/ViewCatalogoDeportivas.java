@@ -120,9 +120,9 @@ public class ViewCatalogoDeportivas extends javax.swing.JFrame {
         BordeArribaLayout.setHorizontalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BordeArribaLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(35, 35, 35)
                 .addComponent(btnRegresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1147, Short.MAX_VALUE))
+                .addContainerGap(1135, Short.MAX_VALUE))
         );
         BordeArribaLayout.setVerticalGroup(
             BordeArribaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
