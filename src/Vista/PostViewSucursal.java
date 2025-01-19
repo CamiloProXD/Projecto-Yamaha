@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class PostViewScucursal extends javax.swing.JFrame {
+public class PostViewSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form PstViewScucursal
      */
-    public PostViewScucursal() {
+    public PostViewSucursal() {
         initComponents();
     }
 
@@ -41,7 +41,6 @@ public class PostViewScucursal extends javax.swing.JFrame {
         btnSalir = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 900));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -50,13 +49,11 @@ public class PostViewScucursal extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ventas Sucursal");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 86, 180, 57));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Inventario Sucursal");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 447, -1, -1));
 
@@ -84,19 +81,17 @@ public class PostViewScucursal extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Modelo", "Color", "Cantidad/modelo"
+                "Modelo", "Color", "Cantidad"
             }
         ));
         jScrollPane3.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 581, 774, 92));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 774, 92));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
-        Regresar.setBackground(new java.awt.Color(255, 255, 255));
         Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
-        VolverMenuAdmin.setBackground(new java.awt.Color(255, 255, 255));
         VolverMenuAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

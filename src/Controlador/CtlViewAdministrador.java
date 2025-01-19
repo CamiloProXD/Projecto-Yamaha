@@ -8,8 +8,8 @@ import Vista.ViewAdministrador;
 import Vista.ViewAgregarVendedor;
 import Vista.ViewCerrarSesion;
 import Vista.ViewConsultarVentas;
-import Vista.ViewFiltrarinventario;
 import Vista.ViewRegistrarmoto;
+import Vista.ViewSucursal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,15 +21,15 @@ public class CtlViewAdministrador implements ActionListener{
 
     private ViewAdministrador vpa;
     private ViewRegistrarmoto vrm;
-    private ViewFiltrarinventario vfi;
+    private ViewSucursal vs;
     private ViewConsultarVentas vcv;
     private ViewAgregarVendedor vav;
     private ViewCerrarSesion vcs;
 
-    public CtlViewAdministrador(ViewAdministrador vpa, ViewRegistrarmoto vrm, ViewFiltrarinventario vfi, ViewConsultarVentas vcv, ViewAgregarVendedor vav, ViewCerrarSesion vcs) {
+    public CtlViewAdministrador(ViewAdministrador vpa, ViewRegistrarmoto vrm, ViewSucursal vs, ViewConsultarVentas vcv, ViewAgregarVendedor vav, ViewCerrarSesion vcs) {
         this.vpa = vpa;
         this.vrm = vrm;
-        this.vfi = vfi;
+        this.vs = vs;
         this.vcv = vcv;
         this.vav = vav;
         this.vcs = vcs;
@@ -54,15 +54,15 @@ public class CtlViewAdministrador implements ActionListener{
             this.vpa.dispose();
         }
         if(ev.getSource().equals(vpa.btnVerInventario)){
-            vfi.setVisible(true);
+            vs.setVisible(true);
             this.vpa.dispose();
         }
         if(ev.getSource().equals(vpa.btnConsultarVentas)){
-            vrm.setVisible(true);
+            vcv.setVisible(true);
             this.vpa.dispose();
         }
         if(ev.getSource().equals(vpa.btnRegresaMenuPrincipal)){
-            vrm.setVisible(true);
+            vcs.setVisible(true);
             this.vpa.dispose();
         }
     }

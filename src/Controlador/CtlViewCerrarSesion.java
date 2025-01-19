@@ -6,7 +6,6 @@ import Vista.ViewPrincipal;
 import Vista.ViewVendedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Modelo.Usuario;
 
 public class CtlViewCerrarSesion implements ActionListener {
 

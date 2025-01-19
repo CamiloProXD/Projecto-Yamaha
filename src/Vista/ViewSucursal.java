@@ -8,12 +8,12 @@ package Vista;
  *
  * @author juanc
  */
-public class ViewSucusal extends javax.swing.JFrame {
+public class ViewSucursal extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewSucusall
      */
-    public ViewSucusal() {
+    public ViewSucursal() {
         initComponents();
     }
 
@@ -45,7 +45,6 @@ public class ViewSucusal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtSucursal.setFont(new java.awt.Font("Bodoni MT Black", 0, 60)); // NOI18N
-        txtSucursal.setForeground(new java.awt.Color(0, 0, 0));
         txtSucursal.setText("Selecccione la sucursal");
         jPanel1.add(txtSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 197, 767, 61));
 
@@ -64,8 +63,6 @@ public class ViewSucusal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabla);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 333, 1126, 92));
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(639, 604, 235, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
@@ -85,10 +82,8 @@ public class ViewSucusal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
-        RegresarAdmin.setBackground(new java.awt.Color(255, 255, 255));
         RegresarAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
-        RegresaMenuPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -133,7 +128,6 @@ public class ViewSucusal extends javax.swing.JFrame {
         jPanel1.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 701, 147, 29));
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("INGRESE EL ID DE LA SUCURSAL :");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 606, -1, -1));
 
