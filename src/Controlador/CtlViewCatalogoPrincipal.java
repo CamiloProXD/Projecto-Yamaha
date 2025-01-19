@@ -13,12 +13,30 @@ import Vista.ViewCatalogoUrbanas;
 import Vista.ViewCatalogoTodoTer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Vista.ViewPrincipal;
+
 
 public class CtlViewCatalogoPrincipal implements ActionListener {
-    private ViewCatalogoPrincipal vcp;
+    private ViewCatalogoPrincipal vcp; 
+    private ViewCatalogoDeportivas vcd; 
+    private ViewCatalogoSuperDep vsd; 
+    private ViewCatalogoAutomaticas ca; 
+    private ViewCatalogoCross cc; 
+    private ViewCatalogoUrbanas vcu; 
+    private ViewCatalogoTodoTer ctt; 
+    private ViewPrincipal vp;
+    
 
-    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp) {
+    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewPrincipal vp) {
         this.vcp = vcp;
+        this.vcd = new ViewCatalogoDeportivas();
+        this.vsd = new ViewCatalogoSuperDep();
+        this.ca = new ViewCatalogoAutomaticas();
+        this.cc = new ViewCatalogoCross();
+        this.vcu = new ViewCatalogoUrbanas();
+        this.ctt = new ViewCatalogoTodoTer();
+
+        
         this.vcp.btnDeportivas.addActionListener(this);
         this.vcp.btnSuperDeportivas.addActionListener(this);
         this.vcp.btnAutomaticas.addActionListener(this);
@@ -27,36 +45,32 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
         this.vcp.btnTodoterreno.addActionListener(this);
         this.vcp.btnVolver1.addActionListener(this); 
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        
         if (ev.getSource().equals(vcp.btnDeportivas)) {
-            ViewCatalogoDeportivas vcd = new ViewCatalogoDeportivas();
             vcd.setVisible(true);
-            vcp.dispose();             
+            vcp.dispose(); 
         } else if (ev.getSource().equals(vcp.btnSuperDeportivas)) {
-            ViewCatalogoSuperDep vsd = new ViewCatalogoSuperDep();
             vsd.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnAutomaticas)) {
-            ViewCatalogoAutomaticas ca = new ViewCatalogoAutomaticas();
             ca.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnEnduro)) {
-            ViewCatalogoCross cc = new ViewCatalogoCross();
             cc.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnUrbanasYtrabajo)) {
-            ViewCatalogoUrbanas vcu = new ViewCatalogoUrbanas();
             vcu.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnTodoterreno)) {
-            ViewCatalogoTodoTer ctt = new ViewCatalogoTodoTer();
             ctt.setVisible(true);
             vcp.dispose();
         } else if (ev.getSource().equals(vcp.btnVolver1)) {
-            
+            vp.setVisible(true); 
+            vcp.dispose();    
+        
         }
     }
 }

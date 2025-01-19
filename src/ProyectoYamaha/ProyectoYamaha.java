@@ -57,7 +57,7 @@ public class ProyectoYamaha {
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
         CtlCerrarSesion ctlcs = new CtlCerrarSesion(vp, vpv, vpa, cs);
-        CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp);
+        CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vp);
         
         vp.setVisible(true);
     }
