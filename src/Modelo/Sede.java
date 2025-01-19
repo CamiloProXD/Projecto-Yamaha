@@ -10,16 +10,18 @@ package Modelo;
  */
 public class Sede {
     private int idSede;
+    private String municipio;
     private int inventario_id;
     private String nombreSede;
-    private String municipio;
+    private String direccionSede;
     private int idAdministrador;
 
-    public Sede(int idSede, int inventario_id, String nombreSede, String municipio, int idAdministrador) {
+    public Sede(int idSede, String municipio, int inventario_id, String nombreSede, String direccionSede, int idAdministrador) {
         this.idSede = idSede;
+        this.municipio = municipio;
         this.inventario_id = inventario_id;
         this.nombreSede = nombreSede;
-        this.municipio = municipio;
+        this.direccionSede = direccionSede;
         this.idAdministrador = idAdministrador;
     }
 
@@ -32,6 +34,14 @@ public class Sede {
 
     public void setIdSede(int idSede) {
         this.idSede = idSede;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public int getInventario_id() {
@@ -50,12 +60,12 @@ public class Sede {
         this.nombreSede = nombreSede;
     }
 
-    public String getMunicipio() {
-        return municipio;
+    public String getDireccionSede() {
+        return direccionSede;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+    public void setDireccionSede(String direccionSede) {
+        this.direccionSede = direccionSede;
     }
 
     public int getIdAdministrador() {
@@ -66,6 +76,7 @@ public class Sede {
         this.idAdministrador = idAdministrador;
     }
 
+    
     
   
 }

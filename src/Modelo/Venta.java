@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -13,15 +10,15 @@ import java.util.Date;
 public class Venta {
     private int numero_factura;
     private Date fecha;
-    private Usuario quienCompro;
-    private Usuario quienAtendio;
-    private Moto[] motosVenta;
+    private Usuario cliente;
+    private Usuario vendedor;
+    private List<Moto> motosVenta;
 
-    public Venta(int numeroFactura, Date fecha, Usuario quienCompro, Usuario quienAtendio, Moto[] motosVenta) {
+    public Venta(int numeroFactura, Date fecha, Usuario quienCompro, Usuario quienAtendio, List<Moto> motosVenta) {
         this.numero_factura = numeroFactura;
         this.fecha = fecha;
-        this.quienCompro = quienCompro;
-        this.quienAtendio = quienAtendio;
+        this.cliente = quienCompro;
+        this.vendedor = quienAtendio;
         this.motosVenta = motosVenta;
     }
 
@@ -44,31 +41,35 @@ public class Venta {
         this.fecha = fecha;
     }
 
-    public Usuario getQuienCompro() {
-        return quienCompro;
+    public Usuario getCliente() {
+        return cliente;
     }
 
-    public void setQuienCompro(Usuario quienCompro) {
-        this.quienCompro = quienCompro;
+    public void setCliente(Usuario cliente) {
+        this.cliente = cliente;
     }
 
-    public Usuario getQuienAtendio() {
-        return quienAtendio;
+    public Usuario getVendedor() {
+        return vendedor;
     }
 
-    public void setQuienAtendio(Usuario quienAtendio) {
-        this.quienAtendio = quienAtendio;
+    public void setVendedor(Usuario vendedor) {
+        this.vendedor = vendedor;
     }
 
-    public Moto[] getMotosVenta() {
+    public List<Moto> getMotosVenta() {
         return motosVenta;
     }
 
-    public void setMotosVenta(Moto[] motosVenta) {
+    public void setMotosVenta(List<Moto> motosVenta) {
         this.motosVenta = motosVenta;
     }
-    
-    
-            
-    
+
+    public void agregarMoto(Moto moto) {
+        this.motosVenta.add(moto);
+    }
+
+    public void eliminarMoto(Moto moto) {
+        this.motosVenta.remove(moto);
+    }
 }

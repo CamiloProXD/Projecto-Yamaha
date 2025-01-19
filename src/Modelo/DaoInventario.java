@@ -14,20 +14,16 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-public class DaoSede extends Conexion {
+public class DaoInventario extends Conexion {
 
-    public boolean agregar(Sede s) {
+    public boolean agregar(Inventario i) {
         Connection cnx = getConexion();
-        String stc = "INSERT INTO sucursales (sucursal_id, inventario_id, nombre_sucursal, municipio, administrador_id, direccion_sucursal) VALUES (?,?,?,?,?,?)";
+        String stc = "INSERT INTO inventarios (inventario_id, cantidad) VALUES (?,?,?,?,?,?)";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(s.getIdSede()));
-            pst.setString(2, Integer.toString(s.getInventario_id()));
-            pst.setString(3, s.getNombreSede());
-            pst.setString(4, s.getMunicipio());
-            pst.setString(5, Integer.toString(s.getIdAdministrador()));
-            pst.setString(6, s.getDireccionSede());
+            pst.setString(1, Integer.toString(i.getInventarioId()));
+            pst.setString(2, Integer.toString(i.getCantidad()));
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -37,19 +33,15 @@ public class DaoSede extends Conexion {
 
         return false;
     }
-    
-    public boolean actualizar(Sede s) {
+
+    public boolean actualizar(Inventario i) {
         Connection cnx = getConexion();
-        String stc = "UPDATE sucursales SET inventario_id=?, nombre_sucursal=?, municipio=?, administrador_id=?, direccion_sucursal=? WHERE sucursal_id=?";
+        String stc = "UPDATE inventarios SET cantidad=? WHERE inventario_id=?";
         PreparedStatement pst;
         try {
-            pst = cnx.prepareStatement(stc);           
-            pst.setString(1, Integer.toString(s.getInventario_id()));
-            pst.setString(2, s.getNombreSede());
-            pst.setString(3, s.getMunicipio());
-            pst.setString(4, Integer.toString(s.getIdAdministrador()));
-            pst.setString(5, s.getDireccionSede());
-            pst.setString(6, Integer.toString(s.getIdSede())); 
+            pst = cnx.prepareStatement(stc);
+            pst.setString(1, Integer.toString(i.getCantidad()));
+            pst.setString(2, Integer.toString(i.getInventarioId()));
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -58,22 +50,18 @@ public class DaoSede extends Conexion {
         }
         return false;
     }
-    
-    public boolean consultar(Sede s) {
+
+    public boolean consultar(Inventario i) {
         Connection cnx = getConexion();
-        String stc = "SELECT * FROM sucursales WHERE sucursal_id=?";
+        String stc = "SELECT * FROM inventarios WHERE inventario_id=?";
         PreparedStatement pst;
         ResultSet rst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(s.getIdSede()));
+            pst.setString(1, Integer.toString(i.getInventarioId()));
             rst = pst.executeQuery();
             if (rst.next()) {
-                s.setInventario_id(Integer.parseInt(rst.getString("inventario_id")));
-                s.setNombreSede(rst.getString("nombre_sucursal"));
-                s.setMunicipio(rst.getString("municipio"));
-                s.setIdAdministrador(Integer.parseInt(rst.getString("administrador_id")));
-                s.setDireccionSede(rst.getString("direccion_sucursal"));
+                i.setCantidad(Integer.parseInt(rst.getString("cantidad")));
             }
             return true;
         } catch (SQLException ex) {
@@ -83,13 +71,13 @@ public class DaoSede extends Conexion {
         return false;
     }
 
-    public boolean eliminar(Sede s) {
+    public boolean eliminar(Inventario i) {
         Connection cnx = getConexion();
-        String stc = "DELETE FROM sucursales WHERE sucursal_id=?)";
+        String stc = "DELETE FROM inventarios WHERE inventario_id=?)";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(s.getIdSede()));
+            pst.setString(1, Integer.toString(i.getInventarioId()));
             pst.execute();
             return true;
         } catch (SQLException ex) {

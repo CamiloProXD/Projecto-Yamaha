@@ -17,15 +17,15 @@ import javax.swing.JOptionPane;
 public class DaoPersona extends Conexion {
     public boolean agregar(Persona p){
         Connection cnx= getConexion();
-        String stc = "INSERT INTO personas (persona_id,nombres,apellidos,numero_telefonico,email,direccion) VALUES (?,?,?,?,?,?)";
+        String stc = "INSERT INTO personas (persona_id,nombres,apellidos,email,numero_telefonico,direccion) VALUES (?,?,?,?,?,?)";
         PreparedStatement pst;
         try{
             pst = cnx.prepareStatement(stc);
             pst.setString(1, Integer.toString(p.getId()));
             pst.setString(2, p.getNombres());
             pst.setString(3, p.getApellidos());
-            pst.setString(4, p.getNumeroTelefonico());
-            pst.setString(5, p.getEmail());
+            pst.setString(4, p.getEmail());
+            pst.setString(5, p.getNumeroTelefonico());       
             pst.setString(6, p.getDireccion());
             pst.execute();
             return true;
@@ -39,14 +39,14 @@ public class DaoPersona extends Conexion {
     
     public boolean actualizar(Persona p){
         Connection cnx= getConexion();
-        String stc = "UPDATE personas SET nombres=?,apellidos=?,numero_telefonico=?,email=?,direccion=? WHERE persona_id=?";
+        String stc = "UPDATE personas SET nombres=?,apellidos=?,email=?,numero_telefonico=?,direccion=? WHERE persona_id=?";
         PreparedStatement pst;
         try{
             pst = cnx.prepareStatement(stc);  
             pst.setString(1, p.getNombres());
             pst.setString(2, p.getApellidos());
-            pst.setString(3, p.getNumeroTelefonico());
-            pst.setString(4, p.getEmail());
+            pst.setString(3, p.getEmail());
+            pst.setString(4, p.getNumeroTelefonico());
             pst.setString(5, p.getDireccion());
             pst.setString(6, Integer.toString(p.getId()));
             pst.execute();
@@ -70,8 +70,8 @@ public class DaoPersona extends Conexion {
             if(rst.next()){
                 p.setNombres(rst.getString("nombres"));
                 p.setApellidos(rst.getString("apellidos"));
-                p.setNumeroTelefonico(rst.getString("numero_telefonico"));
                 p.setEmail(rst.getString("email"));
+                p.setNumeroTelefonico(rst.getString("numero_telefonico"));
                 p.setDireccion(rst.getString("direccion"));
               
             }

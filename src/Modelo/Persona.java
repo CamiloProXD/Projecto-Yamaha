@@ -12,8 +12,8 @@ public class Persona {
     private int id;
     private String nombres;
     private String apellidos;
-    private String numeroTelefonico;
     private String email;
+    private String numeroTelefonico;
     private String direccion;
 
     public Persona(int id, String nombres, String apellidos, String numeroTelefonico, String email, String direccion) {

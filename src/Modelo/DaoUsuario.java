@@ -59,9 +59,9 @@ public class DaoUsuario extends Conexion {
     public boolean consultar(Usuario u) {
         Connection cnx = getConexion();
         String stc = "SELECT p.nombres, p.apellidos, p.numero_telefonico, p.email, p.direccion, u.username, u.password, u.rol, u.salario, u.sucursal_id"
-                + "FROM usuarios u "
+                + " FROM usuarios u "
                 + "INNER JOIN personas p ON p.persona_id = u.persona_id "
-                + "WHERE u.id_usuario = ?"; // Agregamos la condición para filtrar por idUsuario
+                + "WHERE u.id_usuario = ?"; 
         PreparedStatement pst;
         ResultSet rst;
         try {
@@ -94,7 +94,7 @@ public class DaoUsuario extends Conexion {
 
     public boolean eliminar(Usuario u) {
         Connection cnx = getConexion();
-        String stc = "DELETE FROM persona WHERE usuario_id=?)";
+        String stc = "DELETE FROM persona WHERE usuario_id=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);

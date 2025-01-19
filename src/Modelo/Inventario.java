@@ -9,23 +9,34 @@ package Modelo;
  * @author User
  */
 public class Inventario {
-    private Moto[] producto;
-    private int idSede;
+    private int inventarioId;
+    private int cantidad;
 
-    public Inventario(Moto[] producto) {
-        this.producto = producto;
+    public Inventario(int inventarioId, int cantidad) {
+        this.inventarioId = inventarioId;
+        this.cantidad = cantidad;
     }
 
     public Inventario() {
     }
 
-    public Moto[] getProducto() {
-        return producto;
+    public int getInventarioId() {
+        return inventarioId;
     }
 
-    public void setProducto(Moto[] producto) {
-        this.producto = producto;
+    public void setInventarioId(int inventarioId) {
+        this.inventarioId = inventarioId;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    
     
     
 }
