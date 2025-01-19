@@ -4,6 +4,7 @@
  */
 package ProyectoYamaha;
 
+import Controlador.CtlCerrarSesion;
 import Controlador.CtlViewPrincipal;
 import Modelo.DaoUsuario;
 import Modelo.Inventario;
@@ -12,8 +13,11 @@ import Modelo.Persona;
 import Modelo.Sede;
 import Modelo.Usuario;
 import Modelo.Venta;
+import Vista.CerrarSesion;
+import Vista.ViewAdministrador;
+import Vista.ViewCatalogoPrincipal;
 import Vista.ViewPrincipal;
-import Vista.*;
+import Vista.ViewVendedor;
 
 
 
@@ -46,11 +50,12 @@ public class ProyectoYamaha {
         ViewAdministrador vpa = new ViewAdministrador();
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
+        CerrarSesion cs = new CerrarSesion();
         
         
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
-        
+        CtlCerrarSesion ctlcs = new CtlCerrarSesion(vp, vpv, vpa, cs);
         
         vp.setVisible(true);
     }

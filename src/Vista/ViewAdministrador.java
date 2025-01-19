@@ -28,18 +28,18 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtbienvenida = new javax.swing.JLabel();
-        AgregarMoto = new javax.swing.JButton();
+        btnAgregarMoto = new javax.swing.JButton();
         TxtAgregar = new javax.swing.JLabel();
         btnVerInventario = new javax.swing.JButton();
         TxtInventario = new javax.swing.JLabel();
-        ConsultarVentas = new javax.swing.JButton();
+        btnAgregarVendedor = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         RegresaMenuPrincipal = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        ConsultarVentas1 = new javax.swing.JButton();
+        btnConsultarVentas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -53,15 +53,15 @@ public class ViewAdministrador extends javax.swing.JFrame {
         txtbienvenida.setText("Bienvenido Administrador");
         jPanel1.add(txtbienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 750, 40));
 
-        AgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        AgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
-        AgregarMoto.setAutoscrolls(true);
-        AgregarMoto.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarMoto.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        btnAgregarMoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/moto (1).png"))); // NOI18N
+        btnAgregarMoto.setAutoscrolls(true);
+        btnAgregarMoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarMotoActionPerformed(evt);
+                btnAgregarMotoActionPerformed(evt);
             }
         });
-        jPanel1.add(AgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 180, 150));
+        jPanel1.add(btnAgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 180, 150));
 
         TxtAgregar.setBackground(new java.awt.Color(0, 0, 0));
         TxtAgregar.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
@@ -81,13 +81,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
         TxtInventario.setText("Ver Inventario");
         jPanel1.add(TxtInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, -1, -1));
 
-        ConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconNuevoEmpleado.png"))); // NOI18N
-        ConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconNuevoEmpleado.png"))); // NOI18N
+        btnAgregarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarVentasActionPerformed(evt);
+                btnAgregarVendedorActionPerformed(evt);
             }
         });
-        jPanel1.add(ConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 440, 180, 150));
+        jPanel1.add(btnAgregarVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 440, 180, 150));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 24)); // NOI18N
@@ -148,13 +148,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
         jLabel5.setText("Consultar Ventas");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, 20));
 
-        ConsultarVentas1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
-        ConsultarVentas1.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
+        btnConsultarVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarVentas1ActionPerformed(evt);
+                btnConsultarVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(ConsultarVentas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 180, 150));
+        jPanel1.add(btnConsultarVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 180, 150));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,21 +170,21 @@ public class ViewAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMotoActionPerformed
+    private void btnAgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMotoActionPerformed
 
-    }//GEN-LAST:event_AgregarMotoActionPerformed
+    }//GEN-LAST:event_btnAgregarMotoActionPerformed
 
     private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
 
     }//GEN-LAST:event_btnVerInventarioActionPerformed
 
-    private void ConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentasActionPerformed
+    private void btnAgregarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVendedorActionPerformed
 
-    }//GEN-LAST:event_ConsultarVentasActionPerformed
+    }//GEN-LAST:event_btnAgregarVendedorActionPerformed
 
-    private void ConsultarVentas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarVentas1ActionPerformed
+    private void btnConsultarVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarVentasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarVentas1ActionPerformed
+    }//GEN-LAST:event_btnConsultarVentasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,13 +192,13 @@ public class ViewAdministrador extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarMoto;
-    private javax.swing.JButton ConsultarVentas;
-    private javax.swing.JButton ConsultarVentas1;
     private javax.swing.JButton RegresaMenuPrincipal;
     private javax.swing.JLabel TxtAgregar;
     private javax.swing.JLabel TxtInventario;
-    private javax.swing.JButton btnVerInventario;
+    public javax.swing.JButton btnAgregarMoto;
+    public javax.swing.JButton btnAgregarVendedor;
+    public javax.swing.JButton btnConsultarVentas;
+    public javax.swing.JButton btnVerInventario;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
