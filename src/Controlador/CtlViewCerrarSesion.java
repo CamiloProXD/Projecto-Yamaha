@@ -34,7 +34,7 @@ public class CtlViewCerrarSesion implements ActionListener {
         if (ev.getSource().equals(cs.btnSalir)) {
             System.exit(0);
         }
-        if (ev.getSource().equals(cs.btnMenuPrincipal)) {
+        //if (ev.getSource().equals(cs.btnMenuPrincipal)) {
             
             //if (Rol.equals("Admin")) {
             //   this.vpa.setVisible(true);
@@ -44,6 +44,6 @@ public class CtlViewCerrarSesion implements ActionListener {
             //    this.vuv.setVisible(true);
             //    this.cs.dispose();              
             //}
-        }
+        //}
     }
 }
