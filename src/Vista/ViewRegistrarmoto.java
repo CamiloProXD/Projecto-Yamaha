@@ -33,7 +33,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtModelo = new javax.swing.JTextField();
+        txtSerial = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtColor = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
@@ -42,6 +42,10 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         Regresar = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        txtModelo = new javax.swing.JTextField();
+        txtCilindraje = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,23 +106,23 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel8.setText("Tipo           :");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, -1, -1));
+        jLabel8.setText("Tipo:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel12.setText("Modelo      :");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
+        jLabel12.setText("Cilindraje:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
 
-        txtModelo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtModelo.addActionListener(new java.awt.event.ActionListener() {
+        txtSerial.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtSerial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtModeloActionPerformed(evt);
+                txtSerialActionPerformed(evt);
             }
         });
-        getContentPane().add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 250, -1));
+        getContentPane().add(txtSerial, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 250, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel13.setText("Color         :");
+        jLabel13.setText("Color:");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, -1, -1));
 
         txtColor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -127,17 +131,17 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
                 txtColorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 220, -1));
+        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 250, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel14.setText("Precio         :");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 390, -1, -1));
+        jLabel14.setText("Precio:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, -1, -1));
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, 250, -1));
+        getContentPane().add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 250, -1));
 
         txtPrecio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 390, 220, -1));
+        getContentPane().add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 390, 250, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -172,6 +176,30 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         getContentPane().add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel15.setText("Modelo:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
+
+        txtModelo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtModeloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 250, -1));
+
+        txtCilindraje.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtCilindraje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCilindrajeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCilindraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 450, 250, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel16.setText("Serial:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -183,9 +211,17 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtColorActionPerformed
 
+    private void txtSerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSerialActionPerformed
+
     private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtModeloActionPerformed
+
+    private void txtCilindrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCilindrajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCilindrajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +233,8 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
@@ -204,9 +242,11 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    public javax.swing.JTextField txtCilindraje;
     public javax.swing.JTextField txtColor;
     public javax.swing.JTextField txtModelo;
     public javax.swing.JTextField txtPrecio;
+    public javax.swing.JTextField txtSerial;
     public javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
