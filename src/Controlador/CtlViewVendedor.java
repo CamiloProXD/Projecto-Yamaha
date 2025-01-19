@@ -5,7 +5,7 @@
 package Controlador;
 
 import Vista.ViewCerrarSesion;
-import Vista.ViewFiltrarinventario;
+import Vista.ViewSucursal;
 import Vista.ViewRealizarVenta;
 import Vista.ViewVendedor;
 import java.awt.event.ActionEvent;
@@ -17,38 +17,36 @@ import java.awt.event.ActionListener;
  */
 public class CtlViewVendedor implements ActionListener {
     private ViewRealizarVenta vxRealizarVenta;
-    private ViewFiltrarinventario vxFiltrarInventario;
+    private ViewSucursal vxSucursal;
     private ViewVendedor vxVendedor;
     private ViewCerrarSesion vxCerrarSesion;
     
-    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewFiltrarinventario vxFiltrarInventario, ViewVendedor vxVendedor, ViewCerrarSesion vxCerrarSesion) {
+    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewSucursal vxSucursal, ViewVendedor vxVendedor, ViewCerrarSesion vxCerrarSesion) {
         this.vxRealizarVenta = vxRealizarVenta;
-        this.vxFiltrarInventario = vxFiltrarInventario;
+        this.vxSucursal = vxSucursal;
         this.vxVendedor = vxVendedor;
         this.vxCerrarSesion = vxCerrarSesion;
-        this.vxRealizarVenta.btnGenerarFactura.addActionListener(this);
-        this.vxFiltrarInventario.btnFiltrar.addActionListener(this);
+        
+       
         this.vxVendedor.btnConsultarinv.addActionListener(this);
         this.vxVendedor.btnRealizarven.addActionListener(this);
+        this.vxVendedor.btnCerrarSesion.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent ev){
-        if(ev.getSource().equals(vxCerrarSesion)){
-            vxCerrarSesion.setVisible(true);
+        if(ev.getSource().equals(vxVendedor.btnConsultarinv)){
+            vxSucursal.setVisible(true);
             this.vxVendedor.dispose();
         }
-        if(ev.getSource().equals(vxFiltrarInventario)){
-            vxFiltrarInventario.setVisible(true);
-            this.vxVendedor.dispose();
-        }
-        if(ev.getSource().equals(vxVendedor)){
-            vxVendedor.setVisible(true);
-            this.vxVendedor.dispose();
-        }
-        if(ev.getSource().equals(vxRealizarVenta)){
+        if(ev.getSource().equals(vxVendedor.btnRealizarven)){
             vxRealizarVenta.setVisible(true);
             this.vxVendedor.dispose();
         }
+        if(ev.getSource().equals(vxVendedor.btnCerrarSesion)){
+            vxCerrarSesion.setVisible(true);
+            this.vxVendedor.dispose();
+        }
+       
     }
 }

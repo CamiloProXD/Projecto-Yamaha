@@ -31,7 +31,7 @@ public class ViewVendedor extends javax.swing.JFrame {
         btnRealizarven = new Vista.MyButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        Regresar = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         btnConsultarinv1 = new javax.swing.JButton();
         btnRealizarven1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -84,7 +84,7 @@ public class ViewVendedor extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         btnConsultarinv1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Captura de pantalla 2025-01-16 153252.png"))); // NOI18N
 
@@ -140,7 +140,7 @@ public class ViewVendedor extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(30, 30, 30)
-                            .addComponent(Regresar))
+                            .addComponent(btnCerrarSesion))
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
@@ -167,7 +167,7 @@ public class ViewVendedor extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(130, 130, 130)
-                            .addComponent(Regresar)))
+                            .addComponent(btnCerrarSesion)))
                     .addGap(631, 631, 631)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
@@ -203,7 +203,7 @@ public class ViewVendedor extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Regresar;
+    public javax.swing.JButton btnCerrarSesion;
     public Vista.MyButton btnConsultarinv;
     private javax.swing.JButton btnConsultarinv1;
     public Vista.MyButton btnRealizarven;
