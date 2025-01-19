@@ -4,6 +4,8 @@
  */
 package ProyectoYamaha;
 
+import Controlador.CtlViewPrincipal;
+import Modelo.DaoUsuario;
 import Modelo.Inventario;
 import Modelo.Moto;
 import Modelo.Persona;
@@ -11,6 +13,7 @@ import Modelo.Sede;
 import Modelo.Usuario;
 import Modelo.Venta;
 import Vista.ViewPrincipal;
+import Vista.*;
 
 
 
@@ -34,14 +37,22 @@ public class ProyectoYamaha {
         Inventario inventario = new Inventario();
         
         //Dao
+        DaoUsuario daousuario = new DaoUsuario();
+        
         
         
         //Vistas
-        ViewPrincipal viewPrincipal = new ViewPrincipal();
+        ViewPrincipal vp = new ViewPrincipal();
+        ViewAdministrador vpa = new ViewAdministrador();
+        ViewVendedor vpv = new ViewVendedor();
+        ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
         
         
-        viewPrincipal.setResizable(false);
-        viewPrincipal.setVisible(true);
+        //Controladores
+        CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
+        
+        
+        vp.setVisible(true);
     }
     
 }
