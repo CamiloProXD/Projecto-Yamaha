@@ -106,11 +106,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btnCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CatalogoNegro.png"))); // NOI18N
         btnCatalogo.setBorder(null);
         btnCatalogo.setBorderPainted(false);
-        btnCatalogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCatalogoActionPerformed(evt);
-            }
-        });
         jPanel1.add(btnCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 690, 120, 120));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -165,10 +160,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void btnCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCatalogoActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -177,7 +168,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
-    public javax.swing.JButton btnCatalogo;
+    private javax.swing.JButton btnCatalogo;
     public Vista.MyButton btnEntrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

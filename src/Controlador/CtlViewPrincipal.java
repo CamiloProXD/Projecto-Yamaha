@@ -42,7 +42,6 @@ public class CtlViewPrincipal implements ActionListener {
         this.us = us;
 
         this.vp.btnEntrar.addActionListener(this);
-        this.vp.btnCatalogo.addActionListener(this);
     }
 
     @Override
@@ -86,10 +85,6 @@ public class CtlViewPrincipal implements ActionListener {
                 System.err.println("Error al consultar el usuario: " + ex.getMessage());
                 mensaje("Ocurrió un error al verificar las credenciales", "Error");
             }
-        }
-        if(ev.getSource().equals(vp.btnCatalogo)){
-            vcp.setVisible(true);
-            this.vp.dispose();
         }
     }
 
