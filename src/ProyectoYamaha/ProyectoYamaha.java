@@ -8,10 +8,12 @@ import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesion;
 import Controlador.CtlViewPrincipal;
+import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
 import Controlador.CtlViewRegresarDeportivas;
 import Controlador.CtlViewVendedor;
 import Modelo.DaoUsuario;
+import Modelo.DaoMoto;
 import Modelo.Inventario;
 import Modelo.Moto;
 import Modelo.Persona;
@@ -58,6 +60,7 @@ public class ProyectoYamaha {
         
         //Dao
         DaoUsuario daousuario = new DaoUsuario();
+        DaoMoto daomoto = new DaoMoto();
         
         
         
@@ -88,7 +91,7 @@ public class ProyectoYamaha {
         CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, cs);
         CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);
         CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
-        
+        CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, cs);
         
         vp.setVisible(true);
     }

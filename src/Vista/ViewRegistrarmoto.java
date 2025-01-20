@@ -40,7 +40,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         txtPrecio = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        Regresar = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         txtModelo = new javax.swing.JTextField();
         txtCilindraje = new javax.swing.JTextField();
@@ -155,8 +155,8 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 800, 1300, -1));
 
-        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-        getContentPane().add(Regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel15.setText("Modelo:");
@@ -228,8 +228,8 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Regresar;
     public Vista.MyButton btnRegistrar;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

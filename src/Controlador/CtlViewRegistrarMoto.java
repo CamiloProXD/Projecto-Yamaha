@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.DaoMoto;
 import Modelo.Moto;
 import Vista.ViewRegistrarmoto;
+import Vista.ViewCerrarSesion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -15,17 +16,25 @@ import javax.swing.JOptionPane;
  *
  * @author grabieloX19X
  */
-public class CtlRegistrarMoto implements ActionListener{
+public class CtlViewRegistrarMoto implements ActionListener{
     private DaoMoto daoMoto;
     private ViewRegistrarmoto vx;
     private Moto moto;
+    private ViewCerrarSesion vcs;
 
-    public CtlRegistrarMoto(DaoMoto dMoto, ViewRegistrarmoto vx, Moto moto) {
-        this.daoMoto = dMoto;
+    public CtlViewRegistrarMoto(DaoMoto daoMoto, ViewRegistrarmoto vx, Moto moto, ViewCerrarSesion vcs ) {
+        this.daoMoto = daoMoto;
         this.vx = vx;
         this.moto = moto;
+        this.vcs = vcs;
         this.vx.btnRegistrar.addActionListener(this);
+        this.vx.btnRegresar.addActionListener(this);
     }
+
+    
+    
+        
+    
     
     @Override
     public void actionPerformed(ActionEvent ev) {
@@ -43,6 +52,10 @@ public class CtlRegistrarMoto implements ActionListener{
                 mensaje("Moto NO registrada!!!!","Agregar!!!");
                 limpiar();
             }
+        }
+        if(ev.getSource().equals(vx.btnRegresar)){
+           vcs.setVisible(true);
+           this.vx.dispose(); 
         }
     }
     
