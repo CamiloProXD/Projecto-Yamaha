@@ -15,22 +15,22 @@ import Vista.ViewCatalogoSuperDep;
  */
 public class CtlViewRegresarSuperD implements ActionListener{
     
-    private ViewCatalogoSuperDep vcsd;
+    private ViewCatalogoSuperDep vsd;
     private ViewCatalogoPrincipal vcp;
 
     public CtlViewRegresarSuperD(ViewCatalogoSuperDep vcsd, ViewCatalogoPrincipal vcp) {
-        this.vcsd = vcsd;
+        this.vsd = vcsd;
         this.vcp = vcp;
         
-        this.vcsd.btnVolversuper.addActionListener(this);
+        this.vsd.btnVolversuper.addActionListener(this);
     }
     
    
     @Override
     public void actionPerformed(ActionEvent ev) {
-        if(ev.getSource().equals(vcsd.btnVolversuper)){
+        if(ev.getSource().equals(vsd.btnVolversuper)){
             vcp.setVisible(true);
-            vcsd.dispose();
+            vsd.dispose();
        }
 
 
