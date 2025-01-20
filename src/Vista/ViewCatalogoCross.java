@@ -30,6 +30,7 @@ public class ViewCatalogoCross extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        btnRegresarCros = new Vista.MyButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -72,15 +73,38 @@ public class ViewCatalogoCross extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 0, 0));
 
+        btnRegresarCros.setBackground(new java.awt.Color(227, 14, 21));
+        btnRegresarCros.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegresarCros.setForeground(new java.awt.Color(242, 242, 242));
+        btnRegresarCros.setText("Volver");
+        btnRegresarCros.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnRegresarCros.setBorderPainted(false);
+        btnRegresarCros.setColor(new java.awt.Color(227, 14, 21));
+        btnRegresarCros.setColorClick(new java.awt.Color(227, 14, 21));
+        btnRegresarCros.setColorOver(new java.awt.Color(167, 14, 21));
+        btnRegresarCros.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnRegresarCros.setRadius(30);
+        btnRegresarCros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarCrosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btnRegresarCros, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1151, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(btnRegresarCros, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 100));
@@ -291,6 +315,10 @@ public class ViewCatalogoCross extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRegresarCrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarCrosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarCrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +356,7 @@ public class ViewCatalogoCross extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public Vista.MyButton btnRegresarCros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
