@@ -18,7 +18,7 @@ public class DaoMoto extends Conexion {
 
     public boolean agregar(Moto m) {
         Connection cnx = getConexion();
-        String stc = "INSERT INTO motos (serial_moto,color_moto,cilindraje,modelo,precio_unitario,tipo_moto) VALUES (?,?,?,?,?,?)";
+        String stc = "INSERT INTO motos (serial_moto,color_moto,cilindraje,modelo,precio_unitario,tipo_moto,sucursal_id) VALUES (?,?,?,?,?,?,?)";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
@@ -28,6 +28,7 @@ public class DaoMoto extends Conexion {
             pst.setString(4, m.getModelo());
             pst.setString(5, Double.toString(m.getPrecioUnitario()));
             pst.setString(6, m.getTipoMoto());
+            pst.setInt(7, m.getSedeId());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -40,7 +41,7 @@ public class DaoMoto extends Conexion {
 
     public boolean actualizar(Moto m) {
         Connection cnx = getConexion();
-        String stc = "UPDATE motos SET color_moto=?,cilindraje=?,modelo=?,precio_unitario=?,tipo_moto=? WHERE serial_moto=?";
+        String stc = "UPDATE motos SET color_moto=?,cilindraje=?,modelo=?,precio_unitario=?,tipo_moto=?, sucursal_id WHERE serial_moto=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
@@ -50,6 +51,7 @@ public class DaoMoto extends Conexion {
             pst.setString(4, Double.toString(m.getPrecioUnitario()));
             pst.setString(5, m.getTipoMoto());
             pst.setString(6, m.getSerialMoto());
+            pst.setInt(7, m.getSedeId());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -74,6 +76,7 @@ public class DaoMoto extends Conexion {
                 m.setModelo(rst.getString("modelo"));
                 m.setPrecioUnitario(Double.parseDouble(rst.getString("precio_unitario")));
                 m.setTipoMoto(rst.getString("tipo_moto"));
+                m.setSedeId(rst.getInt("sucursal_id"));
 
             }
             return true;

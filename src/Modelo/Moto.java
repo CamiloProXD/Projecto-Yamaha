@@ -15,8 +15,9 @@ public class Moto {
     private String modelo;
     private double precioUnitario;
     private String tipoMoto;
+    private int sedeId;
 
-    public Moto(String serialMoto, String color, int cilindraje, String modelo, double precioUnitario, String tipoMoto) {
+    public Moto(String serialMoto, String color, int cilindraje, String modelo, double precioUnitario, String tipoMoto, int sedeId) {
         this.serialMoto = serialMoto;
         this.color = color;
         this.cilindraje = cilindraje;
@@ -76,5 +77,14 @@ public class Moto {
         this.tipoMoto = tipoMoto;
     }
 
+    public int getSedeId() {
+        return sedeId;
+    }
+
+    public void setSedeId(int sedeId) {
+        this.sedeId = sedeId;
+    }
+
+    
     
 }

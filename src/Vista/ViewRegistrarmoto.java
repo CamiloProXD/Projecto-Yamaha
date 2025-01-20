@@ -46,6 +46,8 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         txtCilindraje = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         btnRegistrar = new Vista.MyButton();
+        txtSucursal = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -200,6 +202,18 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, 171, 60));
 
+        txtSucursal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSucursalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, 250, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel17.setText("Sucursal id:");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -223,6 +237,10 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void txtSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSucursalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSucursalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +253,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
@@ -247,6 +266,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     public javax.swing.JTextField txtModelo;
     public javax.swing.JTextField txtPrecio;
     public javax.swing.JTextField txtSerial;
+    public javax.swing.JTextField txtSucursal;
     public javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
