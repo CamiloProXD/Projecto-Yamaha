@@ -6,7 +6,7 @@ package ProyectoYamaha;
 
 import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewCatalogoPrincipal;
-import Controlador.CtlViewCerrarSesion;
+import Controlador.CtlViewCerrarSesionAdministrado;
 import Controlador.CtlViewPrincipal;
 import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
@@ -29,7 +29,7 @@ import Vista.ViewCatalogoPrincipal;
 import Vista.ViewCatalogoSuperDep;
 import Vista.ViewCatalogoTodoterreno;
 import Vista.ViewCatalogoUrbanas;
-import Vista.ViewCerrarSesion;
+import Vista.ViewCerrarSesionAdmin;
 import Vista.ViewConsultarVentas;
 import Vista.ViewPrincipal;
 import Vista.ViewRealizarVenta;
@@ -69,7 +69,7 @@ public class ProyectoYamaha {
         ViewAdministrador vpa = new ViewAdministrador();
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
-        ViewCerrarSesion cs = new ViewCerrarSesion();
+        ViewCerrarSesionAdmin cs = new ViewCerrarSesionAdmin();
         ViewCatalogoDeportivas vcd = new ViewCatalogoDeportivas();
         ViewCatalogoSuperDep vsd = new ViewCatalogoSuperDep();
         ViewCatalogoAutomaticas vca = new ViewCatalogoAutomaticas();
@@ -86,7 +86,7 @@ public class ProyectoYamaha {
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
         CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vs, vcv, vav, cs);
-        CtlViewCerrarSesion ctlcs = new CtlViewCerrarSesion(vp, vpv, vpa, cs);
+        CtlViewCerrarSesionAdministrado ctlcs = new CtlViewCerrarSesionAdministrado(vp, vpa, cs);
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
         CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, cs);
         CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);

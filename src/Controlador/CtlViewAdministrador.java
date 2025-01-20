@@ -6,7 +6,7 @@ package Controlador;
 
 import Vista.ViewAdministrador;
 import Vista.ViewAgregarVendedor;
-import Vista.ViewCerrarSesion;
+import Vista.ViewCerrarSesionAdmin;
 import Vista.ViewConsultarVentas;
 import Vista.ViewRegistrarmoto;
 import Vista.ViewSucursal;
@@ -24,9 +24,9 @@ public class CtlViewAdministrador implements ActionListener{
     private ViewSucursal vs;
     private ViewConsultarVentas vcv;
     private ViewAgregarVendedor vav;
-    private ViewCerrarSesion vcs;
+    private ViewCerrarSesionAdmin vcs;
 
-    public CtlViewAdministrador(ViewAdministrador vpa, ViewRegistrarmoto vrm, ViewSucursal vs, ViewConsultarVentas vcv, ViewAgregarVendedor vav, ViewCerrarSesion vcs) {
+    public CtlViewAdministrador(ViewAdministrador vpa, ViewRegistrarmoto vrm, ViewSucursal vs, ViewConsultarVentas vcv, ViewAgregarVendedor vav, ViewCerrarSesionAdmin vcs) {
         this.vpa = vpa;
         this.vrm = vrm;
         this.vs = vs;
