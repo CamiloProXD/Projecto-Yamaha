@@ -4,18 +4,22 @@
  */
 package Vista;
 
+import java.util.List;
+
 /**
  *
  * @author juanc
  */
-public class PostViewSucursal extends javax.swing.JFrame {
+public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form PstViewScucursal
      */
-    public PostViewSucursal() {
+    public ViewVerInventarioSucursalAdmin() {
         initComponents();
     }
+   
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,15 +34,16 @@ public class PostViewSucursal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Administrador = new javax.swing.JTable();
+        tablaVentasSucursal = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaInventarioSucursal = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        Regresar = new javax.swing.JButton();
-        VolverMenuAdmin = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSalir = new Vista.MyButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -57,23 +62,23 @@ public class PostViewSucursal extends javax.swing.JFrame {
         jLabel2.setText("Inventario Sucursal");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 447, -1, -1));
 
-        Administrador.setModel(new javax.swing.table.DefaultTableModel(
+        tablaVentasSucursal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Vendedor", "cantidad de ventas", "valor total de las ventas", "Modelo", "modelos vendidos"
+                "Vendedor", "cantidad de ventas", "valor total de las ventas", "Motos Vendidas"
             }
         ));
-        jScrollPane1.setViewportView(Administrador);
+        jScrollPane1.setViewportView(tablaVentasSucursal);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 161, 940, 92));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 161, 970, 100));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 342, 1222, 14));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaInventarioSucursal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -84,34 +89,28 @@ public class PostViewSucursal extends javax.swing.JFrame {
                 "Modelo", "Color", "Cantidad"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(tablaInventarioSucursal);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 774, 92));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 92));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
-        Regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-
-        VolverMenuAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Regresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(VolverMenuAdmin)
-                .addGap(25, 25, 25))
+                .addGap(17, 17, 17)
+                .addComponent(btnCerrarSesion)
+                .addContainerGap(1245, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VolverMenuAdmin)
-                    .addComponent(Regresar))
+                .addComponent(btnCerrarSesion)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -149,6 +148,8 @@ public class PostViewSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 801, 147, 29));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 970, 100));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -174,9 +175,7 @@ public class PostViewSucursal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Administrador;
-    private javax.swing.JButton Regresar;
-    private javax.swing.JButton VolverMenuAdmin;
+    public javax.swing.JButton btnCerrarSesion;
     public Vista.MyButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -184,8 +183,15 @@ public class PostViewSucursal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable2;
+    public javax.swing.JTable tablaInventarioSucursal;
+    public javax.swing.JTable tablaVentasSucursal;
     // End of variables declaration//GEN-END:variables
+
+
+
+   
 }

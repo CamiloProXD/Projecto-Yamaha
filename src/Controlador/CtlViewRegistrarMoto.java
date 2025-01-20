@@ -46,6 +46,7 @@ public class CtlViewRegistrarMoto implements ActionListener{
             moto.setPrecioUnitario(Double.parseDouble(vx.txtPrecio.getText()));
             moto.setTipoMoto(vx.txtTipo.getText());
             moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
+            moto.setNombre(vx.txtNombre.getText());
             if(daoMoto.agregar(moto)){
                 mensaje("Moto registrada exitosamente!!!!","Agregar!!!");
                 limpiar();
@@ -70,5 +71,6 @@ public class CtlViewRegistrarMoto implements ActionListener{
         vx.txtPrecio.setText(null);
         vx.txtSerial.setText(null);
         vx.txtTipo.setText(null);
+        vx.txtNombre.setText(null);
     }
 }

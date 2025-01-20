@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,7 +20,7 @@ public class DaoMoto extends Conexion {
 
     public boolean agregar(Moto m) {
         Connection cnx = getConexion();
-        String stc = "INSERT INTO motos (serial_moto,color_moto,cilindraje,modelo,precio_unitario,tipo_moto,sucursal_id) VALUES (?,?,?,?,?,?,?)";
+        String stc = "INSERT INTO motos (serial_moto,color_moto,cilindraje,modelo,precio_unitario,tipo_moto,sucursal_id,nombre) VALUES (?,?,?,?,?,?,?,?)";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
@@ -29,6 +31,7 @@ public class DaoMoto extends Conexion {
             pst.setString(5, Double.toString(m.getPrecioUnitario()));
             pst.setString(6, m.getTipoMoto());
             pst.setInt(7, m.getSedeId());
+            pst.setString(8, m.getNombre());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -41,7 +44,7 @@ public class DaoMoto extends Conexion {
 
     public boolean actualizar(Moto m) {
         Connection cnx = getConexion();
-        String stc = "UPDATE motos SET color_moto=?,cilindraje=?,modelo=?,precio_unitario=?,tipo_moto=?, sucursal_id WHERE serial_moto=?";
+        String stc = "UPDATE motos SET color_moto=?,cilindraje=?,modelo=?,precio_unitario=?,tipo_moto=?, sucursal_id,nombre WHERE serial_moto=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
@@ -52,6 +55,7 @@ public class DaoMoto extends Conexion {
             pst.setString(5, m.getTipoMoto());
             pst.setString(6, m.getSerialMoto());
             pst.setInt(7, m.getSedeId());
+            pst.setString(8, m.getNombre());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -77,6 +81,7 @@ public class DaoMoto extends Conexion {
                 m.setPrecioUnitario(Double.parseDouble(rst.getString("precio_unitario")));
                 m.setTipoMoto(rst.getString("tipo_moto"));
                 m.setSedeId(rst.getInt("sucursal_id"));
+                m.setNombre(rst.getString("nombre"));
 
             }
             return true;
@@ -101,6 +106,33 @@ public class DaoMoto extends Conexion {
             mensaje("Error al ejecutar el DELETE", "eliminar!!!");
         }
         return false;
+    }
+    
+     public List<Moto> obtenerPorSucursal(int idSucursal) {
+        Connection cnx = getConexion();
+        String stc = "SELECT nombre, modelo, color, cantidad FROM motos WHERE sucursal_id = ?";
+        PreparedStatement pst;
+        ResultSet rst;
+        List<Moto> motos = new ArrayList<>();
+
+        try {
+            pst = cnx.prepareStatement(stc);
+            pst.setInt(1, idSucursal);
+            rst = pst.executeQuery();
+
+            while (rst.next()) {
+                Moto moto = new Moto();
+                moto.setNombre(rst.getString("nombre"));
+                moto.setModelo(rst.getString("modelo"));
+                moto.setColor(rst.getString("color"));
+
+                motos.add(moto); 
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el SELECT -> " + ex.getMessage());
+        }
+
+        return motos;
     }
 
     public void mensaje(String msg, String title) {

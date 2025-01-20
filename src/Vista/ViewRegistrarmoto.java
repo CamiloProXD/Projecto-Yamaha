@@ -48,6 +48,8 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         btnRegistrar = new Vista.MyButton();
         txtSucursal = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -208,11 +210,18 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
                 txtSucursalActionPerformed(evt);
             }
         });
-        getContentPane().add(txtSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, 250, -1));
+        getContentPane().add(txtSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 590, 250, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel17.setText("Sucursal id:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 600, -1, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 590, -1, -1));
+
+        txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 590, 250, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("Nombre:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -257,6 +266,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -264,6 +274,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     public javax.swing.JTextField txtCilindraje;
     public javax.swing.JTextField txtColor;
     public javax.swing.JTextField txtModelo;
+    public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtPrecio;
     public javax.swing.JTextField txtSerial;
     public javax.swing.JTextField txtSucursal;
