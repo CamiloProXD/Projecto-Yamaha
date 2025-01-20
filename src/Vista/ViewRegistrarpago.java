@@ -28,7 +28,7 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        regresarBienvenidoadmin = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtNumfactura = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -43,10 +43,10 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("Numero De Factura       :");
 
-        regresarBienvenidoadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-        regresarBienvenidoadmin.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                regresarBienvenidoadminActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
 
@@ -120,7 +120,7 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(regresarBienvenidoadmin)
+                        .addComponent(btnRegresar)
                         .addGap(351, 351, 351)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -146,7 +146,7 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(regresarBienvenidoadmin)
+                    .addComponent(btnRegresar)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,9 +178,9 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void regresarBienvenidoadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarBienvenidoadminActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_regresarBienvenidoadminActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void txtMontopagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontopagoActionPerformed
         // TODO add your handling code here:
@@ -197,6 +197,7 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public Vista.MyButton btnConfirmarpago;
+    public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -204,7 +205,6 @@ public class ViewRegistrarpago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JButton regresarBienvenidoadmin;
     public javax.swing.JTextField txtMontopago;
     public javax.swing.JTextField txtNumfactura;
     // End of variables declaration//GEN-END:variables
