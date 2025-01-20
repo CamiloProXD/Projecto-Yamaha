@@ -33,9 +33,6 @@ public class CtlViewRegistrarMoto implements ActionListener{
 
     
     
-        
-    
-    
     @Override
     public void actionPerformed(ActionEvent ev) {
         if(ev.getSource().equals(vx.btnRegistrar)){
@@ -72,5 +69,6 @@ public class CtlViewRegistrarMoto implements ActionListener{
         vx.txtSerial.setText(null);
         vx.txtTipo.setText(null);
         vx.txtNombre.setText(null);
+        vx.txtSucursal.setText(null);
     }
 }

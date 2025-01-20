@@ -4,7 +4,6 @@
  */
 package Vista;
 
-import javax.swing.JScrollPane;
 
 /**
  *
@@ -15,12 +14,10 @@ public class ViewSucursalAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form ViewSucusall
      */
-    public JScrollPane scrollPane;
+    
 
     public ViewSucursalAdministrador() {
         initComponents();
-        scrollPane = new JScrollPane();
-        add(scrollPane); 
     }
 
     /**
@@ -162,7 +159,7 @@ public class ViewSucursalAdministrador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable tablaVerSucursales;
     public javax.swing.JTextField txtIdSucursal;

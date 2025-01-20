@@ -14,6 +14,7 @@ import Controlador.CtlViewRegresarAutomaticas;
 import Controlador.CtlViewRegresarDeportivas;
 import Controlador.CtlViewSucursalAdministrador;
 import Controlador.CtlViewVendedor;
+import Controlador.CtlViewVerInventarioSucursalAdmin;
 import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
 import Modelo.DaoSede;
@@ -104,6 +105,7 @@ public class ProyectoYamaha {
         CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
         CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, vcsa);
         CtlViewSucursalAdministrador ctlvsa = new CtlViewSucursalAdministrador(vsa, vvisa, vcsa, daosede, daousuario);
+        CtlViewVerInventarioSucursalAdmin ctlvisa = new CtlViewVerInventarioSucursalAdmin(vvisa, vcsa, 1);
         
         vp.setVisible(true);
     }

@@ -5,6 +5,7 @@
 package Vista;
 
 import java.util.List;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -15,8 +16,12 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
     /**
      * Creates new form PstViewScucursal
      */
+
+    
     public ViewVerInventarioSucursalAdmin() {
+        
         initComponents();
+        
     }
    
 
@@ -33,17 +38,15 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaVentasSucursal = new javax.swing.JTable();
         jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tablaInventarioSucursal = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        btnSalir = new Vista.MyButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaInventarioSucursal = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaVentasSucursal = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,37 +64,7 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 24)); // NOI18N
         jLabel2.setText("Inventario Sucursal");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 447, -1, -1));
-
-        tablaVentasSucursal.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Vendedor", "cantidad de ventas", "valor total de las ventas", "Motos Vendidas"
-            }
-        ));
-        jScrollPane1.setViewportView(tablaVentasSucursal);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 161, 970, 100));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 342, 1222, 14));
-
-        tablaInventarioSucursal.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Modelo", "Color", "Cantidad"
-            }
-        ));
-        jScrollPane3.setViewportView(tablaInventarioSucursal);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 92));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -131,25 +104,37 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 848, 1300, -1));
 
-        btnSalir.setBackground(new java.awt.Color(227, 14, 21));
-        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSalir.setForeground(new java.awt.Color(242, 242, 242));
-        btnSalir.setText("Salir");
-        btnSalir.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnSalir.setBorderPainted(false);
-        btnSalir.setColor(new java.awt.Color(227, 14, 21));
-        btnSalir.setColorClick(new java.awt.Color(227, 14, 21));
-        btnSalir.setColorOver(new java.awt.Color(167, 14, 21));
-        btnSalir.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnSalir.setRadius(30);
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+        tablaInventarioSucursal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Modelo", "Color", "Cantidad"
             }
-        });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 801, 147, 29));
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 970, 100));
+        ));
+        jScrollPane3.setViewportView(tablaInventarioSucursal);
+
+        jScrollPane4.setViewportView(jScrollPane3);
+
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 90));
+
+        tablaVentasSucursal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Vendedor", "cantidad de ventas", "valor total de las ventas", "Motos Vendidas"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaVentasSucursal);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 830, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,10 +150,6 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -176,14 +157,12 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCerrarSesion;
-    public Vista.MyButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator2;

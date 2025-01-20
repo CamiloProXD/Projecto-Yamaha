@@ -90,32 +90,28 @@ public class DaoInventario extends Conexion {
     }
 
     public List<Object[]> obtenerInventarioPorSucursal(int idSucursal) {
-        Connection cnx = getConexion();
-        String stc = "SELECT m.nombre, m.modelo, m.color, SUM(i.cantidad) as total_cantidad " +
-                     "FROM inventario i " +
-                     "JOIN motos m ON i.id_moto = m.id_moto " +
-                     "WHERE i.id_sucursal = ? " +
-                     "GROUP BY m.nombre, m.modelo, m.color";
-        PreparedStatement pst;
-        ResultSet rst;
         List<Object[]> inventario = new ArrayList<>();
+        String query = "SELECT m.nombre, m.modelo, m.color_moto, SUM(i.cantidad_motos) as totalCantidad "
+                + "FROM inventarios i "
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
+                + "WHERE i.sucursal_id = ? "
+                + "GROUP BY m.nombre, m.modelo, m.color_moto";
 
-        try {
-            pst = cnx.prepareStatement(stc);
-            pst.setInt(1, idSucursal);
-            rst = pst.executeQuery();
+        try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
+            stmt.setInt(1, idSucursal);
+            ResultSet rs = stmt.executeQuery();
 
-            while (rst.next()) {
-                Object[] fila = new Object[4];
-                fila[0] = rst.getString("nombre");
-                fila[1] = rst.getString("modelo");
-                fila[2] = rst.getString("color");
-                fila[3] = rst.getInt("total_cantidad");
-
-                inventario.add(fila); // Agregar fila al resultado
+            while (rs.next()) {
+                inventario.add(new Object[]{
+                    rs.getString("nombre"),
+                    rs.getInt("modelo"), 
+                    rs.getString("color_moto"),
+                    rs.getInt("totalCantidad")
+                });
             }
-        } catch (SQLException ex) {
-            System.err.println("Error al obtener inventario -> " + ex.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta -> " + e);
+            mensaje("Error al ejecutar la consulta", "Consultar Inventario!!!");
         }
 
         return inventario;

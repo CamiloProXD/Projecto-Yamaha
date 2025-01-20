@@ -85,7 +85,7 @@ public class CtlViewSucursalAdministrador implements ActionListener {
                 Sede sucursal = daosede.obtenerPorId(idSucursal);
 
                 if (sucursal != null) {
-                    CtlViewVerInventarioSucursalAdmin ctlInventario = new CtlViewVerInventarioSucursalAdmin(vvisa, idSucursal);
+                    CtlViewVerInventarioSucursalAdmin ctlInventario = new CtlViewVerInventarioSucursalAdmin(vvisa, vcs, idSucursal);
                     vvisa.setVisible(true);
                     vsa.dispose();
                 } else {

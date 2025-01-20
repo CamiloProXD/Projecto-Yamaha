@@ -110,7 +110,7 @@ public class DaoMoto extends Conexion {
     
      public List<Moto> obtenerPorSucursal(int idSucursal) {
         Connection cnx = getConexion();
-        String stc = "SELECT nombre, modelo, color, cantidad FROM motos WHERE sucursal_id = ?";
+        String stc = "SELECT nombre, modelo, color_moto, cantidad FROM motos WHERE sucursal_id = ?";
         PreparedStatement pst;
         ResultSet rst;
         List<Moto> motos = new ArrayList<>();
@@ -124,7 +124,7 @@ public class DaoMoto extends Conexion {
                 Moto moto = new Moto();
                 moto.setNombre(rst.getString("nombre"));
                 moto.setModelo(rst.getString("modelo"));
-                moto.setColor(rst.getString("color"));
+                moto.setColor(rst.getString("color_moto"));
 
                 motos.add(moto); 
             }
