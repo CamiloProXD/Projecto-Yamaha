@@ -7,6 +7,7 @@ package ProyectoYamaha;
 import Controlador.CtlViewAdministrador;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesionAdministrado;
+import Controlador.CtlViewCerrarSesionEmpleado;
 import Controlador.CtlViewPrincipal;
 import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
@@ -30,6 +31,7 @@ import Vista.ViewCatalogoSuperDep;
 import Vista.ViewCatalogoTodoterreno;
 import Vista.ViewCatalogoUrbanas;
 import Vista.ViewCerrarSesionAdmin;
+import Vista.ViewCerrarSesionEmpleado;
 import Vista.ViewConsultarVentas;
 import Vista.ViewPrincipal;
 import Vista.ViewRealizarVenta;
@@ -69,7 +71,8 @@ public class ProyectoYamaha {
         ViewAdministrador vpa = new ViewAdministrador();
         ViewVendedor vpv = new ViewVendedor();
         ViewCatalogoPrincipal vcp = new ViewCatalogoPrincipal();
-        ViewCerrarSesionAdmin cs = new ViewCerrarSesionAdmin();
+        ViewCerrarSesionAdmin vcsa = new ViewCerrarSesionAdmin();
+        ViewCerrarSesionEmpleado vcsv = new ViewCerrarSesionEmpleado();
         ViewCatalogoDeportivas vcd = new ViewCatalogoDeportivas();
         ViewCatalogoSuperDep vsd = new ViewCatalogoSuperDep();
         ViewCatalogoAutomaticas vca = new ViewCatalogoAutomaticas();
@@ -85,13 +88,14 @@ public class ProyectoYamaha {
         
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
-        CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vs, vcv, vav, cs);
-        CtlViewCerrarSesionAdministrado ctlcs = new CtlViewCerrarSesionAdministrado(vp, vpa, cs);
+        CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vs, vcv, vav, vcsa);
+        CtlViewCerrarSesionAdministrado ctlcsa = new CtlViewCerrarSesionAdministrado(vp, vpa, vcsa);
+        CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
-        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, cs);
+        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vs, vpv, vcsv);
         CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);
         CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
-        CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, cs);
+        CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, vcsa);
         
         vp.setVisible(true);
     }

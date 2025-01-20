@@ -1,7 +1,6 @@
 package Controlador;
 
-import Vista.ViewCerrarSesionAdmin;
-import Vista.ViewAdministrador;
+import Vista.ViewCerrarSesionEmpleado;
 import Vista.ViewPrincipal;
 import Vista.ViewVendedor;
 import java.awt.event.ActionEvent;
@@ -11,9 +10,9 @@ public class CtlViewCerrarSesionEmpleado implements ActionListener {
 
     private ViewPrincipal vp;
     private ViewVendedor vpv;
-    private ViewCerrarSesionAdmin cs;
+    private ViewCerrarSesionEmpleado cs;
 
-    public CtlViewCerrarSesionEmpleado(ViewPrincipal vp, ViewVendedor vpa, ViewCerrarSesionAdmin cs) {
+    public CtlViewCerrarSesionEmpleado(ViewPrincipal vp, ViewVendedor vpa, ViewCerrarSesionEmpleado cs) {
         this.cs = cs;
         this.vpv = vpa;
         this.vp = vp;

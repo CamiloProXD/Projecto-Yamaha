@@ -4,7 +4,7 @@
  */
 package Controlador;
 
-import Vista.ViewCerrarSesionAdmin;
+import Vista.ViewCerrarSesionEmpleado;
 import Vista.ViewSucursal;
 import Vista.ViewRealizarVenta;
 import Vista.ViewVendedor;
@@ -19,9 +19,9 @@ public class CtlViewVendedor implements ActionListener {
     private ViewRealizarVenta vxRealizarVenta;
     private ViewSucursal vxSucursal;
     private ViewVendedor vxVendedor;
-    private ViewCerrarSesionAdmin vxCerrarSesion;
+    private ViewCerrarSesionEmpleado vxCerrarSesion;
     
-    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewSucursal vxSucursal, ViewVendedor vxVendedor, ViewCerrarSesionAdmin vxCerrarSesion) {
+    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewSucursal vxSucursal, ViewVendedor vxVendedor, ViewCerrarSesionEmpleado vxCerrarSesion) {
         this.vxRealizarVenta = vxRealizarVenta;
         this.vxSucursal = vxSucursal;
         this.vxVendedor = vxVendedor;
