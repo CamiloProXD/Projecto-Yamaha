@@ -10,7 +10,7 @@ import Vista.ViewCatalogoSuperDep;
 import Vista.ViewCatalogoAutomaticas;
 import Vista.ViewCatalogoCross;
 import Vista.ViewCatalogoUrbanas;
-import Vista.ViewCatalogoTodoTer;
+import Vista.ViewCatalogoTodoterreno;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.ViewPrincipal;
@@ -23,11 +23,11 @@ public class CtlViewCatalogoPrincipal implements ActionListener {
     private ViewCatalogoAutomaticas ca; 
     private ViewCatalogoCross cc; 
     private ViewCatalogoUrbanas vcu; 
-    private ViewCatalogoTodoTer ctt; 
+    private ViewCatalogoTodoterreno ctt; 
     private ViewPrincipal vp;
     
 
-    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewCatalogoDeportivas vcd, ViewCatalogoSuperDep vsd, ViewCatalogoAutomaticas ca, ViewCatalogoCross cc, ViewCatalogoUrbanas vcu, ViewCatalogoTodoTer ctt, ViewPrincipal vp) {
+    public CtlViewCatalogoPrincipal(ViewCatalogoPrincipal vcp, ViewCatalogoDeportivas vcd, ViewCatalogoSuperDep vsd, ViewCatalogoAutomaticas ca, ViewCatalogoCross cc, ViewCatalogoUrbanas vcu, ViewCatalogoTodoterreno ctt, ViewPrincipal vp) {
         this.vcp = vcp;
         this.vcd = vcd;
         this.vsd = vsd;

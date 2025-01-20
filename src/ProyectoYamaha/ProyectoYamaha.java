@@ -27,7 +27,7 @@ import Vista.ViewCatalogoCross;
 import Vista.ViewCatalogoDeportivas;
 import Vista.ViewCatalogoPrincipal;
 import Vista.ViewCatalogoSuperDep;
-import Vista.ViewCatalogoTodoTer;
+import Vista.ViewCatalogoTodoterreno;
 import Vista.ViewCatalogoUrbanas;
 import Vista.ViewCerrarSesion;
 import Vista.ViewConsultarVentas;
@@ -75,7 +75,7 @@ public class ProyectoYamaha {
         ViewCatalogoAutomaticas vca = new ViewCatalogoAutomaticas();
         ViewCatalogoCross vcc = new ViewCatalogoCross();
         ViewCatalogoUrbanas vcu = new ViewCatalogoUrbanas();
-        ViewCatalogoTodoTer vctt = new ViewCatalogoTodoTer();
+        ViewCatalogoTodoterreno vctt = new ViewCatalogoTodoterreno();
         ViewRegistrarmoto vrm = new ViewRegistrarmoto();
         ViewSucursal vs = new ViewSucursal();
         ViewConsultarVentas vcv = new ViewConsultarVentas();
