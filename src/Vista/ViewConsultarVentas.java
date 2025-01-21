@@ -29,16 +29,11 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         LabelConsultar = new javax.swing.JLabel();
         labelID = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        LabelingreseFecha = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        Labelconcesionario = new javax.swing.JLabel();
-        txtConsesionario = new javax.swing.JTextField();
+        txtIdEmpleado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaVentasEmpleados = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtMandarEmpleado = new javax.swing.JTextField();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jLabel2 = new javax.swing.JLabel();
         txtTipo1 = new javax.swing.JTextField();
@@ -55,9 +50,14 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        regresarBienvenidoadmin = new javax.swing.JButton();
-        principal = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         btnConsultar = new Vista.MyButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtEmpleadoNombre = new javax.swing.JTextArea();
+        labelID1 = new javax.swing.JLabel();
+        txtFechaInicial = new javax.swing.JTextField();
+        txtFechaFinal = new javax.swing.JTextField();
+        labelID2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -67,36 +67,15 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelConsultar.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        LabelConsultar.setForeground(new java.awt.Color(0, 0, 0));
         LabelConsultar.setText("Consultar Ventas");
         jPanel1.add(LabelConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 111, -1, -1));
 
         labelID.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        labelID.setForeground(new java.awt.Color(0, 0, 0));
-        labelID.setText("Ingrese El ID del empleado");
-        jPanel1.add(labelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 212, -1, -1));
+        labelID.setText("Fecha Inicial (YYYY-MM-DD)");
+        jPanel1.add(labelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        jPanel1.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 207, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 239, 207, -1));
-
-        LabelingreseFecha.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        LabelingreseFecha.setForeground(new java.awt.Color(0, 0, 0));
-        LabelingreseFecha.setText("Ingrese la fecha a Consultar");
-        jPanel1.add(LabelingreseFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 285, -1, -1));
-
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 325, 198, -1));
-
-        Labelconcesionario.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        Labelconcesionario.setForeground(new java.awt.Color(0, 0, 0));
-        Labelconcesionario.setText("Ingrese el consesionario del empleado");
-        jPanel1.add(Labelconcesionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 397, -1, -1));
-
-        txtConsesionario.setBackground(new java.awt.Color(255, 255, 255));
-        txtConsesionario.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtConsesionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 436, 204, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaVentasEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -104,29 +83,20 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "cantidad Ventas", "fecha de venta"
+                "fecha de venta", "cantidad Ventas"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaVentasEmpleados);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 710, 964, 92));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 1190, 340));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/metodo-de-pago.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(988, 239, -1, 152));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 180, -1, 152));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("El empleado :");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 537, -1, -1));
-
-        txtMandarEmpleado.setBackground(new java.awt.Color(255, 255, 255));
-        txtMandarEmpleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMandarEmpleadoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtMandarEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 531, 184, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel2.setText("Filtro De Invenatrio");
@@ -288,11 +258,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
         jPanel3.setForeground(new java.awt.Color(255, 0, 0));
 
-        regresarBienvenidoadmin.setBackground(new java.awt.Color(255, 255, 255));
-        regresarBienvenidoadmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-
-        principal.setBackground(new java.awt.Color(255, 255, 255));
-        principal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -300,18 +266,14 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(regresarBienvenidoadmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(principal)
-                .addGap(15, 15, 15))
+                .addComponent(btnCerrarSesion)
+                .addContainerGap(1244, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(principal)
-                    .addComponent(regresarBienvenidoadmin))
+                .addComponent(btnCerrarSesion)
                 .addContainerGap())
         );
 
@@ -333,7 +295,23 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(628, 608, 130, 60));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 130, 60));
+
+        txtEmpleadoNombre.setColumns(20);
+        txtEmpleadoNombre.setRows(5);
+        jScrollPane2.setViewportView(txtEmpleadoNombre);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 250, 30));
+
+        labelID1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        labelID1.setText("Ingrese El ID del empleado");
+        jPanel1.add(labelID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel1.add(txtFechaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 207, -1));
+        jPanel1.add(txtFechaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 207, -1));
+
+        labelID2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        labelID2.setText("Fecha Final (YYYY-MM-DD)");
+        jPanel1.add(labelID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -349,10 +327,6 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMandarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMandarEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMandarEmpleadoActionPerformed
-
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarActionPerformed
@@ -365,8 +339,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
     private javax.swing.JPanel BordeAbajo;
     private javax.swing.JPanel BordeArriba;
     private javax.swing.JLabel LabelConsultar;
-    private javax.swing.JLabel Labelconcesionario;
-    private javax.swing.JLabel LabelingreseFecha;
+    public javax.swing.JButton btnCerrarSesion;
     public Vista.MyButton btnConsultar;
     private javax.swing.JButton btnFiltrar;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -384,14 +357,15 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelID;
-    private javax.swing.JButton principal;
-    private javax.swing.JButton regresarBienvenidoadmin;
-    public javax.swing.JTextField txtConsesionario;
-    private javax.swing.JTextField txtMandarEmpleado;
+    private javax.swing.JLabel labelID1;
+    private javax.swing.JLabel labelID2;
+    private javax.swing.JTable tablaVentasEmpleados;
+    public javax.swing.JTextArea txtEmpleadoNombre;
+    public javax.swing.JTextField txtFechaFinal;
+    public javax.swing.JTextField txtFechaInicial;
+    public javax.swing.JTextField txtIdEmpleado;
     public javax.swing.JTextField txtModelo1;
     public javax.swing.JTextField txtTipo1;
     // End of variables declaration//GEN-END:variables
