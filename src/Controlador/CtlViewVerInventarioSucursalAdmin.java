@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.DaoInventario;
+import Modelo.DaoVenta;
 import Vista.ViewCerrarSesionAdmin;
 import Vista.ViewVerInventarioSucursalAdmin;
 import java.awt.event.ActionEvent;
@@ -13,19 +14,25 @@ public class CtlViewVerInventarioSucursalAdmin implements ActionListener {
 
     private ViewVerInventarioSucursalAdmin vvisa;
     private DaoInventario daoInventario;
+    private DaoVenta daoVenta;
     private int idSucursal;
     private ViewCerrarSesionAdmin vcs;
     private DefaultTableModel modeloTabla;
+    private DefaultTableModel modeloTablaVentas;
 
     public CtlViewVerInventarioSucursalAdmin(ViewVerInventarioSucursalAdmin vvisa, ViewCerrarSesionAdmin vcs, int idSucursal) {
         this.vvisa = vvisa;
         this.daoInventario = new DaoInventario();
+        this.daoVenta = new DaoVenta();
         this.vcs = vcs;
         this.idSucursal = idSucursal;
 
         this.vvisa.btnCerrarSesion.addActionListener(this);
-        inicializarTabla();
+        inicializarTabla(); 
         cargarInventario();
+        
+        inicializarTablaVentas();
+        cargarVentas();
     }
 
 
@@ -50,6 +57,30 @@ public class CtlViewVerInventarioSucursalAdmin implements ActionListener {
 
             for (Object[] fila : inventario) {
                 modeloTabla.addRow(fila);
+            }
+        }
+    }
+    
+     private void inicializarTablaVentas() {
+        modeloTablaVentas = new DefaultTableModel();
+        modeloTablaVentas.addColumn("Vendedor");
+        modeloTablaVentas.addColumn("Cantidad de Ventas");
+        modeloTablaVentas.addColumn("Valor Total de Ventas");
+        modeloTablaVentas.addColumn("Cantidad Total de Motos Vendidas");
+
+        vvisa.tablaVentasSucursal.setModel(modeloTablaVentas); 
+    }
+
+    private void cargarVentas() {
+        modeloTablaVentas.setRowCount(0);
+
+        List<Object[]> ventas = daoVenta.obtenerVentasPorSucursal(idSucursal); 
+
+        if (ventas.isEmpty()) {
+            mensaje("No hay ventas registradas para esta sucursal.", "Información");
+        } else {
+            for (Object[] fila : ventas) {
+                modeloTablaVentas.addRow(fila);
             }
         }
     }

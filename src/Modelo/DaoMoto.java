@@ -64,8 +64,8 @@ public class DaoMoto extends Conexion {
         }
         return false;
     }
-    
-    public boolean actualizarVenderMoto(Moto m){
+
+    public boolean actualizarVenderMoto(Moto m) {
         Connection cnx = getConexion();
         String stc = "update motos set vendida = true where serial_moto = ?";
         PreparedStatement pst;
@@ -82,7 +82,7 @@ public class DaoMoto extends Conexion {
     }
 
     public boolean consultar(Moto m) {
-        int h =0;
+        int h = 0;
         Connection cnx = getConexion();
         String stc = "SELECT * FROM motos WHERE serial_moto=?";
         PreparedStatement pst;
@@ -124,32 +124,33 @@ public class DaoMoto extends Conexion {
         }
         return false;
     }
-    
-     public List<Moto> obtenerPorSucursal(int idSucursal) {
-        Connection cnx = getConexion();
-        String stc = "SELECT nombre, modelo, color_moto, cantidad FROM motos WHERE sucursal_id = ?";
-        PreparedStatement pst;
-        ResultSet rst;
-        List<Moto> motos = new ArrayList<>();
 
-        try {
-            pst = cnx.prepareStatement(stc);
-            pst.setInt(1, idSucursal);
-            rst = pst.executeQuery();
+    public List<Object[]> obtenerInventarioPorSucursal(int idSucursal) {
+        List<Object[]> inventario = new ArrayList<>();
+        String query = "SELECT m.nombre, m.modelo, m.color_moto, SUM(i.cantidad_motos) as totalCantidad "
+                + "FROM inventarios i "
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
+                + "WHERE i.sucursal_id = ? AND m.vendida = 0 " // Filtrar por motos no vendidas
+                + "GROUP BY m.nombre, m.modelo, m.color_moto";
 
-            while (rst.next()) {
-                Moto moto = new Moto();
-                moto.setNombre(rst.getString("nombre"));
-                moto.setModelo(rst.getString("modelo"));
-                moto.setColor(rst.getString("color_moto"));
+        try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
+            stmt.setInt(1, idSucursal);
+            ResultSet rs = stmt.executeQuery();
 
-                motos.add(moto); 
+            while (rs.next()) {
+                inventario.add(new Object[]{
+                    rs.getString("nombre"),
+                    rs.getInt("modelo"),
+                    rs.getString("color_moto"),
+                    rs.getInt("totalCantidad")
+                });
             }
-        } catch (SQLException ex) {
-            System.err.println("Error al ejecutar el SELECT -> " + ex.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta -> " + e);
+            mensaje("Error al ejecutar la consulta", "Consultar Inventario!!!");
         }
 
-        return motos;
+        return inventario;
     }
 
     public void mensaje(String msg, String title) {

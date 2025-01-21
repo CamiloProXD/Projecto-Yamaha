@@ -4,7 +4,7 @@
  */
 package Controlador;
 
-import Vista.ViewCerrarSesion;
+import Vista.ViewCerrarSesionEmpleado;
 import Vista.ViewRegistrarpago;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,9 +17,9 @@ import javax.swing.JOptionPane;
 public class CtlViewRegitrarPago implements ActionListener{
     
     private ViewRegistrarpago vrp;
-    private ViewCerrarSesion vcs;
+    private ViewCerrarSesionEmpleado vcs;
 
-    public CtlViewRegitrarPago(ViewRegistrarpago vrp, ViewCerrarSesion vcs) {
+    public CtlViewRegitrarPago(ViewRegistrarpago vrp, ViewCerrarSesionEmpleado vcs) {
         this.vrp = vrp;
         this.vcs = vcs;
         vrp.btnConfirmarpago.addActionListener(this);
