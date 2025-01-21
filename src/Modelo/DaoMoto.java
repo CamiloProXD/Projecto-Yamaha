@@ -64,6 +64,22 @@ public class DaoMoto extends Conexion {
         }
         return false;
     }
+    
+    public boolean actualizarVenderMoto(Moto m){
+        Connection cnx = getConexion();
+        String stc = "update motos set vendida = true where serial_moto = ?";
+        PreparedStatement pst;
+        try {
+            pst = cnx.prepareStatement(stc);
+            pst.setString(1, m.getSerialMoto());
+            pst.execute();
+            return true;
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el UPDATE: " + ex + " stc");
+            mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
+        }
+        return false;
+    }
 
     public boolean consultar(Moto m) {
         Connection cnx = getConexion();
