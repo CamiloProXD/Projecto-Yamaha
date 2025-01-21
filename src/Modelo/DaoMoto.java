@@ -44,23 +44,23 @@ public class DaoMoto extends Conexion {
 
     public boolean actualizar(Moto m) {
         Connection cnx = getConexion();
-        String stc = "UPDATE motos SET color_moto=?,cilindraje=?,modelo=?,precio_unitario=?,tipo_moto=?, sucursal_id,nombre WHERE serial_moto=?";
+        String stc = "UPDATE motos SET color_moto=?, cilindraje=?, modelo=?, precio_unitario=?, tipo_moto=?, sucursal_id=?, nombre=? WHERE serial_moto=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
             pst.setString(1, m.getColor());
-            pst.setString(2, Integer.toString(m.getCilindraje()));
+            pst.setInt(2, m.getCilindraje()); // Cambia a setInt para cilindraje
             pst.setString(3, m.getModelo());
-            pst.setString(4, Double.toString(m.getPrecioUnitario()));
+            pst.setDouble(4, m.getPrecioUnitario()); // Cambia a setDouble para precio_unitario
             pst.setString(5, m.getTipoMoto());
-            pst.setString(6, m.getSerialMoto());
-            pst.setInt(7, m.getSedeId());
-            pst.setString(8, m.getNombre());
-            pst.execute();
+            pst.setInt(6, m.getSedeId());
+            pst.setString(7, m.getNombre());
+            pst.setString(8, m.getSerialMoto()); // Asegúrate de que el serial_moto esté al final
+            pst.executeUpdate(); // Cambia a executeUpdate para actualizaciones
             return true;
         } catch (SQLException ex) {
             System.err.println("Error al ejecutar el UPDATE -> " + ex);
-            mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
+            mensaje("Error al ejecutar el UPDATE", "Actualizar!!!");
         }
         return false;
     }

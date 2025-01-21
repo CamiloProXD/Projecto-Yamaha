@@ -50,8 +50,10 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        btnActualizar = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
@@ -202,7 +204,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, 171, 60));
+        getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, 171, 60));
 
         txtSucursal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtSucursal.addActionListener(new java.awt.event.ActionListener() {
@@ -222,6 +224,24 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setText("Nombre:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
+
+        btnActualizar.setBackground(new java.awt.Color(227, 14, 21));
+        btnActualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnActualizar.setForeground(new java.awt.Color(242, 242, 242));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnActualizar.setBorderPainted(false);
+        btnActualizar.setColor(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnActualizar.setRadius(30);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 171, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -250,11 +270,16 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSucursalActionPerformed
 
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public Vista.MyButton btnActualizar;
     public Vista.MyButton btnRegistrar;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel12;

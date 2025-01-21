@@ -16,26 +16,26 @@ import javax.swing.JOptionPane;
  *
  * @author grabieloX19X
  */
-public class CtlViewRegistrarMoto implements ActionListener{
+public class CtlViewRegistrarMoto implements ActionListener {
+
     private DaoMoto daoMoto;
     private ViewRegistrarmoto vx;
     private Moto moto;
     private ViewCerrarSesionAdmin vcs;
 
-    public CtlViewRegistrarMoto(DaoMoto daoMoto, ViewRegistrarmoto vx, Moto moto, ViewCerrarSesionAdmin vcs ) {
+    public CtlViewRegistrarMoto(DaoMoto daoMoto, ViewRegistrarmoto vx, Moto moto, ViewCerrarSesionAdmin vcs) {
         this.daoMoto = daoMoto;
         this.vx = vx;
         this.moto = moto;
         this.vcs = vcs;
         this.vx.btnRegistrar.addActionListener(this);
         this.vx.btnRegresar.addActionListener(this);
+        this.vx.btnActualizar.addActionListener(this);
     }
 
-    
-    
     @Override
     public void actionPerformed(ActionEvent ev) {
-        if(ev.getSource().equals(vx.btnRegistrar)){
+        if (ev.getSource().equals(vx.btnRegistrar)) {
             moto.setSerialMoto(vx.txtSerial.getText());
             moto.setColor(vx.txtColor.getText());
             moto.setCilindraje(Integer.parseInt(vx.txtCilindraje.getText()));
@@ -44,23 +44,43 @@ public class CtlViewRegistrarMoto implements ActionListener{
             moto.setTipoMoto(vx.txtTipo.getText());
             moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
             moto.setNombre(vx.txtNombre.getText());
-            if(daoMoto.agregar(moto)){
-                mensaje("Moto registrada exitosamente!!!!","Agregar!!!");
+            if (daoMoto.agregar(moto)) {
+                mensaje("Moto registrada exitosamente!!!!", "Agregar!!!");
                 limpiar();
-            }else{
-                mensaje("Moto NO registrada!!!!","Agregar!!!");
+            } else {
+                mensaje("Moto NO registrada!!!!", "Agregar!!!");
                 limpiar();
             }
         }
-        if(ev.getSource().equals(vx.btnRegresar)){
-           vcs.setVisible(true);
-           this.vx.dispose(); 
+        if (ev.getSource().equals(vx.btnRegresar)) {
+            vcs.setVisible(true);
+            this.vx.dispose();
+        }
+        if (ev.getSource().equals(vx.btnActualizar)) {
+
+            moto.setSerialMoto(vx.txtSerial.getText());
+            moto.setColor(vx.txtColor.getText());
+            moto.setCilindraje(Integer.parseInt(vx.txtCilindraje.getText()));
+            moto.setModelo(vx.txtModelo.getText());
+            moto.setPrecioUnitario(Double.parseDouble(vx.txtPrecio.getText()));
+            moto.setTipoMoto(vx.txtTipo.getText());
+            moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
+            moto.setNombre(vx.txtNombre.getText());
+
+            if (daoMoto.actualizar(moto)) {
+                mensaje("Moto actualizada exitosamente!!!!", "Actualizar!!!");
+                limpiar();
+            } else {
+                mensaje("Moto NO actualizada!!!!", "Actualizar!!!");
+                limpiar();
+            }
         }
     }
-    
+
     public void mensaje(String msg, String tit) {
         JOptionPane.showMessageDialog(null, msg, tit, 1);
     }
+
     public void limpiar() {
         vx.txtCilindraje.setText(null);
         vx.txtColor.setText(null);
