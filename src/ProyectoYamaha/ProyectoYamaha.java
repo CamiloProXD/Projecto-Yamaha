@@ -13,8 +13,10 @@ import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
 import Controlador.CtlViewRegresarDeportivas;
 import Controlador.CtlViewSucursalAdministrador;
+import Controlador.CtlViewSucursalEmpleado;
 import Controlador.CtlViewVendedor;
 import Controlador.CtlViewVerInventarioSucursalAdmin;
+import Controlador.CtlViewVerinventarioSucursalEmpleado;
 import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
 import Modelo.DaoSede;
@@ -43,6 +45,7 @@ import Vista.ViewSucursalAdministrador;
 import Vista.ViewSucursalEmpleado;
 import Vista.ViewVendedor;
 import Vista.ViewVerInventarioSucursalAdmin;
+import Vista.ViewVerInventarioSucursalEmpleado;
 
 
 
@@ -92,20 +95,29 @@ public class ProyectoYamaha {
         ViewAgregarVendedor vav = new ViewAgregarVendedor();
         ViewRealizarVenta vrv = new ViewRealizarVenta();
         ViewVerInventarioSucursalAdmin vvisa = new ViewVerInventarioSucursalAdmin();
+        ViewVerInventarioSucursalEmpleado vvise = new ViewVerInventarioSucursalEmpleado();
         
         
         //Controladores
         CtlViewPrincipal ctlvp = new CtlViewPrincipal(vp, vpa, vpv, vcp, daousuario, usuario);
-        CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vsa, vcv, vav, vcsa);
-        CtlViewCerrarSesionAdministrado ctlcsa = new CtlViewCerrarSesionAdministrado(vp, vpa, vcsa);
-        CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
-        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv);
         CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);
         CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
+        //controladores admin
+        CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vsa, vcv, vav, vcsa);
+        CtlViewCerrarSesionAdministrado ctlcsa = new CtlViewCerrarSesionAdministrado(vp, vpa, vcsa);
         CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, vcsa);
         CtlViewSucursalAdministrador ctlvsa = new CtlViewSucursalAdministrador(vsa, vvisa, vcsa, daosede, daousuario);
         CtlViewVerInventarioSucursalAdmin ctlvisa = new CtlViewVerInventarioSucursalAdmin(vvisa, vcsa, 1);
+        //Controladores empleado
+        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv);
+        CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
+        CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
+        CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
+        
+        
+        
+        
         
         vp.setVisible(true);
     }
