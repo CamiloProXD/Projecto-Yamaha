@@ -12,6 +12,10 @@ import Controlador.CtlViewPrincipal;
 import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
 import Controlador.CtlViewRegresarDeportivas;
+import Controlador.CtlViewRegresarEnduro;
+import Controlador.CtlViewRegresarSuperD;
+import Controlador.CtlViewRegresarTodoterreno;
+import Controlador.CtlViewRegresarUrbanas;
 import Controlador.CtlViewSucursalAdministrador;
 import Controlador.CtlViewSucursalEmpleado;
 import Controlador.CtlViewVendedor;
@@ -103,6 +107,10 @@ public class ProyectoYamaha {
         CtlViewCatalogoPrincipal ctlvcp = new CtlViewCatalogoPrincipal(vcp, vcd, vsd, vca, vcc, vcu, vctt, vp);
         CtlViewRegresarAutomaticas ctlvrg = new CtlViewRegresarAutomaticas(vcp, vca);
         CtlViewRegresarDeportivas ctlvrd = new CtlViewRegresarDeportivas(vcd, vcp);
+        CtlViewRegresarEnduro ctvre = new CtlViewRegresarEnduro(vcc, vcp);
+        CtlViewRegresarSuperD ctvrsd = new CtlViewRegresarSuperD(vsd, vcp);
+        CtlViewRegresarTodoterreno ctvrtt = new CtlViewRegresarTodoterreno(vcp, vctt);
+        CtlViewRegresarUrbanas ctvru = new CtlViewRegresarUrbanas(vcp, vcu);
         //controladores admin
         CtlViewAdministrador ctlva = new CtlViewAdministrador(vpa, vrm, vsa, vcv, vav, vcsa);
         CtlViewCerrarSesionAdministrado ctlcsa = new CtlViewCerrarSesionAdministrado(vp, vpa, vcsa);

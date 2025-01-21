@@ -69,22 +69,21 @@ public class DaoInventario extends Conexion {
 
     public List<Object[]> obtenerInventarioPorSucursal(int idSucursal) {
         List<Object[]> inventario = new ArrayList<>();
-        String query = "SELECT m.nombre, m.modelo, m.color_moto, SUM(i.cantidad_motos) as totalCantidad "
+        String query = "SELECT m.nombre, m.modelo, m.color_moto, i.cantidad_motos "
                 + "FROM inventarios i "
-                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
-                + "WHERE i.sucursal_id = ? "
-                + "GROUP BY m.nombre, m.modelo, m.color_moto";
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id " // Cambia la unión a la columna correcta
+                + "WHERE i.sucursal_id = ? AND m.vendida = 0";
 
         try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
-            stmt.setInt(1, idSucursal);
+            stmt.setInt(1, idSucursal); // Asegúrate de que el marcador de posición se esté utilizando correctamente
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
                 inventario.add(new Object[]{
                     rs.getString("nombre"),
-                    rs.getInt("modelo"), 
+                    rs.getString("modelo"),
                     rs.getString("color_moto"),
-                    rs.getInt("totalCantidad")
+                    rs.getInt("cantidad_motos")
                 });
             }
         } catch (SQLException e) {
