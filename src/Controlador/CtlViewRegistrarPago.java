@@ -50,7 +50,7 @@ public class CtlViewRegistrarPago implements ActionListener {
             }
         }
 
-        if (ev.getSource().equals(vcs.btncerrarSesion)) {
+        if (ev.getSource().equals(vrp.btnRegresar)) {
             vcs.setVisible(true);
             vrp.dispose();
         }
