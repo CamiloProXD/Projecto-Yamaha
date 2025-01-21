@@ -54,10 +54,11 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         txtAbonado = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         botonRegresar = new javax.swing.JButton();
-        botonMenu = new javax.swing.JButton();
-        btnGenerarFactura = new Vista.MyButton();
+        btnAgregarMoto = new Vista.MyButton();
         jPanel3 = new javax.swing.JPanel();
-        btnGenerarFactura1 = new Vista.MyButton();
+        btnGenerarFactura = new Vista.MyButton();
+        labelNombre1 = new javax.swing.JLabel();
+        txtIDUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -86,7 +87,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         jPanel1.add(labelcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 504, -1, -1));
 
         labelNumero.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelNumero.setText("Contacto");
+        labelNumero.setText("Numero telefonico");
         jPanel1.add(labelNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 418, -1, -1));
 
         labelDirec.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
@@ -141,13 +142,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
             }
         });
 
-        botonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
-        botonMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonMenuActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -155,39 +149,35 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(botonRegresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonMenu)
-                .addGap(15, 15, 15))
+                .addContainerGap(1246, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonMenu)
-                    .addComponent(botonRegresar))
+                .addComponent(botonRegresar)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
 
-        btnGenerarFactura.setBackground(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnGenerarFactura.setForeground(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura.setText("Agregar moto");
-        btnGenerarFactura.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura.setBorderPainted(false);
-        btnGenerarFactura.setColor(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura.setColorClick(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura.setColorOver(new java.awt.Color(167, 14, 21));
-        btnGenerarFactura.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnGenerarFactura.setRadius(30);
-        btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarMoto.setBackground(new java.awt.Color(227, 14, 21));
+        btnAgregarMoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregarMoto.setForeground(new java.awt.Color(242, 242, 242));
+        btnAgregarMoto.setText("Agregar moto");
+        btnAgregarMoto.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnAgregarMoto.setBorderPainted(false);
+        btnAgregarMoto.setColor(new java.awt.Color(227, 14, 21));
+        btnAgregarMoto.setColorClick(new java.awt.Color(227, 14, 21));
+        btnAgregarMoto.setColorOver(new java.awt.Color(167, 14, 21));
+        btnAgregarMoto.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnAgregarMoto.setRadius(30);
+        btnAgregarMoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarFacturaActionPerformed(evt);
+                btnAgregarMotoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 730, 223, 60));
+        jPanel1.add(btnAgregarMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 730, 223, 60));
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -204,23 +194,28 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 823, -1, -1));
 
-        btnGenerarFactura1.setBackground(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnGenerarFactura1.setForeground(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura1.setText("Generar Factura");
-        btnGenerarFactura1.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura1.setBorderPainted(false);
-        btnGenerarFactura1.setColor(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setColorClick(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setColorOver(new java.awt.Color(167, 14, 21));
-        btnGenerarFactura1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnGenerarFactura1.setRadius(30);
-        btnGenerarFactura1.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarFactura.setBackground(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGenerarFactura.setForeground(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura.setBorderPainted(false);
+        btnGenerarFactura.setColor(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setColorClick(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setColorOver(new java.awt.Color(167, 14, 21));
+        btnGenerarFactura.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnGenerarFactura.setRadius(30);
+        btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarFactura1ActionPerformed(evt);
+                btnGenerarFacturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarFactura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
+        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
+
+        labelNombre1.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
+        labelNombre1.setText("ID usuario");
+        jPanel1.add(labelNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+        jPanel1.add(txtIDUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 225, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,17 +238,13 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botonRegresarActionPerformed
 
-    private void botonMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMenuActionPerformed
-
-    }//GEN-LAST:event_botonMenuActionPerformed
+    private void btnAgregarMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMotoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarMotoActionPerformed
 
     private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarFacturaActionPerformed
-
-    private void btnGenerarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFactura1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarFactura1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,10 +259,9 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     public javax.swing.JTextField TxtColor;
     public javax.swing.JTextField TxtNombre;
     public javax.swing.JTextField TxtTelefono;
-    private javax.swing.JButton botonMenu;
-    private javax.swing.JButton botonRegresar;
+    public javax.swing.JButton botonRegresar;
+    public Vista.MyButton btnAgregarMoto;
     public Vista.MyButton btnGenerarFactura;
-    public Vista.MyButton btnGenerarFactura1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -281,6 +271,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     private javax.swing.JLabel labelCliente;
     private javax.swing.JLabel labelDirec;
     private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelNombre1;
     private javax.swing.JLabel labelNumero;
     private javax.swing.JLabel labelPlaca;
     private javax.swing.JLabel labelTipo;
@@ -289,6 +280,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     public javax.swing.JTextField txtAbonado;
     public javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtDirec;
+    public javax.swing.JTextField txtIDUsuario;
     public javax.swing.JTextField txtPlaca;
     public javax.swing.JTextField txtmodelo;
     public javax.swing.JTextField txtprecio;
