@@ -9,20 +9,23 @@ package Modelo;
  * @author User
  */
 public class Moto {
+    private String nombre;
     private String serialMoto;
     private String color;
     private int cilindraje;
     private String modelo;
     private double precioUnitario;
     private String tipoMoto;
+    private int sedeId;
 
-    public Moto(String serialMoto, String color, int cilindraje, String modelo, double precioUnitario, String tipoMoto) {
+    public Moto(String serialMoto, String color, int cilindraje, String modelo, double precioUnitario, String tipoMoto, int sedeId, String nombre) {
         this.serialMoto = serialMoto;
         this.color = color;
         this.cilindraje = cilindraje;
         this.modelo = modelo;
         this.precioUnitario = precioUnitario;
         this.tipoMoto = tipoMoto;
+        this.nombre = nombre;
     }
 
     public Moto() {
@@ -76,5 +79,23 @@ public class Moto {
         this.tipoMoto = tipoMoto;
     }
 
+    public int getSedeId() {
+        return sedeId;
+    }
+
+    public void setSedeId(int sedeId) {
+        this.sedeId = sedeId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
+    
     
 }

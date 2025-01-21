@@ -111,6 +111,25 @@ public class DaoUsuario extends Conexion {
         }
         return false;
     }
+    
+    public String obtenerNombrePorId(int idUsuario) {
+    String nombre = null;
+    String sql = "SELECT CONCAT(nombres, ' ', apellidos) AS nombre_completo FROM personas p " +
+                 "INNER JOIN usuarios u ON p.persona_id = u.persona_id WHERE u.usuario_id = ?";
+    try (Connection cnx = getConexion();
+         PreparedStatement pst = cnx.prepareStatement(sql)) {
+        pst.setInt(1, idUsuario);
+        try (ResultSet rst = pst.executeQuery()) {
+            if (rst.next()) {
+                nombre = rst.getString("nombre_completo");
+            }
+        }
+    } catch (SQLException ex) {
+        System.err.println("Error al ejecutar el SELECT -> " + ex);
+        mensaje("Error al ejecutar el SELECT", "obtenerNombrePorId");
+    }
+    return nombre;
+}
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);

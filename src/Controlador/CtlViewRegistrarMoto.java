@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.DaoMoto;
 import Modelo.Moto;
 import Vista.ViewRegistrarmoto;
+import Vista.ViewCerrarSesionAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -15,17 +16,22 @@ import javax.swing.JOptionPane;
  *
  * @author grabieloX19X
  */
-public class CtlRegistrarMoto implements ActionListener{
+public class CtlViewRegistrarMoto implements ActionListener{
     private DaoMoto daoMoto;
     private ViewRegistrarmoto vx;
     private Moto moto;
+    private ViewCerrarSesionAdmin vcs;
 
-    public CtlRegistrarMoto(DaoMoto dMoto, ViewRegistrarmoto vx, Moto moto) {
-        this.daoMoto = dMoto;
+    public CtlViewRegistrarMoto(DaoMoto daoMoto, ViewRegistrarmoto vx, Moto moto, ViewCerrarSesionAdmin vcs ) {
+        this.daoMoto = daoMoto;
         this.vx = vx;
         this.moto = moto;
+        this.vcs = vcs;
         this.vx.btnRegistrar.addActionListener(this);
+        this.vx.btnRegresar.addActionListener(this);
     }
+
+    
     
     @Override
     public void actionPerformed(ActionEvent ev) {
@@ -36,6 +42,8 @@ public class CtlRegistrarMoto implements ActionListener{
             moto.setModelo(vx.txtModelo.getText());
             moto.setPrecioUnitario(Double.parseDouble(vx.txtPrecio.getText()));
             moto.setTipoMoto(vx.txtTipo.getText());
+            moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
+            moto.setNombre(vx.txtNombre.getText());
             if(daoMoto.agregar(moto)){
                 mensaje("Moto registrada exitosamente!!!!","Agregar!!!");
                 limpiar();
@@ -43,6 +51,10 @@ public class CtlRegistrarMoto implements ActionListener{
                 mensaje("Moto NO registrada!!!!","Agregar!!!");
                 limpiar();
             }
+        }
+        if(ev.getSource().equals(vx.btnRegresar)){
+           vcs.setVisible(true);
+           this.vx.dispose(); 
         }
     }
     
@@ -56,5 +68,7 @@ public class CtlRegistrarMoto implements ActionListener{
         vx.txtPrecio.setText(null);
         vx.txtSerial.setText(null);
         vx.txtTipo.setText(null);
+        vx.txtNombre.setText(null);
+        vx.txtSucursal.setText(null);
     }
 }

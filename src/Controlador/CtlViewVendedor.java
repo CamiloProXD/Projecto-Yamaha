@@ -4,8 +4,8 @@
  */
 package Controlador;
 
-import Vista.ViewCerrarSesion;
-import Vista.ViewSucursal;
+import Vista.ViewCerrarSesionEmpleado;
+import Vista.ViewSucursalEmpleado;
 import Vista.ViewRealizarVenta;
 import Vista.ViewVendedor;
 import java.awt.event.ActionEvent;
@@ -17,11 +17,11 @@ import java.awt.event.ActionListener;
  */
 public class CtlViewVendedor implements ActionListener {
     private ViewRealizarVenta vxRealizarVenta;
-    private ViewSucursal vxSucursal;
+    private ViewSucursalEmpleado vxSucursal;
     private ViewVendedor vxVendedor;
-    private ViewCerrarSesion vxCerrarSesion;
+    private ViewCerrarSesionEmpleado vxCerrarSesion;
     
-    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewSucursal vxSucursal, ViewVendedor vxVendedor, ViewCerrarSesion vxCerrarSesion) {
+    public CtlViewVendedor(ViewRealizarVenta vxRealizarVenta, ViewSucursalEmpleado vxSucursal, ViewVendedor vxVendedor, ViewCerrarSesionEmpleado vxCerrarSesion) {
         this.vxRealizarVenta = vxRealizarVenta;
         this.vxSucursal = vxSucursal;
         this.vxVendedor = vxVendedor;

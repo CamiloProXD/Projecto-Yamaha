@@ -4,16 +4,19 @@
  */
 package Vista;
 
+
 /**
  *
  * @author juanc
  */
-public class ViewSucursal extends javax.swing.JFrame {
+public class ViewSucursalAdministrador extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewSucusall
      */
-    public ViewSucursal() {
+    
+
+    public ViewSucursalAdministrador() {
         initComponents();
     }
 
@@ -28,15 +31,15 @@ public class ViewSucursal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txtSucursal = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabla = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        txtIdSucursal = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        RegresarAdmin = new javax.swing.JButton();
-        RegresaMenuPrincipal = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         btnAcceder = new Vista.MyButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaVerSucursales = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -47,23 +50,7 @@ public class ViewSucursal extends javax.swing.JFrame {
         txtSucursal.setFont(new java.awt.Font("Bodoni MT Black", 0, 60)); // NOI18N
         txtSucursal.setText("Selecccione la sucursal");
         jPanel1.add(txtSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 197, 767, 61));
-
-        tabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Id Sucursal", "Nombre de la Sucursal", "Administrador"
-            }
-        ));
-        jScrollPane1.setViewportView(tabla);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 333, 1126, 92));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(639, 604, 235, -1));
+        jPanel1.add(txtIdSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(639, 604, 235, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -82,29 +69,23 @@ public class ViewSucursal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
-        RegresarAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-
-        RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(RegresarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(23, 23, 23)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1197, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RegresarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
@@ -131,6 +112,24 @@ public class ViewSucursal extends javax.swing.JFrame {
         jLabel1.setText("INGRESE EL ID DE LA SUCURSAL :");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 606, -1, -1));
 
+        tablaVerSucursales.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tablaVerSucursales.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Id Sucursal", "Nombre de la Sucursal", "Administrador"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaVerSucursales);
+
+        jScrollPane2.setViewportView(jScrollPane1);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 1150, 150));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,18 +152,17 @@ public class ViewSucursal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RegresaMenuPrincipal;
-    private javax.swing.JButton RegresarAdmin;
     public Vista.MyButton btnAcceder;
+    public javax.swing.JButton btnCerrarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tabla;
+    public javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable tablaVerSucursales;
+    public javax.swing.JTextField txtIdSucursal;
     private javax.swing.JLabel txtSucursal;
     // End of variables declaration//GEN-END:variables
 }

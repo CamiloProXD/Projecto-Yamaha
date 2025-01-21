@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -85,6 +87,34 @@ public class DaoInventario extends Conexion {
             mensaje("Error al ejecutar el DELETE", "eliminar!!!");
         }
         return false;
+    }
+
+    public List<Object[]> obtenerInventarioPorSucursal(int idSucursal) {
+        List<Object[]> inventario = new ArrayList<>();
+        String query = "SELECT m.nombre, m.modelo, m.color_moto, SUM(i.cantidad_motos) as totalCantidad "
+                + "FROM inventarios i "
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
+                + "WHERE i.sucursal_id = ? "
+                + "GROUP BY m.nombre, m.modelo, m.color_moto";
+
+        try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
+            stmt.setInt(1, idSucursal);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                inventario.add(new Object[]{
+                    rs.getString("nombre"),
+                    rs.getInt("modelo"), 
+                    rs.getString("color_moto"),
+                    rs.getInt("totalCantidad")
+                });
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta -> " + e);
+            mensaje("Error al ejecutar la consulta", "Consultar Inventario!!!");
+        }
+
+        return inventario;
     }
 
     public void mensaje(String msg, String title) {
