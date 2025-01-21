@@ -12,8 +12,10 @@ import java.awt.event.ActionListener;
 import Modelo.DaoMoto;
 import Modelo.DaoUsuario;
 import Modelo.DaoVenta;
+import Modelo.DaoVentasMotos;
 import Modelo.Usuario;
 import Modelo.Venta;
+import Modelo.VentasMotos;
 import Vista.ViewCerrarSesionEmpleado;
 import javax.swing.JOptionPane;
 
@@ -34,21 +36,21 @@ public class CtlViewRealizarVenta implements ActionListener {
         this.vrv = vrv;
         this.vcs = vcs;
         this.dUsuario = dUsuario;
-        vrv.btnAgregarMoto.addActionListener(this);
-        vrv.btnGenerarFactura.addActionListener(this);
+        vrv.btnAnadirMoto.addActionListener(this);
+        vrv.btnAnadirMoto.addActionListener(this);
         vrv.botonRegresar.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(vrv.btnGenerarFactura)) {
-            Usuario nuevo = new Usuario(Integer.parseInt(vrv.txtIDUsuario.getText()), null, null, "Cliente", 0, null, 0, Integer.parseInt(vrv.TxtCedula.getText()), vrv.TxtNombre.getText(), vrv.txtApellido.getText(), vrv.TxtTelefono.getText(), null, vrv.txtDirec.getText());
+        if (e.getSource().equals(vrv.btnAnadirMoto)) {
+            Usuario nuevo = new Usuario(Integer.parseInt(vrv.txtIDVenta.getText()), null, null, "Cliente", 0, null, 0, Integer.parseInt(vrv.TxtCedula.getText()), vrv.TxtNombre.getText(), vrv.txtApellido.getText(), vrv.TxtTelefono.getText(), null, vrv.txtDirec.getText());
             dUsuario.agregar(nuevo);
             JOptionPane.showMessageDialog(null, "cliente " + vrv.TxtNombre.getText() +" agregado correctamente");
             vrp.setVisible(true);
             vrv.dispose();
         }
-        if (e.getSource().equals(vrv.btnAgregarMoto)) {
+        if (e.getSource().equals(vrv.btnAnadirMoto)) {
             vrp.setVisible(true);
             vrv.dispose();
         }
@@ -61,6 +63,13 @@ public class CtlViewRealizarVenta implements ActionListener {
     public void venderMoto(Moto moto, Venta venta) {
         DaoMoto dMoto = new DaoMoto();
         DaoVenta dVenta = new DaoVenta();
+        DaoVentasMotos dvm = new DaoVentasMotos();
+        
+        VentasMotos vm = new VentasMotos();
+        vm.setMotoId(Integer.parseInt(vrv.txtSerial.getText()));
+        vm.setVentaId(Integer.parseInt(vrv.txtIDVenta.getText()));
+        venta.setNumeroFactura(Integer.parseInt(vrv.txtIDVenta.getText()));
+        dvm.agregar(vm);
         dVenta.agregar(venta);
         dMoto.eliminar(moto);
     }
