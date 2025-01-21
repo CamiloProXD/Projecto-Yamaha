@@ -28,13 +28,12 @@ public class CtlViewVerInventarioSucursalAdmin implements ActionListener {
         this.idSucursal = idSucursal;
 
         this.vvisa.btnCerrarSesion.addActionListener(this);
-        inicializarTabla(); 
+        inicializarTabla();
         cargarInventario();
-        
+
         inicializarTablaVentas();
         cargarVentas();
     }
-
 
     private void inicializarTabla() {
         modeloTabla = new DefaultTableModel();
@@ -60,15 +59,15 @@ public class CtlViewVerInventarioSucursalAdmin implements ActionListener {
             }
         }
     }
-    
-     private void inicializarTablaVentas() {
+
+    private void inicializarTablaVentas() {
         modeloTablaVentas = new DefaultTableModel();
         modeloTablaVentas.addColumn("Vendedor");
         modeloTablaVentas.addColumn("Cantidad de Ventas");
         modeloTablaVentas.addColumn("Valor Total de Ventas");
         modeloTablaVentas.addColumn("Cantidad Total de Motos Vendidas");
 
-        vvisa.tablaVentasSucursal.setModel(modeloTablaVentas); 
+        vvisa.tablaVentasSucursal.setModel(modeloTablaVentas);
     }
 
     private void cargarVentas() {
@@ -80,7 +79,15 @@ public class CtlViewVerInventarioSucursalAdmin implements ActionListener {
             mensaje("No hay ventas registradas para esta sucursal.", "Información");
         } else {
             for (Object[] fila : ventas) {
-                modeloTablaVentas.addRow(fila);
+                
+                float valorTotalVentas = ((Double) fila[2]).floatValue(); 
+                modeloTablaVentas.addRow(new Object[]{
+                    fila[0], 
+                    fila[1], 
+                    String.format("%.2f", valorTotalVentas), 
+                    fila[3],
+                    fila[4] 
+                });
             }
         }
     }

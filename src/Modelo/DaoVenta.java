@@ -117,7 +117,7 @@ public class DaoVenta extends Conexion {
             pstEliminarVenta = cnx.prepareStatement(stcEliminarVenta);
             pstEliminarVenta.setInt(1, v.getNumeroFactura());
             pstEliminarVenta.executeUpdate();
-            
+
             return true;
         } catch (SQLException ex) {
             System.err.println("Error al ejecutar el DELETE -> " + ex);
@@ -125,37 +125,39 @@ public class DaoVenta extends Conexion {
         }
         return false;
     }
-    
+
     public List<Object[]> obtenerVentasPorSucursal(int idSucursal) {
-    List<Object[]> ventas = new ArrayList<>();
-    String query = "SELECT u.username AS vendedor, COUNT(v.numero_factura) AS cantidad_ventas, "
-                 + "SUM(m.precio_unitario) AS valor_total_ventas, COUNT(vm.moto_id) AS cantidad_motos_vendidas "
-                 + "FROM ventas v "
-                 + "JOIN usuarios u ON v.vendedor_id = u.usuario_id "
-                 + "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id "
-                 + "JOIN motos m ON vm.moto_id = m.serial_moto "
-                 + "WHERE v.sucursal_id = ? "
-                 + "GROUP BY u.usuario_id";
+        List<Object[]> ventas = new ArrayList<>();
+        String query = "SELECT u.username AS vendedor, COUNT(v.numero_factura) AS cantidad_ventas, "
+                + "SUM(m.precio_unitario) AS valor_total_ventas, COUNT(vm.moto_id) AS cantidad_motos_vendidas, "
+                + "GROUP_CONCAT(m.serial_moto) AS motos_vendidas "
+                + "FROM ventas v "
+                + "JOIN usuarios u ON v.vendedor_id = u.usuario_id "
+                + "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id "
+                + "JOIN motos m ON vm.moto_id = m.serial_moto "
+                + "WHERE m.sucursal_id = ? " 
+                + "GROUP BY u.usuario_id";
 
-    try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
-        stmt.setInt(1, idSucursal);
-        ResultSet rs = stmt.executeQuery();
+        try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
+            stmt.setInt(1, idSucursal);
+            ResultSet rs = stmt.executeQuery();
 
-        while (rs.next()) {
-            ventas.add(new Object[]{
-                rs.getString("vendedor"),
-                rs.getInt("cantidad_ventas"),
-                rs.getDouble("valor_total_ventas"),
-                rs.getInt("cantidad_motos_vendidas")
-            });
+            while (rs.next()) {
+                ventas.add(new Object[]{
+                    rs.getString("vendedor"),
+                    rs.getInt("cantidad_ventas"),
+                    rs.getDouble("valor_total_ventas"),
+                    rs.getInt("cantidad_motos_vendidas"),
+                    rs.getString("motos_vendidas")
+                });
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta -> " + e);
+            mensaje("Error al ejecutar la consulta", "Consultar Ventas!!!");
         }
-    } catch (SQLException e) {
-        //System.err.println("Error al ejecutar la consulta -> " + e);
-        //mensaje("Error al ejecutar la consulta", "Consultar Ventas!!!");
-    }
 
-    return ventas;
-}
+        return ventas;
+    }
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);

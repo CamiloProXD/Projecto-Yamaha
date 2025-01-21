@@ -130,7 +130,7 @@ public class DaoMoto extends Conexion {
         String query = "SELECT m.nombre, m.modelo, m.color_moto, SUM(i.cantidad_motos) as totalCantidad "
                 + "FROM inventarios i "
                 + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
-                + "WHERE i.sucursal_id = ? AND m.vendida = 0 " // Filtrar por motos no vendidas
+                + "WHERE i.sucursal_id = ? AND m.vendida = 0 " 
                 + "GROUP BY m.nombre, m.modelo, m.color_moto";
 
         try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
