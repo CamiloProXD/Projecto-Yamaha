@@ -11,7 +11,7 @@ package Modelo;
 public class Pago {
     private int numeroFactura;
     private double montoPago;
-    boolean pagado;
+    int pagado;
 
     public int getNumeroFactura() {
         return numeroFactura;
@@ -29,11 +29,11 @@ public class Pago {
         this.montoPago = montoPago;
     }
 
-    public boolean isPagado() {
+    public int isPagado() {
         return pagado;
     }
 
-    public void setPagado(boolean pagado) {
+    public void setPagado(int pagado) {
         this.pagado = pagado;
     }
     

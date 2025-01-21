@@ -64,7 +64,7 @@ public class DaoPago extends Conexion {
             if(rst.next()){
                 pago.setNumeroFactura(Integer.parseInt(rst.getString("numero_factura")));
                 pago.setMontoPago(Double.parseDouble(rst.getString("monto_pago")));
-                pago.setPagado(Boolean.parseBoolean(rst.getString(stc)));
+                pago.setPagado(Integer.parseInt(rst.getString(stc)));
             }
             return true;
         }catch(SQLException ex){

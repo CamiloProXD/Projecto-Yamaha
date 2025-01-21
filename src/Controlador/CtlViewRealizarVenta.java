@@ -44,7 +44,7 @@ public class CtlViewRealizarVenta implements ActionListener {
         if (e.getSource().equals(vrv.btnGenerarFactura)) {
             Usuario nuevo = new Usuario(Integer.parseInt(vrv.txtIDUsuario.getText()), null, null, "Cliente", 0, null, 0, Integer.parseInt(vrv.TxtCedula.getText()), vrv.TxtNombre.getText(), vrv.txtApellido.getText(), vrv.TxtTelefono.getText(), null, vrv.txtDirec.getText());
             dUsuario.agregar(nuevo);
-            JOptionPane.showMessageDialog(null, "cliente " + vrv.TxtNombre +" agregado correctamente");
+            JOptionPane.showMessageDialog(null, "cliente " + vrv.TxtNombre.getText() +" agregado correctamente");
             vrp.setVisible(true);
             vrv.dispose();
         }

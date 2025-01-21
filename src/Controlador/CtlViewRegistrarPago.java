@@ -30,19 +30,30 @@ public class CtlViewRegistrarPago implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        if (ev.getSource().equals(vrp)) {
-            JOptionPane.showMessageDialog(null, "pago " + vrp.txtNumfactura + " registrado exitosamente", "confirmacion registro pago", 4);
+        if (ev.getSource().equals(vrp.btnConfirmarpago)) {
+            
+            JOptionPane.showMessageDialog(null, "Pago " + vrp.txtNumfactura.getText() + " registrado exitosamente", "Confirmación de Registro de Pago", JOptionPane.INFORMATION_MESSAGE);
+
+           
             DaoPago dPago = new DaoPago();
             Pago pago = new Pago();
+
+            
             pago.setNumeroFactura(Integer.parseInt(vrp.txtNumfactura.getText()));
             pago.setMontoPago(Double.parseDouble(vrp.txtMontopago.getText()));
-            pago.setPagado(true);
-            dPago.agregar(pago);
+            pago.setPagado(1);
+
+            if (dPago.agregar(pago)) {
+                JOptionPane.showMessageDialog(null, "Pago registrado exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al registrar el pago", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        if (ev.getSource().equals(vcs)) {
+
+        if (ev.getSource().equals(vcs.btncerrarSesion)) {
             vcs.setVisible(true);
             vrp.dispose();
-            
         }
+
     }
 }

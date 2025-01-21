@@ -135,8 +135,7 @@ public class ProyectoYamaha {
         CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
         CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
         CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv);
-        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv);
-        
+        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario);
         
         
         
