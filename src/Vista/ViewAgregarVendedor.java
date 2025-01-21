@@ -29,9 +29,8 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        RegresarAdmin = new javax.swing.JButton();
-        RegresaMenuPrincipal = new javax.swing.JButton();
-        btnAcceder = new Vista.MyButton();
+        btnCerrarSesion = new javax.swing.JButton();
+        btnEliminar = new Vista.MyButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -52,6 +51,8 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
         txtIDSucursal = new javax.swing.JTextField();
+        btnAcceder1 = new Vista.MyButton();
+        btnActualizar1 = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,9 +76,7 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
-        RegresarAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
-
-        RegresaMenuPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -85,40 +84,36 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(RegresarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1175, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RegresarAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(RegresaMenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 24, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
 
-        btnAcceder.setBackground(new java.awt.Color(227, 14, 21));
-        btnAcceder.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAcceder.setForeground(new java.awt.Color(242, 242, 242));
-        btnAcceder.setText("Agregar vendedor");
-        btnAcceder.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnAcceder.setBorderPainted(false);
-        btnAcceder.setColor(new java.awt.Color(227, 14, 21));
-        btnAcceder.setColorClick(new java.awt.Color(227, 14, 21));
-        btnAcceder.setColorOver(new java.awt.Color(167, 14, 21));
-        btnAcceder.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnAcceder.setRadius(30);
-        btnAcceder.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setBackground(new java.awt.Color(227, 14, 21));
+        btnEliminar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.setForeground(new java.awt.Color(242, 242, 242));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setColor(new java.awt.Color(227, 14, 21));
+        btnEliminar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnEliminar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnEliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnEliminar.setRadius(30);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccederActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 740, 260, 50));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 740, 260, 50));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Apellidos");
@@ -200,6 +195,42 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         txtIDSucursal.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jPanel1.add(txtIDSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 590, 320, -1));
 
+        btnAcceder1.setBackground(new java.awt.Color(227, 14, 21));
+        btnAcceder1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAcceder1.setForeground(new java.awt.Color(242, 242, 242));
+        btnAcceder1.setText("Agregar vendedor");
+        btnAcceder1.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnAcceder1.setBorderPainted(false);
+        btnAcceder1.setColor(new java.awt.Color(227, 14, 21));
+        btnAcceder1.setColorClick(new java.awt.Color(227, 14, 21));
+        btnAcceder1.setColorOver(new java.awt.Color(167, 14, 21));
+        btnAcceder1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnAcceder1.setRadius(30);
+        btnAcceder1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcceder1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAcceder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 740, 260, 50));
+
+        btnActualizar1.setBackground(new java.awt.Color(227, 14, 21));
+        btnActualizar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnActualizar1.setForeground(new java.awt.Color(242, 242, 242));
+        btnActualizar1.setText("Actualizar");
+        btnActualizar1.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnActualizar1.setBorderPainted(false);
+        btnActualizar1.setColor(new java.awt.Color(227, 14, 21));
+        btnActualizar1.setColorClick(new java.awt.Color(227, 14, 21));
+        btnActualizar1.setColorOver(new java.awt.Color(167, 14, 21));
+        btnActualizar1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnActualizar1.setRadius(30);
+        btnActualizar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnActualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 740, 260, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -214,9 +245,9 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAccederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccederActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAccederActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtNombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresActionPerformed
         // TODO add your handling code here:
@@ -225,6 +256,14 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
     private void txtNumTelefonicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumTelefonicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumTelefonicoActionPerformed
+
+    private void btnAcceder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceder1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAcceder1ActionPerformed
+
+    private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,9 +301,10 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton RegresaMenuPrincipal;
-    private javax.swing.JButton RegresarAdmin;
-    public Vista.MyButton btnAcceder;
+    public Vista.MyButton btnAcceder1;
+    public Vista.MyButton btnActualizar1;
+    public javax.swing.JButton btnCerrarSesion;
+    public Vista.MyButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

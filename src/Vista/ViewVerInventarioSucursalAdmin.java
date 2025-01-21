@@ -119,7 +119,7 @@ public class ViewVerInventarioSucursalAdmin extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(jScrollPane3);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 90));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 780, 240));
 
         tablaVentasSucursal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
