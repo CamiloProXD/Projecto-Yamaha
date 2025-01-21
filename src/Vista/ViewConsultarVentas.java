@@ -28,7 +28,6 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         LabelConsultar = new javax.swing.JLabel();
-        labelID = new javax.swing.JLabel();
         txtIdEmpleado = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaVentasEmpleados = new javax.swing.JTable();
@@ -52,12 +51,8 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
         btnConsultar = new Vista.MyButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtEmpleadoNombre = new javax.swing.JTextArea();
         labelID1 = new javax.swing.JLabel();
-        txtFechaInicial = new javax.swing.JTextField();
-        txtFechaFinal = new javax.swing.JTextField();
-        labelID2 = new javax.swing.JLabel();
+        txtEmpleadoNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -69,11 +64,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         LabelConsultar.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
         LabelConsultar.setText("Consultar Ventas");
         jPanel1.add(LabelConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 111, -1, -1));
-
-        labelID.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        labelID.setText("Fecha Inicial (YYYY-MM-DD)");
-        jPanel1.add(labelID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
-        jPanel1.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 207, -1));
+        jPanel1.add(txtIdEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 207, -1));
 
         tablaVentasEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -250,7 +241,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 62, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 838, 1300, -1));
@@ -267,7 +258,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btnCerrarSesion)
-                .addContainerGap(1244, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,27 +288,16 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         });
         jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 130, 60));
 
-        txtEmpleadoNombre.setColumns(20);
-        txtEmpleadoNombre.setRows(5);
-        jScrollPane2.setViewportView(txtEmpleadoNombre);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 250, 30));
-
         labelID1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         labelID1.setText("Ingrese El ID del empleado");
-        jPanel1.add(labelID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jPanel1.add(labelID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
-        txtFechaInicial.addActionListener(new java.awt.event.ActionListener() {
+        txtEmpleadoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaInicialActionPerformed(evt);
+                txtEmpleadoNombreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtFechaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 207, -1));
-        jPanel1.add(txtFechaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 207, -1));
-
-        labelID2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
-        labelID2.setText("Fecha Final (YYYY-MM-DD)");
-        jPanel1.add(labelID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        jPanel1.add(txtEmpleadoNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -337,9 +317,9 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void txtFechaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicialActionPerformed
+    private void txtEmpleadoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpleadoNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaInicialActionPerformed
+    }//GEN-LAST:event_txtEmpleadoNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,14 +347,9 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel labelID;
     private javax.swing.JLabel labelID1;
-    private javax.swing.JLabel labelID2;
     public javax.swing.JTable tablaVentasEmpleados;
-    public javax.swing.JTextArea txtEmpleadoNombre;
-    public javax.swing.JTextField txtFechaFinal;
-    public javax.swing.JTextField txtFechaInicial;
+    public javax.swing.JTextField txtEmpleadoNombre;
     public javax.swing.JTextField txtIdEmpleado;
     public javax.swing.JTextField txtModelo1;
     public javax.swing.JTextField txtTipo1;

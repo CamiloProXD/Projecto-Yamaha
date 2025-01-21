@@ -151,6 +151,8 @@ public class DaoUsuario extends Conexion {
         }
         return false;
     }
+    
+    
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);

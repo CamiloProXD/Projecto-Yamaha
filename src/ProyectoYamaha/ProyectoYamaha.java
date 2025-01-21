@@ -9,6 +9,7 @@ import Controlador.CtlViewAgregarVendedor;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesionAdministrado;
 import Controlador.CtlViewCerrarSesionEmpleado;
+import Controlador.CtlViewConsultarVentas;
 import Controlador.CtlViewPrincipal;
 import Controlador.CtlViewRegistrarMoto;
 import Controlador.CtlViewRegresarAutomaticas;
@@ -25,6 +26,7 @@ import Controlador.CtlViewVerinventarioSucursalEmpleado;
 import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
 import Modelo.DaoSede;
+import Modelo.DaoVentasMotos;
 import Modelo.Inventario;
 import Modelo.Moto;
 import Modelo.Persona;
@@ -77,6 +79,7 @@ public class ProyectoYamaha {
         DaoUsuario daousuario = new DaoUsuario();
         DaoMoto daomoto = new DaoMoto();
         DaoSede daosede = new DaoSede();
+        DaoVentasMotos daoventasmotos = new DaoVentasMotos();
         
         
         
@@ -119,6 +122,7 @@ public class ProyectoYamaha {
         CtlViewSucursalAdministrador ctlvsa = new CtlViewSucursalAdministrador(vsa, vvisa, vcsa, daosede, daousuario);
         CtlViewVerInventarioSucursalAdmin ctlvisa = new CtlViewVerInventarioSucursalAdmin(vvisa, vcsa, 1);
         CtlViewAgregarVendedor ctlvav = new CtlViewAgregarVendedor(vcsa, vav, daousuario);
+        CtlViewConsultarVentas ctlcv = new CtlViewConsultarVentas(vcsa, vcv, daoventasmotos, daousuario);
         //Controladores empleado
         CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv);
         CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);

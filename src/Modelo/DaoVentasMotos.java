@@ -77,23 +77,23 @@ public class DaoVentasMotos extends Conexion {
         return false;
     }
 
-    public ResultSet consultarVentasXVendedor(String vendedorId, String fechaIni, String fechaFin) {
+    public ResultSet consultarVentasXVendedor(String idVendedor) {
         Connection cnx = getConexion();
-        String stc = "select vm.fecha, p.monto_pago from ventas v "
-                + "join pagos p on v.numero_factura = p.numero_factura "
-                + "where v.vendedor_id = ? "
-                + "and v.fecha between ? and ?";
+        String query = "SELECT v.fecha AS 'fecha de venta', SUM(p.monto_pago) AS 'total de esta venta' "
+                + "FROM ventas v "
+                + "JOIN pagos p ON v.numero_factura = p.numero_factura "
+                + "WHERE v.vendedor_id = ? "
+                + "GROUP BY v.fecha";
         PreparedStatement pst;
+        ResultSet rst = null;
         try {
-            pst = cnx.prepareStatement(stc);
-            pst.setString(1, vendedorId);
-            pst.setString(2, fechaIni);
-            pst.setString(3, fechaFin);
-            return pst.executeQuery();
+            pst = cnx.prepareStatement(query);
+            pst.setInt(1, Integer.parseInt(idVendedor)); // Asegúrate de que el ID sea un número
+            rst = pst.executeQuery();
         } catch (SQLException e) {
-            System.out.println("error consultarVentasXVendedor: " + e);
+            System.err.println("Error al consultar ventas: " + e.getMessage());
         }
-        return null;
+        return rst;
     }
 
     public void mensaje(String msg, String title) {

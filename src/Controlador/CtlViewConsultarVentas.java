@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.DaoUsuario;
 import Modelo.DaoVentasMotos;
 import Modelo.Persona;
 import Vista.ViewCerrarSesionAdmin;
@@ -24,6 +25,21 @@ public class CtlViewConsultarVentas implements ActionListener {
     private ViewConsultarVentas vConsultarVentas;
     private DaoVentasMotos dVM;
     private DefaultTableModel modelo;
+    private DaoUsuario daousuario;
+
+    public CtlViewConsultarVentas(ViewCerrarSesionAdmin vCerrAdm, ViewConsultarVentas vConsultarVentas, DaoVentasMotos dVM, DaoUsuario daousuario) {
+        this.vCerrAdm = vCerrAdm;
+        this.vConsultarVentas = vConsultarVentas;
+        this.dVM = dVM;
+        this.modelo = modelo;
+        this.daousuario = daousuario;
+        
+        this.vConsultarVentas.btnCerrarSesion.addActionListener(this);
+        this.vConsultarVentas.btnConsultar.addActionListener(this);
+        initTabla();
+    }
+    
+    
 
     public void initTabla() {
         String[] titulos = {"fecha de venta", "total de esta venta"};
@@ -33,14 +49,14 @@ public class CtlViewConsultarVentas implements ActionListener {
 
     public void llenarTabla() {
         modelo.setRowCount(0);
-        ResultSet rst = dVM.consultarVentasXVendedor(vConsultarVentas.txtIdEmpleado.getText(), vConsultarVentas.txtFechaInicial.getText(), vConsultarVentas.txtFechaFinal.getText());
+        ResultSet rst = dVM.consultarVentasXVendedor(vConsultarVentas.txtIdEmpleado.getText());
         try {
             while (rst.next()) {
                 Object[] row = new Object[2];
                 row[0] = rst.getDate("fecha de venta");
                 row[1] = rst.getDouble("total de esta venta");
 
-                // Add the row to the table model
+                
                 modelo.addRow(row);
             }
         } catch (SQLException e) {
@@ -55,9 +71,9 @@ public class CtlViewConsultarVentas implements ActionListener {
             vConsultarVentas.dispose();
         }
         if (e.getSource().equals(vConsultarVentas.btnConsultar)) {
-            dVM.consultarVentasXVendedor(vConsultarVentas.txtIdEmpleado.getText(), vConsultarVentas.txtFechaInicial.getText(), vConsultarVentas.txtFechaFinal.getText());
+            llenarTabla();
             Persona persona = new Persona();
-            vConsultarVentas.txtEmpleadoNombre.setText(persona.getNombres());
+            vConsultarVentas.txtEmpleadoNombre.setText(daousuario.obtenerNombrePorId(Integer.parseInt(vConsultarVentas.txtIdEmpleado.getText())));
         }
     }
 }
