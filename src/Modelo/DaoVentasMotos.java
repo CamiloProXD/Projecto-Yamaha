@@ -77,6 +77,25 @@ public class DaoVentasMotos extends Conexion {
         return false;
     }
 
+    public ResultSet consultarVentasXVendedor(String vendedorId, String fechaIni, String fechaFin) {
+        Connection cnx = getConexion();
+        String stc = "select vm.fecha, p.monto_pago from ventas v "
+                + "join pagos p on v.numero_factura = p.numero_factura "
+                + "where v.vendedor_id = ? "
+                + "and v.fecha between ? and ?";
+        PreparedStatement pst;
+        try {
+            pst = cnx.prepareStatement(stc);
+            pst.setString(1, vendedorId);
+            pst.setString(2, fechaIni);
+            pst.setString(3, fechaFin);
+            return pst.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("error consultarVentasXVendedor: " + e);
+        }
+        return null;
+    }
+
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);
     }

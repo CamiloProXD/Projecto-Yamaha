@@ -83,7 +83,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "fecha de venta", "cantidad Ventas"
+                "fecha de venta", "total de esta venta"
             }
         ));
         jScrollPane1.setViewportView(tablaVentasEmpleados);
@@ -306,6 +306,12 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
         labelID1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
         labelID1.setText("Ingrese El ID del empleado");
         jPanel1.add(labelID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        txtFechaInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaInicialActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtFechaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 207, -1));
         jPanel1.add(txtFechaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 207, -1));
 
@@ -330,6 +336,10 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void txtFechaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaInicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaInicialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,7 +371,7 @@ public class ViewConsultarVentas extends javax.swing.JFrame {
     private javax.swing.JLabel labelID;
     private javax.swing.JLabel labelID1;
     private javax.swing.JLabel labelID2;
-    private javax.swing.JTable tablaVentasEmpleados;
+    public javax.swing.JTable tablaVentasEmpleados;
     public javax.swing.JTextArea txtEmpleadoNombre;
     public javax.swing.JTextField txtFechaFinal;
     public javax.swing.JTextField txtFechaInicial;
