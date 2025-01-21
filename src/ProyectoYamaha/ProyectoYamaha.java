@@ -11,7 +11,9 @@ import Controlador.CtlViewCerrarSesionAdministrado;
 import Controlador.CtlViewCerrarSesionEmpleado;
 import Controlador.CtlViewConsultarVentas;
 import Controlador.CtlViewPrincipal;
+import Controlador.CtlViewRealizarVenta;
 import Controlador.CtlViewRegistrarMoto;
+import Controlador.CtlViewRegistrarPago;
 import Controlador.CtlViewRegresarAutomaticas;
 import Controlador.CtlViewRegresarDeportivas;
 import Controlador.CtlViewRegresarEnduro;
@@ -49,6 +51,7 @@ import Vista.ViewConsultarVentas;
 import Vista.ViewPrincipal;
 import Vista.ViewRealizarVenta;
 import Vista.ViewRegistrarmoto;
+import Vista.ViewRegistrarpago;
 import Vista.ViewSucursalAdministrador;
 import Vista.ViewSucursalEmpleado;
 import Vista.ViewVendedor;
@@ -106,6 +109,7 @@ public class ProyectoYamaha {
         ViewRealizarVenta vrv = new ViewRealizarVenta();
         ViewVerInventarioSucursalAdmin vvisa = new ViewVerInventarioSucursalAdmin();
         ViewVerInventarioSucursalEmpleado vvise = new ViewVerInventarioSucursalEmpleado();
+        ViewRegistrarpago vrp = new ViewRegistrarpago();
         
         
         //Controladores
@@ -130,7 +134,8 @@ public class ProyectoYamaha {
         CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
         CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
         CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
-        
+        CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv);
+        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv);
         
         
         
