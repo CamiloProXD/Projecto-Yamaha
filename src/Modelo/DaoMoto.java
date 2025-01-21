@@ -82,6 +82,7 @@ public class DaoMoto extends Conexion {
     }
 
     public boolean consultar(Moto m) {
+        int h =0;
         Connection cnx = getConexion();
         String stc = "SELECT * FROM motos WHERE serial_moto=?";
         PreparedStatement pst;

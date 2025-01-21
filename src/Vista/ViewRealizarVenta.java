@@ -57,6 +57,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         botonMenu = new javax.swing.JButton();
         btnGenerarFactura = new Vista.MyButton();
         jPanel3 = new javax.swing.JPanel();
+        btnGenerarFactura1 = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -65,111 +66,74 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Realizar venta");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 95, -1, -1));
 
         labelCliente.setFont(new java.awt.Font("Bodoni MT Black", 0, 36)); // NOI18N
-        labelCliente.setForeground(new java.awt.Color(0, 0, 0));
         labelCliente.setText("Cliente ");
         jPanel1.add(labelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 169, 158, -1));
 
         labelNombre.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelNombre.setForeground(new java.awt.Color(0, 0, 0));
         labelNombre.setText("Nombre");
         jPanel1.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 246, -1, -1));
 
         labelapellido.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelapellido.setForeground(new java.awt.Color(0, 0, 0));
         labelapellido.setText("Apellido");
         jPanel1.add(labelapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 332, -1, -1));
 
         labelcedula.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelcedula.setForeground(new java.awt.Color(0, 0, 0));
         labelcedula.setText("Cedúla");
         jPanel1.add(labelcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 504, -1, -1));
 
         labelNumero.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelNumero.setForeground(new java.awt.Color(0, 0, 0));
         labelNumero.setText("Contacto");
         jPanel1.add(labelNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 418, -1, -1));
 
         labelDirec.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelDirec.setForeground(new java.awt.Color(0, 0, 0));
         labelDirec.setText("Dirección");
         jPanel1.add(labelDirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 590, -1, -1));
 
         labelTipo.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelTipo.setForeground(new java.awt.Color(0, 0, 0));
         labelTipo.setText("Tipo");
         jPanel1.add(labelTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 246, -1, -1));
 
         LabelMod.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        LabelMod.setForeground(new java.awt.Color(0, 0, 0));
         LabelMod.setText("Modelo");
         jPanel1.add(LabelMod, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 332, -1, -1));
 
         LabelColor.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        LabelColor.setForeground(new java.awt.Color(0, 0, 0));
         LabelColor.setText("Color");
         jPanel1.add(LabelColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 590, -1, -1));
 
         LabePrec.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        LabePrec.setForeground(new java.awt.Color(0, 0, 0));
         LabePrec.setText("Precio");
         jPanel1.add(LabePrec, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 418, -1, -1));
-
-        TxtNombre.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 286, 225, -1));
-
-        txtApellido.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 372, 225, -1));
-
-        TxtCedula.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(TxtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 544, 225, -1));
-
-        TxtTelefono.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(TxtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 458, 225, -1));
-
-        txtDirec.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtDirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 630, 225, -1));
 
         jLabel3.setFont(new java.awt.Font("Bodoni MT Black", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Moto");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 169, -1, -1));
 
         labelPlaca.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelPlaca.setForeground(new java.awt.Color(0, 0, 0));
         labelPlaca.setText("Placa");
         jPanel1.add(labelPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 504, -1, -1));
-
-        txttipo.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txttipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 286, 190, -1));
-
-        txtmodelo.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtmodelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 372, 190, -1));
-
-        txtprecio.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtprecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 458, 190, -1));
-
-        txtPlaca.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 544, 190, -1));
-
-        TxtColor.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(TxtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(837, 630, 190, -1));
 
         jLabel2.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Precio abonado");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 676, -1, -1));
-
-        txtAbonado.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(txtAbonado, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 716, 225, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 0));
 
-        botonRegresar.setBackground(new java.awt.Color(255, 255, 255));
         botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/esquema-de-boton-circular-de-flecha-hacia-atras-izquierda.png"))); // NOI18N
         botonRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,7 +141,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
             }
         });
 
-        botonMenu.setBackground(new java.awt.Color(255, 255, 255));
         botonMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/casa.png"))); // NOI18N
         botonMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,7 +174,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         btnGenerarFactura.setBackground(new java.awt.Color(227, 14, 21));
         btnGenerarFactura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnGenerarFactura.setForeground(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.setText("Agregar moto");
         btnGenerarFactura.setBorderColor(new java.awt.Color(242, 242, 242));
         btnGenerarFactura.setBorderPainted(false);
         btnGenerarFactura.setColor(new java.awt.Color(227, 14, 21));
@@ -224,7 +187,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
                 btnGenerarFacturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
+        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 730, 223, 60));
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
 
@@ -240,6 +203,24 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 823, -1, -1));
+
+        btnGenerarFactura1.setBackground(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGenerarFactura1.setForeground(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura1.setText("Generar Factura");
+        btnGenerarFactura1.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura1.setBorderPainted(false);
+        btnGenerarFactura1.setColor(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura1.setColorClick(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura1.setColorOver(new java.awt.Color(167, 14, 21));
+        btnGenerarFactura1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnGenerarFactura1.setRadius(30);
+        btnGenerarFactura1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarFactura1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGenerarFactura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -270,6 +251,10 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarFacturaActionPerformed
 
+    private void btnGenerarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFactura1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarFactura1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,6 +271,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     private javax.swing.JButton botonMenu;
     private javax.swing.JButton botonRegresar;
     public Vista.MyButton btnGenerarFactura;
+    public Vista.MyButton btnGenerarFactura1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
