@@ -51,8 +51,9 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JTextField();
         txtSalario = new javax.swing.JTextField();
         txtIDSucursal = new javax.swing.JTextField();
-        btnAcceder1 = new Vista.MyButton();
-        btnActualizar1 = new Vista.MyButton();
+        btnAgregarVendedor = new Vista.MyButton();
+        btnActualizar = new Vista.MyButton();
+        LabelConsultar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -196,41 +197,45 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         txtIDSucursal.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jPanel1.add(txtIDSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 590, 320, -1));
 
-        btnAcceder1.setBackground(new java.awt.Color(227, 14, 21));
-        btnAcceder1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAcceder1.setForeground(new java.awt.Color(242, 242, 242));
-        btnAcceder1.setText("Agregar vendedor");
-        btnAcceder1.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnAcceder1.setBorderPainted(false);
-        btnAcceder1.setColor(new java.awt.Color(227, 14, 21));
-        btnAcceder1.setColorClick(new java.awt.Color(227, 14, 21));
-        btnAcceder1.setColorOver(new java.awt.Color(167, 14, 21));
-        btnAcceder1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnAcceder1.setRadius(30);
-        btnAcceder1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarVendedor.setBackground(new java.awt.Color(227, 14, 21));
+        btnAgregarVendedor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAgregarVendedor.setForeground(new java.awt.Color(242, 242, 242));
+        btnAgregarVendedor.setText("Agregar vendedor");
+        btnAgregarVendedor.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnAgregarVendedor.setBorderPainted(false);
+        btnAgregarVendedor.setColor(new java.awt.Color(227, 14, 21));
+        btnAgregarVendedor.setColorClick(new java.awt.Color(227, 14, 21));
+        btnAgregarVendedor.setColorOver(new java.awt.Color(167, 14, 21));
+        btnAgregarVendedor.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnAgregarVendedor.setRadius(30);
+        btnAgregarVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAcceder1ActionPerformed(evt);
+                btnAgregarVendedorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAcceder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 740, 260, 50));
+        jPanel1.add(btnAgregarVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 740, 260, 50));
 
-        btnActualizar1.setBackground(new java.awt.Color(227, 14, 21));
-        btnActualizar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnActualizar1.setForeground(new java.awt.Color(242, 242, 242));
-        btnActualizar1.setText("Actualizar");
-        btnActualizar1.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnActualizar1.setBorderPainted(false);
-        btnActualizar1.setColor(new java.awt.Color(227, 14, 21));
-        btnActualizar1.setColorClick(new java.awt.Color(227, 14, 21));
-        btnActualizar1.setColorOver(new java.awt.Color(167, 14, 21));
-        btnActualizar1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnActualizar1.setRadius(30);
-        btnActualizar1.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setBackground(new java.awt.Color(227, 14, 21));
+        btnActualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnActualizar.setForeground(new java.awt.Color(242, 242, 242));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnActualizar.setBorderPainted(false);
+        btnActualizar.setColor(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnActualizar.setRadius(30);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizar1ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnActualizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 740, 260, 50));
+        jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 740, 260, 50));
+
+        LabelConsultar.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
+        LabelConsultar.setText("Gestion Empleado");
+        jPanel1.add(LabelConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,16 +263,17 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumTelefonicoActionPerformed
 
-    private void btnAcceder1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceder1ActionPerformed
+    private void btnAgregarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVendedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAcceder1ActionPerformed
+    }//GEN-LAST:event_btnAgregarVendedorActionPerformed
 
-    private void btnActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizar1ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizar1ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public Vista.MyButton btnAcceder1;
-    public Vista.MyButton btnActualizar1;
+    private javax.swing.JLabel LabelConsultar;
+    public Vista.MyButton btnActualizar;
+    public Vista.MyButton btnAgregarVendedor;
     public javax.swing.JButton btnCerrarSesion;
     public Vista.MyButton btnEliminar;
     private javax.swing.JLabel jLabel1;

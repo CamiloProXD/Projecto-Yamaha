@@ -5,6 +5,7 @@
 package ProyectoYamaha;
 
 import Controlador.CtlViewAdministrador;
+import Controlador.CtlViewAgregarVendedor;
 import Controlador.CtlViewCatalogoPrincipal;
 import Controlador.CtlViewCerrarSesionAdministrado;
 import Controlador.CtlViewCerrarSesionEmpleado;
@@ -117,6 +118,7 @@ public class ProyectoYamaha {
         CtlViewRegistrarMoto ctlvrm = new CtlViewRegistrarMoto(daomoto, vrm, moto, vcsa);
         CtlViewSucursalAdministrador ctlvsa = new CtlViewSucursalAdministrador(vsa, vvisa, vcsa, daosede, daousuario);
         CtlViewVerInventarioSucursalAdmin ctlvisa = new CtlViewVerInventarioSucursalAdmin(vvisa, vcsa, 1);
+        CtlViewAgregarVendedor ctlvav = new CtlViewAgregarVendedor(vcsa, vav, daousuario);
         //Controladores empleado
         CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv);
         CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
