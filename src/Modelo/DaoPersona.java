@@ -15,34 +15,35 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class DaoPersona extends Conexion {
-    public boolean agregar(Persona p){
-        Connection cnx= getConexion();
+
+    public boolean agregar(Persona p) {
+        Connection cnx = getConexion();
         String stc = "INSERT INTO personas (persona_id,nombres,apellidos,email,numero_telefonico,direccion) VALUES (?,?,?,?,?,?)";
         PreparedStatement pst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
             pst.setString(1, Integer.toString(p.getId()));
             pst.setString(2, p.getNombres());
             pst.setString(3, p.getApellidos());
             pst.setString(4, p.getEmail());
-            pst.setString(5, p.getNumeroTelefonico());       
+            pst.setString(5, p.getNumeroTelefonico());
             pst.setString(6, p.getDireccion());
             pst.execute();
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el INSERT-> "+ex);
-            mensaje("Error al ejecutar el INSERT","Agregar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el INSERT-> " + ex);
+            mensaje("Error al ejecutar el INSERT", "Agregar!!!");
         }
-        
+
         return false;
     }
-    
-    public boolean actualizar(Persona p){
-        Connection cnx= getConexion();
+
+    public boolean actualizar(Persona p) {
+        Connection cnx = getConexion();
         String stc = "UPDATE personas SET nombres=?,apellidos=?,email=?,numero_telefonico=?,direccion=? WHERE persona_id=?";
         PreparedStatement pst;
-        try{
-            pst = cnx.prepareStatement(stc);  
+        try {
+            pst = cnx.prepareStatement(stc);
             pst.setString(1, p.getNombres());
             pst.setString(2, p.getApellidos());
             pst.setString(3, p.getEmail());
@@ -51,56 +52,55 @@ public class DaoPersona extends Conexion {
             pst.setString(6, Integer.toString(p.getId()));
             pst.execute();
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el UPDATE -> "+ex);
-            mensaje("Error al ejecutar el UPDATE","actualizar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el UPDATE -> " + ex);
+            mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
         }
         return false;
-    } 
-    
-    public boolean consultar(Persona p){
-        Connection cnx= getConexion();
+    }
+
+    public boolean consultar(Persona p) {
+        Connection cnx = getConexion();
         String stc = "SELECT * FROM personas WHERE persona_id=?";
         PreparedStatement pst;
         ResultSet rst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
             pst.setString(1, Integer.toString(p.getId()));
             rst = pst.executeQuery();
-            if(rst.next()){
+            if (rst.next()) {
                 p.setNombres(rst.getString("nombres"));
                 p.setApellidos(rst.getString("apellidos"));
                 p.setEmail(rst.getString("email"));
                 p.setNumeroTelefonico(rst.getString("numero_telefonico"));
                 p.setDireccion(rst.getString("direccion"));
-              
+
             }
             return true;
-        }catch(SQLException ex){
-            System.err.println("Error al ejecutar el SELECT -> "+ex);
-            mensaje("Error al ejecutar el SELECT","consultar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el SELECT -> " + ex);
+            mensaje("Error al ejecutar el SELECT", "consultar!!!");
         }
         return false;
-    } 
-    
-     public boolean eliminar(Persona p){
+    }
+
+    public boolean eliminar(Persona p) {
         Connection cnx = getConexion();
         String stc = "DELETE FROM persona WHERE persona_id=?)";
         PreparedStatement pst;
-        try{
+        try {
             pst = cnx.prepareStatement(stc);
             pst.setString(1, Integer.toString(p.getId()));
             pst.execute();
             return true;
-        }
-        catch(SQLException ex){
-            System.err.println("Error al ejecutar el DELETE -> "+ex);
-            mensaje("Error al ejecutar el DELETE","eliminar!!!");
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el DELETE -> " + ex);
+            mensaje("Error al ejecutar el DELETE", "eliminar!!!");
         }
         return false;
-   }
-    
-    public void mensaje(String msg, String title){
+    }
+
+    public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);
     }
 }

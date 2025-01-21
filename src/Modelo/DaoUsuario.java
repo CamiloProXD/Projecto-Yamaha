@@ -39,20 +39,21 @@ public class DaoUsuario extends Conexion {
 
     public boolean actualizar(Usuario u) {
         Connection cnx = getConexion();
-        String stc = "UPDATE usuarios SET username=?,password=?,rol=?,salario=? WHERE usuario_id=?";
+        String stc = "UPDATE usuarios SET username=?, password=?, rol=?, salario=?, persona_id=? WHERE usuario_id=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
             pst.setString(1, u.getUsername());
             pst.setString(2, u.getPassword());
             pst.setString(3, u.getRol());
-            pst.setString(4, Double.toString(u.getSalario()));
-            pst.setString(5, Integer.toString(u.getIdUsuario()));
-            pst.execute();
+            pst.setDouble(4, u.getSalario());
+            pst.setInt(5, u.getId()); 
+            pst.setInt(6, u.getIdUsuario()); 
+            pst.executeUpdate();
             return true;
         } catch (SQLException ex) {
             System.err.println("Error al ejecutar el UPDATE -> " + ex);
-            mensaje("Error al ejecutar el UPDATE", "actualizar!!!");
+            mensaje("Error al ejecutar el UPDATE", "Actualizar!!!");
         }
         return false;
     }
@@ -151,8 +152,6 @@ public class DaoUsuario extends Conexion {
         }
         return false;
     }
-    
-    
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);

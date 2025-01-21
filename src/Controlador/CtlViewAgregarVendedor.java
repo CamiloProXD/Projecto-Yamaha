@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.DaoPersona;
 import Modelo.DaoUsuario;
 import Modelo.Persona;
 import Modelo.Usuario;
@@ -22,16 +23,16 @@ public class CtlViewAgregarVendedor implements ActionListener {
     ViewCerrarSesionAdmin cs;
     ViewAgregarVendedor vav;
     DaoUsuario daousuario;
+    DaoPersona daopersona;
 
-    public CtlViewAgregarVendedor(ViewCerrarSesionAdmin cs, ViewAgregarVendedor vav, DaoUsuario daousuario) {
+    public CtlViewAgregarVendedor(ViewCerrarSesionAdmin cs, ViewAgregarVendedor vav, DaoUsuario daousuario, DaoPersona daopersona) {
         this.cs = cs;
         this.vav = vav;
         this.daousuario = daousuario;
+        this.daopersona = daopersona;
 
         vav.btnAgregarVendedor.addActionListener(this);
-        vav.btnActualizar.addActionListener(this);
         vav.btnCerrarSesion.addActionListener(this);
-        vav.btnEliminar.addActionListener(this);
     }
 
     @Override
@@ -48,7 +49,6 @@ public class CtlViewAgregarVendedor implements ActionListener {
             Double salario = Double.parseDouble(vav.txtSalario.getText());
             int sucursal_id = Integer.parseInt(vav.txtIDSucursal.getText());
 
-            // Crear un nuevo objeto Persona
             Persona nuevaPersona = new Persona();
             nuevaPersona.setId(id);
             nuevaPersona.setNombres(nombres);
@@ -57,9 +57,7 @@ public class CtlViewAgregarVendedor implements ActionListener {
             nuevaPersona.setNumeroTelefonico(numeroTelefonico);
             nuevaPersona.setDireccion(direccion);
 
-            // Agregar la persona a la base de datos
             if (daousuario.agregarPersona(nuevaPersona)) {
-                // Crear un nuevo objeto Usuario
                 Usuario nuevoUsuario = new Usuario();
                 nuevoUsuario.setUsername(username);
                 nuevoUsuario.setPassword(password);
@@ -68,7 +66,6 @@ public class CtlViewAgregarVendedor implements ActionListener {
                 nuevoUsuario.setId(nuevaPersona.getId());
                 nuevoUsuario.setIdSede(sucursal_id);
 
-                
                 if (daousuario.agregar(nuevoUsuario)) {
                     mensaje("Vendedor agregado exitosamente!", "Agregar Vendedor");
                     limpiarCampos();
@@ -79,6 +76,7 @@ public class CtlViewAgregarVendedor implements ActionListener {
                 mensaje("Error al agregar la persona.", "Agregar Persona");
             }
         }
+
     }
 
     public void mensaje(String msg, String title) {
