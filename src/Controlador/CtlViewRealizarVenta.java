@@ -30,6 +30,8 @@ public class CtlViewRealizarVenta implements ActionListener {
     private ViewRealizarVenta vrv;
     private ViewCerrarSesionEmpleado vcs;
     private DaoUsuario dUsuario;
+    private Venta venta;
+    private Moto moto;
 
     public CtlViewRealizarVenta(ViewRegistrarpago vrp, ViewRealizarVenta vrv, ViewCerrarSesionEmpleado vcs, DaoUsuario dUsuario) {
         this.vrp = vrp;
@@ -52,6 +54,7 @@ public class CtlViewRealizarVenta implements ActionListener {
         }
         if (e.getSource().equals(vrv.btnAnadirMoto)) {
             vrp.setVisible(true);
+            venderMoto(moto, venta);
             vrv.dispose();
         }
         if(e.getSource().equals(vrv.botonRegresar)){
