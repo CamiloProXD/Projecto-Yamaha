@@ -103,7 +103,8 @@ public class CtlViewRealizarVenta implements ActionListener {
             if (rs.next()) {
                 
 
-                String ruta = "D:\\universidad" + idVenta + ".pdf";
+                String ruta = "D:\\universidad\\3er semestre\\proyecto Yamaha\\" + "Factura de la venta "+idVenta + ".pdf";
+               
 
                 Document document = new Document();
                 PdfWriter.getInstance(document, new FileOutputStream(ruta));
