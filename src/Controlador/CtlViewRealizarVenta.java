@@ -130,6 +130,7 @@ public class CtlViewRealizarVenta implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "No se encontraron datos para la factura " + idVenta, "Error", JOptionPane.ERROR_MESSAGE);
             }
+            
 
         } catch (Exception ex) {
             ex.printStackTrace();
