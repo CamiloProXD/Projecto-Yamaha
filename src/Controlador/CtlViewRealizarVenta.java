@@ -88,38 +88,43 @@ public class CtlViewRealizarVenta implements ActionListener {
 
     public void generarFactura(int idVenta) {
         Connection conexion = new Conexion().getConexion();
-        String query = "SELECT v.numeroFactura, c.nombreCliente, c.cedulaCliente, c.direccionCliente, c.telefonoCliente, " +
-                       "m.modeloMoto, m.precioMoto, v.fechaVenta " +
+        String query = "SELECT v.numero_factura, p.nombres, p.persona_id, p.direccion, p.numero_telefonico, " +
+                       "m.modelo, m.precio_unitario, v.fecha, m.nombre " +
                        "FROM ventas v " +
-                       "JOIN clientes c ON v.clienteId = c.idCliente " +
-                       "JOIN ventas_motos vm ON v.numeroFactura = vm.ventaId " +
-                       "JOIN motos m ON vm.motoId = m.idMoto " +
-                       "WHERE v.numeroFactura = ?";
+                       "JOIN personas p ON v.cliente_id = p.persona_id " +
+                       "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id " +
+                       "JOIN motos m ON vm.moto_id = m.serial_moto " +
+                       "WHERE v.numero_factura = ?";
 
         try (PreparedStatement ps = conexion.prepareStatement(query)) {
             ps.setInt(1, idVenta);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
+                
 
-                String ruta = "C:\\Users\\LUIS A\\Desktop\\Trabajos\\factura_" + idVenta + ".pdf";
+                String ruta = "D:\\universidad" + idVenta + ".pdf";
 
                 Document document = new Document();
                 PdfWriter.getInstance(document, new FileOutputStream(ruta));
                 document.open();
 
                 document.add(new Paragraph("Factura de Venta"));
-                document.add(new Paragraph("Número de Factura: " + rs.getInt("numeroFactura")));
-                document.add(new Paragraph("Fecha: " + rs.getDate("fechaVenta")));
-                document.add(new Paragraph("Cliente: " + rs.getString("nombreCliente")));
-                document.add(new Paragraph("Cédula: " + rs.getString("cedulaCliente")));
-                document.add(new Paragraph("Dirección: " + rs.getString("direccionCliente")));
-                document.add(new Paragraph("Teléfono: " + rs.getString("telefonoCliente")));
+                document.add(new Paragraph("Número de Factura: " + rs.getInt("numero_factura")));
+                document.add(new Paragraph("Fecha: " + rs.getDate("fecha")));
+                document.add(new Paragraph("Cliente: " + rs.getString("nombres")));
+                document.add(new Paragraph("Cédula: " + rs.getString("persona_id")));
+                document.add(new Paragraph("Dirección: " + rs.getString("direccion")));
+                document.add(new Paragraph("Teléfono: " + rs.getString("numero_telefonico")));
                 document.add(new Paragraph("\n"));
 
                 document.add(new Paragraph("Detalle de la compra:"));
-                document.add(new Paragraph("Modelo: " + rs.getString("modeloMoto")));
-                document.add(new Paragraph("Precio: " + rs.getDouble("precioMoto")));
+                document.add(new Paragraph("Nombre moto:" + rs.getString("nombre")));
+                document.add(new Paragraph("Modelo: " + rs.getString("modelo")));
+                
+                String precio = String.format("%.2f", rs.getDouble("precio_unitario")); 
+                document.add(new Paragraph("Precio: " + precio));
+                
                 document.add(new Paragraph("\n"));
 
                 document.close();

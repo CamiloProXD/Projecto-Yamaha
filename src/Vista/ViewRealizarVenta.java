@@ -210,7 +210,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         jPanel1.add(txtIDVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 540, 225, -1));
 
         labelNombre2.setFont(new java.awt.Font("Bodoni MT Black", 0, 18)); // NOI18N
-        labelNombre2.setText("ID usuario");
+        labelNombre2.setText("Cedula");
         jPanel1.add(labelNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
         jPanel1.add(txtIDUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 225, -1));
 
@@ -235,7 +235,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
                 btnGenerarFacturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
+        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 223, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
