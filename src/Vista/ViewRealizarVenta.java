@@ -62,7 +62,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         txtIDUsuario1 = new javax.swing.JTextField();
         LabelColor1 = new javax.swing.JLabel();
         txtSerial = new javax.swing.JTextField();
-        btnGenerarFactura1 = new Vista.MyButton();
+        btnGenerarFactura = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -219,23 +219,23 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         jPanel1.add(LabelColor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, -1, -1));
         jPanel1.add(txtSerial, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 580, 190, -1));
 
-        btnGenerarFactura1.setBackground(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnGenerarFactura1.setForeground(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura1.setText("Generar Factura");
-        btnGenerarFactura1.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnGenerarFactura1.setBorderPainted(false);
-        btnGenerarFactura1.setColor(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setColorClick(new java.awt.Color(227, 14, 21));
-        btnGenerarFactura1.setColorOver(new java.awt.Color(167, 14, 21));
-        btnGenerarFactura1.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnGenerarFactura1.setRadius(30);
-        btnGenerarFactura1.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerarFactura.setBackground(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnGenerarFactura.setForeground(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura.setText("Generar Factura");
+        btnGenerarFactura.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnGenerarFactura.setBorderPainted(false);
+        btnGenerarFactura.setColor(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setColorClick(new java.awt.Color(227, 14, 21));
+        btnGenerarFactura.setColorOver(new java.awt.Color(167, 14, 21));
+        btnGenerarFactura.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnGenerarFactura.setRadius(30);
+        btnGenerarFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarFactura1ActionPerformed(evt);
+                btnGenerarFacturaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGenerarFactura1, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
+        jPanel1.add(btnGenerarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 734, 223, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -266,9 +266,9 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombreActionPerformed
 
-    private void btnGenerarFactura1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFactura1ActionPerformed
+    private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarFactura1ActionPerformed
+    }//GEN-LAST:event_btnGenerarFacturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,7 +286,7 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     public javax.swing.JTextField TxtTelefono;
     public javax.swing.JButton botonRegresar;
     public Vista.MyButton btnAnadirMoto;
-    public Vista.MyButton btnGenerarFactura1;
+    public Vista.MyButton btnGenerarFactura;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
