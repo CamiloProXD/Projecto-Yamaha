@@ -33,6 +33,7 @@ public class ViewAgregarMotos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtSerialMotoVenta = new javax.swing.JTextField();
+        btnActualizar = new Vista.MyButton();
 
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
@@ -74,6 +75,18 @@ public class ViewAgregarMotos extends javax.swing.JInternalFrame {
 
         txtSerialMotoVenta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
+        btnActualizar.setBackground(new java.awt.Color(227, 14, 21));
+        btnActualizar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnActualizar.setForeground(new java.awt.Color(242, 242, 242));
+        btnActualizar.setText("Actualizar");
+        btnActualizar.setBorderColor(new java.awt.Color(242, 242, 242));
+        btnActualizar.setBorderPainted(false);
+        btnActualizar.setColor(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorClick(new java.awt.Color(227, 14, 21));
+        btnActualizar.setColorOver(new java.awt.Color(167, 14, 21));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btnActualizar.setRadius(30);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -84,15 +97,17 @@ public class ViewAgregarMotos extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(txtSerialMotoVenta))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnAnadirMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 36, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addComponent(jLabel1))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(24, 24, 24)
+                                    .addComponent(btnAnadirMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 24, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -105,8 +120,10 @@ public class ViewAgregarMotos extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
                 .addComponent(txtSerialMotoVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(46, 46, 46)
                 .addComponent(btnAnadirMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -123,6 +140,7 @@ public class ViewAgregarMotos extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public Vista.MyButton btnActualizar;
     public Vista.MyButton btnAnadirMoto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
