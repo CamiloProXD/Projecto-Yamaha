@@ -21,14 +21,14 @@ public class DaoVenta extends Conexion {
 
     public boolean agregar(Venta v) {
         Connection cnx = getConexion();
-        String stc = "INSERT INTO ventas (numero_factura, fecha, vendedor_id, cliente_id) VALUES (?,?,?,?)";
+        String stc = "INSERT INTO ventas (vendedor_id, cliente_id, fecha, sucursal_id) VALUES (?,?,?,?)";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setString(1, Integer.toString(v.getNumeroFactura()));
-            pst.setDate(2, new java.sql.Date(v.getFecha().getTime()));
-            pst.setString(3, Integer.toString(v.getVendedor().getIdUsuario()));
-            pst.setString(4, Integer.toString(v.getCliente().getIdUsuario()));
+            pst.setString(1, Integer.toString(v.getVendedor().getIdUsuario()));
+            pst.setString(2, Integer.toString(v.getCliente().getId()));
+            pst.setDate(3, new java.sql.Date(v.getFecha().getTime()));
+            pst.setInt(4, v.getSucursal());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -41,14 +41,15 @@ public class DaoVenta extends Conexion {
 
     public boolean actualizar(Venta v) {
         Connection cnx = getConexion();
-        String stc = "UPDATE ventas SET fecha=?, vendedor_id=?, cliente_id=? WHERE numero_factura=?";
+        String stc = "UPDATE ventas SET vendedor_id=?, cliente_id=?, fecha=?, sucursal_id=? WHERE numero_factura=?";
         PreparedStatement pst;
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setDate(1, new java.sql.Date(v.getFecha().getTime()));
-            pst.setString(2, Integer.toString(v.getVendedor().getIdUsuario()));
-            pst.setString(3, Integer.toString(v.getCliente().getIdUsuario()));
-            pst.setString(4, Integer.toString(v.getNumeroFactura()));
+            pst.setString(1, Integer.toString(v.getVendedor().getIdUsuario()));
+            pst.setString(2, Integer.toString(v.getCliente().getId()));
+            pst.setDate(3, new java.sql.Date(v.getFecha().getTime()));
+            pst.setString(4, Integer.toString(v.getSucursal()));
+            pst.setString(5, Integer.toString(v.getNumeroFactura()));
             pst.execute();
             return true;
         } catch (SQLException ex) {

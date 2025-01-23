@@ -8,18 +8,19 @@ import java.util.List;
  * @author User
  */
 public class Venta {
-    private int numero_factura;
+    private int numero_factura, sucursal;
     private Date fecha;
-    private Usuario cliente;
+    private Persona cliente;
     private Usuario vendedor;
     private List<Moto> motosVenta;
 
-    public Venta(int numeroFactura, Date fecha, Usuario quienCompro, Usuario quienAtendio, List<Moto> motosVenta) {
+    public Venta(int numeroFactura, Date fecha, Persona quienCompro, Usuario quienAtendio, List<Moto> motosVenta, int sucursal) {
         this.numero_factura = numeroFactura;
         this.fecha = fecha;
         this.cliente = quienCompro;
         this.vendedor = quienAtendio;
         this.motosVenta = motosVenta;
+        this.sucursal = sucursal;
     }
 
     public Venta() {
@@ -41,11 +42,11 @@ public class Venta {
         this.fecha = fecha;
     }
 
-    public Usuario getCliente() {
+    public Persona getCliente() {
         return cliente;
     }
 
-    public void setCliente(Usuario cliente) {
+    public void setCliente(Persona cliente) {
         this.cliente = cliente;
     }
 
@@ -72,4 +73,16 @@ public class Venta {
     public void eliminarMoto(Moto moto) {
         this.motosVenta.remove(moto);
     }
+
+    public int getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(int sucursal) {
+        this.sucursal = sucursal;
+    }
+
+
+    
+    
 }

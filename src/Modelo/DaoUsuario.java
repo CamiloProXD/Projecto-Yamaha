@@ -47,8 +47,8 @@ public class DaoUsuario extends Conexion {
             pst.setString(2, u.getPassword());
             pst.setString(3, u.getRol());
             pst.setDouble(4, u.getSalario());
-            pst.setInt(5, u.getId()); 
-            pst.setInt(6, u.getIdUsuario()); 
+            pst.setInt(5, u.getId());
+            pst.setInt(6, u.getIdUsuario());
             pst.executeUpdate();
             return true;
         } catch (SQLException ex) {
@@ -151,6 +151,44 @@ public class DaoUsuario extends Conexion {
             mensaje("Error al ejecutar el INSERT en personas", "Agregar Persona");
         }
         return false;
+    }
+
+    public Usuario consultarTrabajadorPorId(int id) {
+        Connection cnx = getConexion();
+        String stc = "SELECT p.nombres, p.apellidos, p.numero_telefonico, p.email, p.direccion, u.usuario_id, u.username, u.password, u.rol, u.salario, u.sucursal_id "
+                + "FROM usuarios u "
+                + "INNER JOIN personas p ON p.persona_id = u.persona_id "
+                + "WHERE u.usuario_id = ? AND u.rol = 'Empleado'";
+
+        PreparedStatement pst;
+        ResultSet rst;
+        Usuario usuario = null;
+
+        try {
+            pst = cnx.prepareStatement(stc);
+            pst.setInt(1, id); 
+            rst = pst.executeQuery();
+
+            if (rst.next()) {
+                usuario = new Usuario();
+                usuario.setNombres(rst.getString("nombres"));
+                usuario.setApellidos(rst.getString("apellidos"));
+                usuario.setNumeroTelefonico(rst.getString("numero_telefonico"));
+                usuario.setEmail(rst.getString("email"));
+                usuario.setDireccion(rst.getString("direccion"));
+                usuario.setIdUsuario(rst.getInt("usuario_id"));
+                usuario.setUsername(rst.getString("username"));
+                usuario.setPassword(rst.getString("password"));
+                usuario.setRol(rst.getString("rol"));
+                usuario.setSalario(rst.getDouble("salario"));
+                usuario.setIdSede(rst.getInt("sucursal_id"));
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar el SELECT -> " + ex);
+            mensaje("Error al ejecutar el SELECT", "consultarTrabajadorPorId");
+        }
+
+        return usuario;
     }
 
     public void mensaje(String msg, String title) {

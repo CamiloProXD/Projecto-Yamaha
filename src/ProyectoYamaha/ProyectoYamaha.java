@@ -29,6 +29,7 @@ import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
 import Modelo.DaoPersona;
 import Modelo.DaoSede;
+import Modelo.DaoVenta;
 import Modelo.DaoVentasMotos;
 import Modelo.Inventario;
 import Modelo.Moto;
@@ -37,6 +38,7 @@ import Modelo.Sede;
 import Modelo.Usuario;
 import Modelo.Venta;
 import Vista.ViewAdministrador;
+import Vista.ViewAgregarMotos;
 import Vista.ViewAgregarVendedor;
 import Vista.ViewCatalogoAutomaticas;
 import Vista.ViewCatalogoCross;
@@ -83,6 +85,7 @@ public class ProyectoYamaha {
         DaoUsuario daousuario = new DaoUsuario();
         DaoMoto daomoto = new DaoMoto();
         DaoSede daosede = new DaoSede();
+        DaoVenta daoventa = new DaoVenta();
         DaoVentasMotos daoventasmotos = new DaoVentasMotos();
         DaoPersona daopersona = new DaoPersona();
         
@@ -135,7 +138,7 @@ public class ProyectoYamaha {
         CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
         CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
         CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv);
-        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario);
+        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario, daopersona, daoventa);
         
         
         
