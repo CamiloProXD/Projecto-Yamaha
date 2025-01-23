@@ -176,17 +176,17 @@ public class CtlViewRealizarVenta implements ActionListener {
         }
     }
 
-    public void generarFactura(int idVenta) {
-        Connection conexion = new Conexion().getConexion();
-        String query = "SELECT v.numero_factura, p.nombres, p.persona_id, p.direccion, p.numero_telefonico, "
-                + "m.modelo, m.precio_unitario, v.fecha, m.nombre "
-                + "FROM ventas v "
-                + "JOIN personas p ON v.cliente_id = p.persona_id "
-                + "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id "
-                + "JOIN motos m ON vm.moto_id = m.serial_moto "
-                + "WHERE v.numero_factura = ?";
+public void generarFactura(int idVenta) {
+    Connection conexion = new Conexion().getConexion();
+    String query = "SELECT v.numero_factura, p.nombres, p.persona_id, p.direccion, p.numero_telefonico, " +
+                   "m.modelo, m.precio_unitario, v.fecha, m.nombre " +
+                   "FROM ventas v " +
+                   "JOIN personas p ON v.cliente_id = p.persona_id " +
+                   "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id " +
+                   "JOIN motos m ON vm.moto_id = m.serial_moto " +
+                   "WHERE v.numero_factura = ?";
 
-         try (PreparedStatement ps = conexion.prepareStatement(query)) {
+    try (PreparedStatement ps = conexion.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)) {
         ps.setInt(1, idVenta);
         ResultSet rs = ps.executeQuery();
 
