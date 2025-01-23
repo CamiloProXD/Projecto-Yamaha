@@ -17,6 +17,7 @@ import Vista.ViewRegistrarpago;
 import Vista.ViewCerrarSesionEmpleado;
 
 import Modelo.Conexion;
+import Modelo.DaoInventario;
 import Modelo.DaoPersona;
 import Modelo.Persona;
 import Vista.ViewAgregarCliente;
@@ -35,7 +36,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -49,20 +52,28 @@ public class CtlViewRealizarVenta implements ActionListener {
     private DaoUsuario dUsuario;
     private DaoPersona dPersona;
     private DaoVenta dVenta;
+    private DaoInventario dInventario;
+    private DaoVentasMotos dVentasMotos;
+    private DaoMoto dMoto;
     private Venta venta;
     private Moto moto;
+    private VentasMotos ventasMotos;
     ViewAgregarCliente vac = new ViewAgregarCliente();
     ViewAgregarMotos vam = new ViewAgregarMotos();
+    private DefaultTableModel modeloTabla;
 
-    public CtlViewRealizarVenta(ViewRegistrarpago vrp, ViewRealizarVenta vrv, ViewCerrarSesionEmpleado vcs, DaoUsuario dUsuario, DaoPersona dPersona, DaoVenta dVenta) {
+    public CtlViewRealizarVenta(ViewRegistrarpago vrp, ViewRealizarVenta vrv, ViewCerrarSesionEmpleado vcs, DaoUsuario dUsuario, DaoPersona dPersona, DaoVenta dVenta, DaoInventario dInventario, DaoVentasMotos dVentasMotos, DaoMoto dMoto) {
         this.vrp = vrp;
         this.vrv = vrv;
         this.vcs = vcs;
         this.dUsuario = dUsuario;
         this.dPersona = dPersona;
         this.dVenta = dVenta;
+        this.dInventario = dInventario;
+        this.dVentasMotos = dVentasMotos;
+        this.dMoto = dMoto;
 
-        vrv.btnAnadirMoto.addActionListener(this);
+        vam.btnAnadirMoto.addActionListener(this);
         vrv.btnGenerarFactura.addActionListener(this);
         vrv.botonRegresar.addActionListener(this);
         vrv.btnCrearPedido.addActionListener(this);
@@ -97,6 +108,9 @@ public class CtlViewRealizarVenta implements ActionListener {
 
                     vrv.EscritorioAgregarMotos.add(vam);
                     vam.setVisible(true);
+
+                    inicializarTabla();
+                    cargarInventario(vendedor.getIdSede());
                 } else {
                     mensaje("Vendedor no encontrado", "Error");
                 }
@@ -119,14 +133,46 @@ public class CtlViewRealizarVenta implements ActionListener {
             mensaje("Cliente Nuevo Agregado Correctamente ", "EXITO!!!!!");
             this.vac.dispose();
         }
+        if (e.getSource().equals(vam.btnAnadirMoto)) {
+            
+            vam.txtSerialMotoVenta.getText();
+            VentasMotos nuevamoto = new VentasMotos();
+            nuevamoto.setMotoId(vam.txtSerialMotoVenta.getText());
+            nuevamoto.setVentaId(dVenta.obtenerUltimoNumeroFactura());
+            dMoto.actualizarEstadoVendida(vam.txtSerialMotoVenta.getText());
+            dVentasMotos.agregar(nuevamoto);
+            vam.txtSerialMotoVenta.setText(null);
+        }
 
         if (e.getSource().equals(vrv.btnGenerarFactura)) {
-            generarFactura(1);
+            generarFactura(dVenta.obtenerUltimoNumeroFactura());
         }
 
         if (e.getSource().equals(vrv.botonRegresar)) {
             vcs.setVisible(true);
             vrv.dispose();
+        }
+    }
+
+    private void inicializarTabla() {
+        modeloTabla = new DefaultTableModel();
+        modeloTabla.addColumn("Nombre");
+        modeloTabla.addColumn("Modelo");
+        modeloTabla.addColumn("Color");
+        modeloTabla.addColumn("Serial");
+
+        vam.tablaInventarioSucursal.setModel(modeloTabla);
+    }
+
+    private void cargarInventario(int idSede) {
+        modeloTabla.setRowCount(0);
+
+        List<Object[]> inventario = dInventario.obtenerInventarioDetallesPorSucursal(idSede);
+        if (inventario.isEmpty()) {
+        } else {
+            for (Object[] fila : inventario) {
+                modeloTabla.addRow(fila);
+            }
         }
     }
 

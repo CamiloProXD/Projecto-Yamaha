@@ -152,6 +152,21 @@ public class DaoMoto extends Conexion {
         return inventario;
     }
 
+    public boolean actualizarEstadoVendida(String serialMoto) {
+        Connection cnx = getConexion();
+        String stc = "UPDATE motos SET vendida = 1 WHERE serial_moto = ?";
+
+        try (PreparedStatement pst = cnx.prepareStatement(stc)) {
+            pst.setString(1, serialMoto); 
+            pst.executeUpdate(); 
+            return true; 
+        } catch (SQLException ex) {
+            System.err.println("Error al actualizar el estado de la moto: " + ex.getMessage());
+            mensaje("Error al actualizar el estado de la moto", "Actualizar!!!");
+        }
+        return false; 
+    }
+
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);
     }

@@ -136,7 +136,7 @@ public class DaoVenta extends Conexion {
                 + "JOIN usuarios u ON v.vendedor_id = u.usuario_id "
                 + "JOIN ventas_motos vm ON v.numero_factura = vm.venta_id "
                 + "JOIN motos m ON vm.moto_id = m.serial_moto "
-                + "WHERE m.sucursal_id = ? " 
+                + "WHERE m.sucursal_id = ? "
                 + "GROUP BY u.usuario_id";
 
         try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
@@ -158,6 +158,22 @@ public class DaoVenta extends Conexion {
         }
 
         return ventas;
+    }
+
+    public int obtenerUltimoNumeroFactura() {
+        int ultimoNumeroFactura = -1;
+        String query = "SELECT numero_factura FROM ventas ORDER BY numero_factura DESC LIMIT 1";
+
+        try (Connection cnx = getConexion(); PreparedStatement pst = cnx.prepareStatement(query); ResultSet rs = pst.executeQuery()) {
+            if (rs.next()) {
+                ultimoNumeroFactura = rs.getInt("numero_factura");
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al obtener el último número de factura: " + ex.getMessage());
+            mensaje("Error al obtener el último número de factura", "Consulta!!!");
+        }
+
+        return ultimoNumeroFactura;
     }
 
     public void mensaje(String msg, String title) {

@@ -38,7 +38,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         txtIdVendedor = new javax.swing.JTextField();
         labelNombre3 = new javax.swing.JLabel();
         EscritorioAgregarMotos = new javax.swing.JDesktopPane();
-        btnAnadirMoto = new Vista.MyButton();
         btnCrearPedido = new Vista.MyButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -139,24 +138,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
 
         jPanel1.add(EscritorioAgregarMotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 960, 650));
 
-        btnAnadirMoto.setBackground(new java.awt.Color(227, 14, 21));
-        btnAnadirMoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAnadirMoto.setForeground(new java.awt.Color(242, 242, 242));
-        btnAnadirMoto.setText("Anadir moto");
-        btnAnadirMoto.setBorderColor(new java.awt.Color(242, 242, 242));
-        btnAnadirMoto.setBorderPainted(false);
-        btnAnadirMoto.setColor(new java.awt.Color(227, 14, 21));
-        btnAnadirMoto.setColorClick(new java.awt.Color(227, 14, 21));
-        btnAnadirMoto.setColorOver(new java.awt.Color(167, 14, 21));
-        btnAnadirMoto.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
-        btnAnadirMoto.setRadius(30);
-        btnAnadirMoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAnadirMotoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAnadirMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 170, 40));
-
         btnCrearPedido.setBackground(new java.awt.Color(227, 14, 21));
         btnCrearPedido.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCrearPedido.setForeground(new java.awt.Color(242, 242, 242));
@@ -196,10 +177,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarFacturaActionPerformed
 
-    private void btnAnadirMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirMotoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAnadirMotoActionPerformed
-
     private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
 
     }//GEN-LAST:event_botonRegresarActionPerformed
@@ -216,7 +193,6 @@ public class ViewRealizarVenta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane EscritorioAgregarMotos;
     public javax.swing.JButton botonRegresar;
-    public Vista.MyButton btnAnadirMoto;
     public Vista.MyButton btnCrearPedido;
     public Vista.MyButton btnGenerarFactura;
     private javax.swing.JLabel jLabel1;

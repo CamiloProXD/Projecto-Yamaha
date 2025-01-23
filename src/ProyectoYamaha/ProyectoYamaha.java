@@ -25,6 +25,7 @@ import Controlador.CtlViewSucursalEmpleado;
 import Controlador.CtlViewVendedor;
 import Controlador.CtlViewVerInventarioSucursalAdmin;
 import Controlador.CtlViewVerinventarioSucursalEmpleado;
+import Modelo.DaoInventario;
 import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
 import Modelo.DaoPersona;
@@ -88,6 +89,7 @@ public class ProyectoYamaha {
         DaoVenta daoventa = new DaoVenta();
         DaoVentasMotos daoventasmotos = new DaoVentasMotos();
         DaoPersona daopersona = new DaoPersona();
+        DaoInventario daoinventario = new DaoInventario();
         
         
         
@@ -138,7 +140,7 @@ public class ProyectoYamaha {
         CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
         CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
         CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv);
-        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario, daopersona, daoventa);
+        CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario, daopersona, daoventa, daoinventario, daoventasmotos, daomoto);
         
         
         

@@ -25,7 +25,7 @@ public class DaoVentasMotos extends Conexion {
         try {
             pst = cnx.prepareStatement(stc);
             pst.setInt(1, vm.getVentaId());
-            pst.setInt(2, vm.getMotoId());
+            pst.setString(2, vm.getMotoId());
             pst.execute();
             return true;
         } catch (SQLException ex) {
@@ -49,7 +49,7 @@ public class DaoVentasMotos extends Conexion {
             while (rst.next()) {
                 VentasMotos vmotos = new VentasMotos();
                 vm.setVentaId(rst.getInt("venta_id"));
-                vm.setMotoId(rst.getInt("moto_id"));
+                vm.setMotoId(rst.getString("moto_id"));
                 lista.add(vmotos);
             }
         } catch (SQLException ex) {
@@ -66,7 +66,7 @@ public class DaoVentasMotos extends Conexion {
         try {
             pst = cnx.prepareStatement(stc);
             pst.setInt(1, vm.getVentaId());
-            pst.setInt(2, vm.getMotoId());
+            pst.setString(2, vm.getMotoId());
             pst.executeUpdate();
             pst.execute();
             return true;

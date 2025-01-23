@@ -10,12 +10,12 @@ package Modelo;
  */
 public class VentasMotos {
     private int ventaId;
-    private int motoId;
+    private String motoId;
 
     public VentasMotos() {
     }
 
-    public VentasMotos(int ventaId, int motoId) {
+    public VentasMotos(int ventaId, String motoId) {
         this.ventaId = ventaId;
         this.motoId = motoId;
     }
@@ -28,11 +28,11 @@ public class VentasMotos {
         this.ventaId = ventaId;
     }
 
-    public int getMotoId() {
+    public String getMotoId() {
         return motoId;
     }
 
-    public void setMotoId(int motoId) {
+    public void setMotoId(String motoId) {
         this.motoId = motoId;
     }
 }

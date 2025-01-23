@@ -71,11 +71,11 @@ public class DaoInventario extends Conexion {
         List<Object[]> inventario = new ArrayList<>();
         String query = "SELECT m.nombre, m.modelo, m.color_moto, i.cantidad_motos "
                 + "FROM inventarios i "
-                + "JOIN motos m ON i.sucursal_id = m.sucursal_id " // Cambia la unión a la columna correcta
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
                 + "WHERE i.sucursal_id = ? AND m.vendida = 0";
 
         try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
-            stmt.setInt(1, idSucursal); // Asegúrate de que el marcador de posición se esté utilizando correctamente
+            stmt.setInt(1, idSucursal);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
@@ -93,6 +93,34 @@ public class DaoInventario extends Conexion {
 
         return inventario;
     }
+
+    public List<Object[]> obtenerInventarioDetallesPorSucursal(int idSucursal) {
+        List<Object[]> inventario = new ArrayList<>();
+        String query = "SELECT m.nombre, m.modelo, m.color_moto, m.serial_moto "
+                + "FROM inventarios i "
+                + "JOIN motos m ON i.sucursal_id = m.sucursal_id "
+                + "WHERE i.sucursal_id = ? AND m.vendida = 0";
+
+        try (Connection cnx = getConexion(); PreparedStatement stmt = cnx.prepareStatement(query)) {
+            stmt.setInt(1, idSucursal);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                inventario.add(new Object[]{
+                    rs.getString("nombre"),
+                    rs.getString("modelo"),
+                    rs.getString("color_moto"),
+                    rs.getString("serial_moto") // Cambiado de cantidad a serial_moto
+                });
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta -> " + e);
+            mensaje("Error al ejecutar la consulta", "Consultar Inventario!!!");
+        }
+
+        return inventario;
+    }
+
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, JOptionPane.ERROR_MESSAGE);
