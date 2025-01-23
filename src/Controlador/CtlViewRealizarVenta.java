@@ -25,12 +25,10 @@ import Vista.ViewAgregarMotos;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Element;
-import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.awt.Desktop;
@@ -38,6 +36,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -205,70 +204,74 @@ public void generarFactura(int idVenta) {
             PdfWriter.getInstance(document, new FileOutputStream(ruta));
             document.open();
 
-            String fuenteRuta = "fuentes\\OpenSans-Regular.ttf"; 
-            BaseFont baseFont = BaseFont.createFont(fuenteRuta, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            ClassLoader classLoader = getClass().getClassLoader();
+            InputStream logoStream = classLoader.getResourceAsStream("imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png");
 
-            com.itextpdf.text.Font fuenteTitulo = new com.itextpdf.text.Font(baseFont, 18, com.itextpdf.text.Font.BOLD);
-            com.itextpdf.text.Font fuenteTexto = new com.itextpdf.text.Font(baseFont, 12, com.itextpdf.text.Font.NORMAL);
-            com.itextpdf.text.Font fuenteNegrita = new com.itextpdf.text.Font(baseFont, 12, com.itextpdf.text.Font.BOLD);
-
-            Image logo = Image.getInstance(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"));
-            logo.scaleToFit(120, 120);  
-            logo.setAlignment(Element.ALIGN_CENTER);
-            document.add(logo);
+            if (logoStream != null) {
+                Image logo = Image.getInstance(logoStream.readAllBytes()); 
+                logo.scaleToFit(100, 100); 
+                logo.setAlignment(Element.ALIGN_CENTER); 
+                document.add(logo);
+            } else {
+                System.err.println("No se pudo cargar el logo desde el paquete 'imagenes'.");
+            }
 
             document.add(new Paragraph("\n"));
 
-            Paragraph titulo = new Paragraph("Factura de Venta", fuenteTitulo);
+            com.itextpdf.text.Font tituloFont = new com.itextpdf.text.Font(com.itextpdf.text.Font.FontFamily.HELVETICA, 18, com.itextpdf.text.Font.BOLD);
+            Paragraph titulo = new Paragraph("Factura de Venta", tituloFont);
             titulo.setAlignment(Element.ALIGN_CENTER);
             document.add(titulo);
 
             document.add(new Paragraph("\n"));
 
-            PdfPTable encabezadoTabla = new PdfPTable(2);
-            encabezadoTabla.setWidthPercentage(100); 
-            encabezadoTabla.setSpacingBefore(10f);   
-            encabezadoTabla.setSpacingAfter(10f);    
+            PdfPTable tablaDatos = new PdfPTable(2);
+            tablaDatos.setWidthPercentage(100); 
+            tablaDatos.setSpacingBefore(10f);
+            tablaDatos.setSpacingAfter(10f);
 
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Número de Factura:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getInt("numero_factura")), fuenteTexto)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Fecha:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getDate("fecha")), fuenteTexto)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Cliente:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("nombres"), fuenteTexto)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Cédula:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("persona_id"), fuenteTexto)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Dirección:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("direccion"), fuenteTexto)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Teléfono:", fuenteNegrita)));
-            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("numero_telefonico"), fuenteTexto)));
+            com.itextpdf.text.Font boldFont = new com.itextpdf.text.Font(com.itextpdf.text.Font.FontFamily.HELVETICA, 12, com.itextpdf.text.Font.BOLD);
+            com.itextpdf.text.Font normalFont = new com.itextpdf.text.Font(com.itextpdf.text.Font.FontFamily.HELVETICA, 12, com.itextpdf.text.Font.NORMAL);
 
-            document.add(encabezadoTabla);
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Número de Factura:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getInt("numero_factura")), normalFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Fecha:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getDate("fecha")), normalFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Cliente:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(rs.getString("nombres"), normalFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Cédula:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(rs.getString("persona_id"), normalFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Dirección:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(rs.getString("direccion"), normalFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph("Teléfono:", boldFont)));
+            tablaDatos.addCell(new PdfPCell(new Paragraph(rs.getString("numero_telefonico"), normalFont)));
 
-            Paragraph detalleTitulo = new Paragraph("Detalle de la Compra", fuenteTitulo);
+            document.add(tablaDatos);
+
+            Paragraph detalleTitulo = new Paragraph("Detalle de la Compra", tituloFont);
             detalleTitulo.setAlignment(Element.ALIGN_CENTER);
             document.add(detalleTitulo);
 
             document.add(new Paragraph("\n"));
-  
+
             PdfPTable detalleTabla = new PdfPTable(3);
             detalleTabla.setWidthPercentage(100);
             detalleTabla.setSpacingBefore(10f);
             detalleTabla.setSpacingAfter(10f);
 
-            detalleTabla.addCell(new PdfPCell(new Paragraph("Nombre de la Moto", fuenteNegrita)));
-            detalleTabla.addCell(new PdfPCell(new Paragraph("Modelo", fuenteNegrita)));
-            detalleTabla.addCell(new PdfPCell(new Paragraph("Precio", fuenteNegrita)));
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Nombre de la Moto", boldFont)));
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Modelo", boldFont)));
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Precio", boldFont)));
 
             do {
-                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("nombre"), fuenteTexto)));
-                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("modelo"), fuenteTexto)));
-                detalleTabla.addCell(new PdfPCell(new Paragraph("$" + String.format("%.2f", rs.getDouble("precio_unitario")), fuenteTexto)));
+                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("nombre"), normalFont)));
+                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("modelo"), normalFont)));
+                detalleTabla.addCell(new PdfPCell(new Paragraph("$" + String.format("%.2f", rs.getDouble("precio_unitario")), normalFont)));
             } while (rs.next());
 
             document.add(detalleTabla);
 
-            Paragraph gracias = new Paragraph("Gracias por su compra", fuenteTitulo);
+            Paragraph gracias = new Paragraph("Gracias por su compra", tituloFont);
             gracias.setAlignment(Element.ALIGN_CENTER);
             document.add(gracias);
 
