@@ -24,7 +24,13 @@ import Vista.ViewAgregarCliente;
 import Vista.ViewAgregarMotos;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.awt.Desktop;
@@ -39,6 +45,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+
 
 /**
  *
@@ -191,43 +199,87 @@ public void generarFactura(int idVenta) {
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) { 
-    String ruta = "D:\\universidad\\3er semestre\\proyecto Yamaha\\" + "Factura de la venta " + idVenta + ".pdf";
+            String ruta = "D:\\universidad\\3er semestre\\proyecto Yamaha\\" + "Factura de la venta " + idVenta + ".pdf";
 
-    Document document = new Document();
-    PdfWriter.getInstance(document, new FileOutputStream(ruta));
-    document.open();
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(ruta));
+            document.open();
 
- 
-    document.add(new Paragraph("Factura de Venta"));
-    document.add(new Paragraph("Número de Factura: " + rs.getInt("numero_factura")));
-    document.add(new Paragraph("Fecha: " + rs.getDate("fecha")));
-    document.add(new Paragraph("Cliente: " + rs.getString("nombres")));
-    document.add(new Paragraph("Cédula: " + rs.getString("persona_id")));
-    document.add(new Paragraph("Dirección: " + rs.getString("direccion")));
-    document.add(new Paragraph("Teléfono: " + rs.getString("numero_telefonico")));
-    document.add(new Paragraph("\n"));
+            String fuenteRuta = "fuentes\\OpenSans-Regular.ttf"; 
+            BaseFont baseFont = BaseFont.createFont(fuenteRuta, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 
-    document.add(new Paragraph("Detalle de la Compra:"));
+            com.itextpdf.text.Font fuenteTitulo = new com.itextpdf.text.Font(baseFont, 18, com.itextpdf.text.Font.BOLD);
+            com.itextpdf.text.Font fuenteTexto = new com.itextpdf.text.Font(baseFont, 12, com.itextpdf.text.Font.NORMAL);
+            com.itextpdf.text.Font fuenteNegrita = new com.itextpdf.text.Font(baseFont, 12, com.itextpdf.text.Font.BOLD);
 
+            Image logo = Image.getInstance(getClass().getResource("/imagenes/png-transparent-yamaha-logo-yamaha-motor-company-logo-yamaha-corporation-decal-yamaha-emblem-company-motorcycle-thumbnail-removebg-preview.png"));
+            logo.scaleToFit(120, 120);  
+            logo.setAlignment(Element.ALIGN_CENTER);
+            document.add(logo);
 
-    do {
-        document.add(new Paragraph("Nombre de la moto: " + rs.getString("nombre")));
-        document.add(new Paragraph("Modelo: " + rs.getString("modelo")));
+            document.add(new Paragraph("\n"));
 
-        String precio = String.format("%.2f", rs.getDouble("precio_unitario"));
-        document.add(new Paragraph("Precio: $" + precio));
-        document.add(new Paragraph("\n"));
-    } while (rs.next());
+            Paragraph titulo = new Paragraph("Factura de Venta", fuenteTitulo);
+            titulo.setAlignment(Element.ALIGN_CENTER);
+            document.add(titulo);
 
-    document.add(new Paragraph("¡Gracias por su compra!"));
-    document.close();
+            document.add(new Paragraph("\n"));
 
-    Desktop.getDesktop().open(new File(ruta));
+            PdfPTable encabezadoTabla = new PdfPTable(2);
+            encabezadoTabla.setWidthPercentage(100); 
+            encabezadoTabla.setSpacingBefore(10f);   
+            encabezadoTabla.setSpacingAfter(10f);    
 
-    JOptionPane.showMessageDialog(null, "Factura generada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-} else {
-    JOptionPane.showMessageDialog(null, "No se encontraron datos para la factura " + idVenta, "Error", JOptionPane.ERROR_MESSAGE);
-}
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Número de Factura:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getInt("numero_factura")), fuenteTexto)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Fecha:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(String.valueOf(rs.getDate("fecha")), fuenteTexto)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Cliente:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("nombres"), fuenteTexto)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Cédula:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("persona_id"), fuenteTexto)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Dirección:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("direccion"), fuenteTexto)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph("Teléfono:", fuenteNegrita)));
+            encabezadoTabla.addCell(new PdfPCell(new Paragraph(rs.getString("numero_telefonico"), fuenteTexto)));
+
+            document.add(encabezadoTabla);
+
+            Paragraph detalleTitulo = new Paragraph("Detalle de la Compra", fuenteTitulo);
+            detalleTitulo.setAlignment(Element.ALIGN_CENTER);
+            document.add(detalleTitulo);
+
+            document.add(new Paragraph("\n"));
+  
+            PdfPTable detalleTabla = new PdfPTable(3);
+            detalleTabla.setWidthPercentage(100);
+            detalleTabla.setSpacingBefore(10f);
+            detalleTabla.setSpacingAfter(10f);
+
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Nombre de la Moto", fuenteNegrita)));
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Modelo", fuenteNegrita)));
+            detalleTabla.addCell(new PdfPCell(new Paragraph("Precio", fuenteNegrita)));
+
+            do {
+                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("nombre"), fuenteTexto)));
+                detalleTabla.addCell(new PdfPCell(new Paragraph(rs.getString("modelo"), fuenteTexto)));
+                detalleTabla.addCell(new PdfPCell(new Paragraph("$" + String.format("%.2f", rs.getDouble("precio_unitario")), fuenteTexto)));
+            } while (rs.next());
+
+            document.add(detalleTabla);
+
+            Paragraph gracias = new Paragraph("Gracias por su compra", fuenteTitulo);
+            gracias.setAlignment(Element.ALIGN_CENTER);
+            document.add(gracias);
+
+            document.close();
+
+            Desktop.getDesktop().open(new File(ruta));
+
+            JOptionPane.showMessageDialog(null, "Factura generada exitosamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "No se encontraron datos para la factura " + idVenta, "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     } catch (Exception ex) {
         ex.printStackTrace();
