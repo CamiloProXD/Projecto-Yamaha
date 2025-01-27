@@ -28,12 +28,14 @@ import Controlador.CtlViewVerinventarioSucursalEmpleado;
 import Modelo.DaoInventario;
 import Modelo.DaoUsuario;
 import Modelo.DaoMoto;
+import Modelo.DaoPago;
 import Modelo.DaoPersona;
 import Modelo.DaoSede;
 import Modelo.DaoVenta;
 import Modelo.DaoVentasMotos;
 import Modelo.Inventario;
 import Modelo.Moto;
+import Modelo.Pago;
 import Modelo.Persona;
 import Modelo.Sede;
 import Modelo.Usuario;
@@ -81,6 +83,7 @@ public class ProyectoYamaha {
         Sede sede = new Sede();
         Venta venta = new Venta();
         Inventario inventario = new Inventario();
+        Pago pago = new Pago();
         
         //Dao
         DaoUsuario daousuario = new DaoUsuario();
@@ -90,6 +93,7 @@ public class ProyectoYamaha {
         DaoVentasMotos daoventasmotos = new DaoVentasMotos();
         DaoPersona daopersona = new DaoPersona();
         DaoInventario daoinventario = new DaoInventario();
+        DaoPago daoPago = new DaoPago();
         
         
         
@@ -135,11 +139,11 @@ public class ProyectoYamaha {
         CtlViewAgregarVendedor ctlvav = new CtlViewAgregarVendedor(vcsa, vav, daousuario, daopersona);
         CtlViewConsultarVentas ctlcv = new CtlViewConsultarVentas(vcsa, vcv, daoventasmotos, daousuario);
         //Controladores empleado
-        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv);
+        CtlViewVendedor ctlvv = new CtlViewVendedor(vrv, vse, vpv, vcsv, vrp);
         CtlViewCerrarSesionEmpleado ctlcse = new CtlViewCerrarSesionEmpleado(vp, vpv, vcsv);
         CtlViewSucursalEmpleado ctvse = new CtlViewSucursalEmpleado(vse, vvise, vcsv, daosede, daousuario);
         CtlViewVerinventarioSucursalEmpleado ctvise = new CtlViewVerinventarioSucursalEmpleado(vvise, vcsv, 1);
-        CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv);
+        CtlViewRegistrarPago ctvrp = new CtlViewRegistrarPago(vrp, vcsv, daoventa, daoPago, pago);
         CtlViewRealizarVenta vrvev = new CtlViewRealizarVenta(vrp, vrv, vcsv, daousuario, daopersona, daoventa, daoinventario, daoventasmotos, daomoto);
         
         

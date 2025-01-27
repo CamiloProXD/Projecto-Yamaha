@@ -176,7 +176,28 @@ public class DaoVenta extends Conexion {
         return ultimoNumeroFactura;
     }
 
+    public boolean existeVenta(int numeroFactura) {
+        Connection cnx = getConexion();
+        String query = "SELECT COUNT(*) AS total FROM ventas WHERE numero_factura = ?";
+        PreparedStatement pst;
+        ResultSet rs;
+
+        try {
+            pst = cnx.prepareStatement(query);
+            pst.setInt(1, numeroFactura);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("total") > 0; 
+            }
+        } catch (SQLException ex) {
+            System.err.println("Error al ejecutar la consulta para verificar existencia de venta -> " + ex);
+            mensaje("Error al verificar existencia de venta", "Consulta!!!");
+        }
+        return false;
+    }
+
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);
     }
+
 }
