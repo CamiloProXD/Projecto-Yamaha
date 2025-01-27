@@ -88,7 +88,7 @@ public class DaoVentasMotos extends Conexion {
         ResultSet rst = null;
         try {
             pst = cnx.prepareStatement(query);
-            pst.setInt(1, Integer.parseInt(idVendedor)); // Asegúrate de que el ID sea un número
+            pst.setInt(1, Integer.parseInt(idVendedor));
             rst = pst.executeQuery();
         } catch (SQLException e) {
             System.err.println("Error al consultar ventas: " + e.getMessage());

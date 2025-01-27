@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -51,10 +52,11 @@ public class CtlViewConsultarVentas implements ActionListener {
         modelo.setRowCount(0);
         ResultSet rst = dVM.consultarVentasXVendedor(vConsultarVentas.txtIdEmpleado.getText());
         try {
+            DecimalFormat df = new DecimalFormat("#.00");
             while (rst.next()) {
                 Object[] row = new Object[2];
                 row[0] = rst.getDate("fecha de venta");
-                row[1] = rst.getDouble("total de esta venta");
+                row[1] = df.format(rst.getDouble("total de esta venta"));
 
                 
                 modelo.addRow(row);
