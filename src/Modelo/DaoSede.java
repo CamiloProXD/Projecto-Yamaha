@@ -107,11 +107,9 @@ public class DaoSede extends Conexion {
         PreparedStatement pst;
         ResultSet rst;
         List<Sede> listaSedes = new ArrayList<>();
-
         try {
             pst = cnx.prepareStatement(stc);
             rst = pst.executeQuery();
-
             while (rst.next()) {
                 Sede s = new Sede();
                 s.setIdSede(rst.getInt("sucursal_id"));
@@ -120,11 +118,7 @@ public class DaoSede extends Conexion {
                 s.setMunicipio(rst.getString("municipio"));
                 s.setIdAdministrador(rst.getInt("administrador_id"));
                 s.setDireccionSede(rst.getString("direccion_sucursal"));
-
-                listaSedes.add(s);
-
-                
-                System.out.println("Sucursal obtenida: " + s.getIdSede() + " - " + s.getNombreSede());
+                listaSedes.add(s); 
             }
         } catch (SQLException ex) {
             System.err.println("Error al ejecutar el SELECT -> " + ex.getMessage());

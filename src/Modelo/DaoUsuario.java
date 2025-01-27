@@ -64,10 +64,6 @@ public class DaoUsuario extends Conexion {
                 + "FROM usuarios u "
                 + "INNER JOIN personas p ON p.persona_id = u.persona_id "
                 + "WHERE u.username = ?";
-        System.out.println("Conectando a la base de datos...");
-        System.out.println("Consulta SQL: " + stc);
-        System.out.println("Username proporcionado: " + u.getUsername());
-
         PreparedStatement pst;
         ResultSet rst;
         try {
@@ -166,7 +162,7 @@ public class DaoUsuario extends Conexion {
 
         try {
             pst = cnx.prepareStatement(stc);
-            pst.setInt(1, id); 
+            pst.setInt(1, id);
             rst = pst.executeQuery();
 
             if (rst.next()) {
@@ -190,6 +186,7 @@ public class DaoUsuario extends Conexion {
 
         return usuario;
     }
+
 
     public void mensaje(String msg, String title) {
         JOptionPane.showMessageDialog(null, msg, title, 1);

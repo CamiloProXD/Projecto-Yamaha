@@ -36,7 +36,6 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtColor = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtTipo = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -51,6 +50,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         btnActualizar = new Vista.MyButton();
+        cbTipoMoto = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -124,9 +124,6 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel14.setText("Precio:");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 390, -1, -1));
-
-        txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        getContentPane().add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 250, -1));
 
         txtPrecio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         getContentPane().add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 390, 250, -1));
@@ -243,6 +240,10 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
         });
         getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 670, 171, 60));
 
+        cbTipoMoto.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        cbTipoMoto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deportivas", "Motocross ", "Enduro", "Automáticas", "Semiautomáticas", "Cuatrimotos", "Adventure", "Sport Heritage", "Super Deportivas", "Todoterreno", "Urbanas", " " }));
+        getContentPane().add(cbTipoMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 250, 40));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -282,6 +283,7 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     public Vista.MyButton btnActualizar;
     public Vista.MyButton btnRegistrar;
     public javax.swing.JButton btnRegresar;
+    public javax.swing.JComboBox<String> cbTipoMoto;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -303,6 +305,5 @@ public class ViewRegistrarmoto extends javax.swing.JFrame {
     public javax.swing.JTextField txtPrecio;
     public javax.swing.JTextField txtSerial;
     public javax.swing.JTextField txtSucursal;
-    public javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }

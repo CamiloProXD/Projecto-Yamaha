@@ -193,7 +193,7 @@ public class ViewAgregarVendedor extends javax.swing.JFrame {
                 btnAgregarVendedorActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregarVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 740, 260, 50));
+        jPanel1.add(btnAgregarVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 730, 260, 50));
 
         LabelConsultar.setFont(new java.awt.Font("Bodoni MT Black", 0, 48)); // NOI18N
         LabelConsultar.setText("Gestion Empleado");

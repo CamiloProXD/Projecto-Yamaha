@@ -41,7 +41,13 @@ public class CtlViewRegistrarMoto implements ActionListener {
             moto.setCilindraje(Integer.parseInt(vx.txtCilindraje.getText()));
             moto.setModelo(vx.txtModelo.getText());
             moto.setPrecioUnitario(Double.parseDouble(vx.txtPrecio.getText()));
-            moto.setTipoMoto(vx.txtTipo.getText());
+            String tipoSeleccionado = (String) vx.cbTipoMoto.getSelectedItem();
+            moto.setTipoMoto(tipoSeleccionado);
+            if (tipoSeleccionado != null) {
+                moto.setTipoMoto(tipoSeleccionado);
+            } else {
+                System.out.println("Por favor, selecciona un tipo de moto.");
+            }
             moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
             moto.setNombre(vx.txtNombre.getText());
             if (daoMoto.agregar(moto)) {
@@ -63,7 +69,13 @@ public class CtlViewRegistrarMoto implements ActionListener {
             moto.setCilindraje(Integer.parseInt(vx.txtCilindraje.getText()));
             moto.setModelo(vx.txtModelo.getText());
             moto.setPrecioUnitario(Double.parseDouble(vx.txtPrecio.getText()));
-            moto.setTipoMoto(vx.txtTipo.getText());
+            String tipoSeleccionado = (String) vx.cbTipoMoto.getSelectedItem();
+            moto.setTipoMoto(tipoSeleccionado);
+            if (tipoSeleccionado != null) {
+                moto.setTipoMoto(tipoSeleccionado);
+            } else {
+                System.out.println("Por favor, selecciona un tipo de moto.");
+            }
             moto.setSedeId(Integer.parseInt(vx.txtSucursal.getText()));
             moto.setNombre(vx.txtNombre.getText());
 
@@ -87,7 +99,6 @@ public class CtlViewRegistrarMoto implements ActionListener {
         vx.txtModelo.setText(null);
         vx.txtPrecio.setText(null);
         vx.txtSerial.setText(null);
-        vx.txtTipo.setText(null);
         vx.txtNombre.setText(null);
         vx.txtSucursal.setText(null);
     }

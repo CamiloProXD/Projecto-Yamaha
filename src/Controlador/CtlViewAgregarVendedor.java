@@ -24,7 +24,6 @@ public class CtlViewAgregarVendedor implements ActionListener {
     ViewAgregarVendedor vav;
     DaoUsuario daousuario;
     DaoPersona daopersona;
-    
 
     public CtlViewAgregarVendedor(ViewCerrarSesionAdmin cs, ViewAgregarVendedor vav, DaoUsuario daousuario, DaoPersona daopersona) {
         this.cs = cs;
@@ -77,7 +76,7 @@ public class CtlViewAgregarVendedor implements ActionListener {
                 mensaje("Error al agregar la persona.", "Agregar Persona");
             }
         }
-        if (ev.getSource().equals(vav.btnCerrarSesion)){
+        if (ev.getSource().equals(vav.btnCerrarSesion)) {
             cs.setVisible(true);
             this.vav.dispose();
         }
